@@ -1,0 +1,6 @@
+- nmap -sVC -Pn [IP]
+    - lists ports' running processes
+- gobuster dir -u [url] -w [wordlist]
+    - tries a directory search brute force attack
+- searchspliot to search for exploits
+- john the ripper for brute force password attacks

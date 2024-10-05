@@ -1,0 +1,13 @@
+- show everything
+	- ip a
+	- ifconfig (~ ~)
+- wireless config
+	- iwconfig
+- list neighbor (what ip is assosiated with what MAC)
+	- ip n
+	- arp -a
+- routing table
+	- ip r
+	- route
+- identify open ports/services
+	- netstat
