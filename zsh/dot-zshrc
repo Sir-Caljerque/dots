@@ -60,6 +60,9 @@ source ~/.zsh/Sources/functions
 # Change starship config location
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
+# Add cargo to PATH
+export PATH="$PATH:$HOME/.cargo/bin/"
+
 # Start up programs
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"

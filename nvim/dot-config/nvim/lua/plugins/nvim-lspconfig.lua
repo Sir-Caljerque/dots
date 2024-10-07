@@ -50,19 +50,19 @@ local config = function()
 
     -- python
     lspconfig.pyright.setup({
-    	capabilities = capabilities,
-    	on_attach = on_attach,
-    	settings = {
-    		pyright = {
-    			disableOrganizeImports = false,
-    			analysis = {
-    				useLibraryCodeForTypes = true,
-    				autoSearchPaths = true,
-    				diagnosticMode = "workspace",
-    				autoImportCompletions = true,
-    			},
-    		},
-    	},
+        capabilities = capabilities,
+        on_attach = on_attach,
+        settings = {
+            pyright = {
+                disableOrganizeImports = false,
+                analysis = {
+                    useLibraryCodeForTypes = true,
+                    autoSearchPaths = true,
+                    diagnosticMode = "workspace",
+                    autoImportCompletions = true,
+                },
+            },
+        },
     })
 
     -- Python #2
@@ -166,6 +166,13 @@ local config = function()
                 },
             },
         },
+    })
+
+    -- Assembly
+    lspconfig.asm_lsp.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        filetypes = { "asm", "s", "S" },
     })
 
     -- TOML
