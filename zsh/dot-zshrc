@@ -2,6 +2,7 @@ clear
 
 rand=$((RANDOM))
 
+[[ -z "$NVIM" ]] &&
 if (( rand % 2 == 0 )); then
     fastfetch --logo ~/Pictures/wallpaps/bridWithKicks.png --logo-width 48 --logo-height 27
 else
@@ -40,6 +41,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/plugins/archlinux/archlinux.zsh
 source ~/.zsh/plugins/completions/starship.zsh
+source ~/.zsh/plugins/completions/rustup.zsh
 
 # keybinding sources
 source ~/.zsh/Sources/keybindings/ViKeys
@@ -61,7 +63,7 @@ source ~/.zsh/Sources/functions
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 # Add cargo to PATH
-export PATH="$PATH:$HOME/.cargo/bin/"
+export PATH="$PATH:$HOME/.cargo/bin/:$HOME/.local/bin"
 
 # Start up programs
 eval "$(zoxide init zsh)"

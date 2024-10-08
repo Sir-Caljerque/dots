@@ -48,7 +48,7 @@ vim.api.nvim_set_keymap("n", "<C-/>", "gcc", { noremap = false })
 vim.api.nvim_set_keymap("v", "<C-/>", "gcc", { noremap = false })
 
 -- Floating term secondary keys
-km.set({ "n", "v", "i", "o", "x", "t" }, "<C-\\>", "<cmd>Lspsaga term_toggle<CR>", { desc = "Toggle floating term" })
+km.set({ "n", "v", "i", "o", "x", "t" }, "<C-\\>", "<cmd>ToggleTerm<CR>", { desc = "Toggle floating term" })
 
 local duck = require("duck") -- for `duck` plugin keymap
 local builtin = require("telescope.builtin")
