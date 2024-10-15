@@ -66,5 +66,5 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export PATH="$PATH:$HOME/.cargo/bin/:$HOME/.local/bin"
 
 # Start up programs
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"

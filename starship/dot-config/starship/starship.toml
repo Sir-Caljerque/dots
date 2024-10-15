@@ -7,9 +7,9 @@ $time\
 $sudo\
 $username\
 [](bg:color_bg2 fg:color_blue)\
-$os\
-[](fg:color_bg2)\
-$character"""
+$character\
+[](fg:color_bg2) \
+ """ # $os $character"""
 
 right_format = """
 [](fg:color_purple)\
@@ -101,14 +101,14 @@ truncation_length = 6
 truncation_symbol = "…/"
 
 [directory.substitutions]
-"Documents" = "󰈙"
-"Downloads" = " "
-"Music" = "󰝚 "
-"Pictures" = " "
-"Code" = "󰲋 "
-"Certs" = "󰄤 "
-"Apps" = "󰀻"
-"Dots" = "󱞞 "
+"/Documents" = "/󰈙"
+"/Downloads" = "/ "
+"/Music" = "/󰝚 "
+"/Pictures" = "/ "
+"/Code" = "/󰲋 "
+"/Certs" = "/󰄤 "
+"/Apps" = "/󰀻"
+"/Dots" = "/󱞞 "
 
 [direnv]
 disabled = true # false
@@ -124,44 +124,44 @@ format = '[($all_status$ahead_behind )]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:color_bg1 fg:color_aqua"
-format = '[[ $symbol](fg:color_fg0 bg:color_blue)]($style)'
+style = "bg:color_bg1 fg:color_yellow"
+format = '[ $symbol ($version) ]($style)'
 
 [c]
 symbol = " "
 style = "bg:color_bg1 fg:color_aqua"
-format = '[ $symbol( $version)]($style)'
+format = '[ $symbol( $version) ]($style)'
 
 [rust]
 symbol = ""
 style = "bg:color_bg1 fg:color_orange"
-format = '[[ $symbol( $version)](fg:color_fg0 bg:color_blue)]($style)'
+format = '[ $symbol( $version) ]($style)'
 
 [zig]
 symbol = " "
 style = "bg:color_bg1 fg:color_yellow"
-format = '[ $symbol( $version)]($style)'
+format = '[ $symbol( $version) ]($style)'
 detect_extensions = ['zig']
 
 [golang]
 symbol = ""
 style = "bg:color_bg1 fg:color_aqua"
-format = '[ $symbol]($style)'
+format = '[ $symbol ]($style)'
 
 [php]
 symbol = " "
 style = "bg:color_bg1 fg:color_purple"
-format = '[ $symbol]($style)'
+format = '[ $symbol ]($style)'
 
 [java]
 symbol = " "
 style = "bg:color_bg1 fg:color_green"
-format = '[ $symbol]($style)'
+format = '[ $symbol ]($style)'
 
 [kotlin]
 symbol = " "
 style = "bg:color_bg1 fg:color_green"
-format = '[ $symbol]($style)'
+format = '[ $symbol ]($style)'
 
 [haskell]
 symbol = " "
@@ -170,7 +170,7 @@ format = '[ $symbol]($style)'
 
 [python]
 symbol = " "
-style = "bg:color_bg1 fg:color_yellow"
+style = "bg:color_bg1 fg:color_blue"
 format = '[ $symbol( $version) $virtualenv ]($style)'
 
 [docker_context]
@@ -193,11 +193,21 @@ format = '[ 󰚭$duration ]($style)'
 [line_break]
 disabled = false
 
+# [character]
+# disabled = false
+# success_symbol = '[](bold fg:color_green)'
+# error_symbol = '[](bold fg:color_red)'
+# vimcmd_symbol = '[](bold fg:color_green)'
+# vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
+# vimcmd_replace_symbol = '[](bold fg:color_purple)'
+# vimcmd_visual_symbol = '[](bold fg:color_yellow)'
+
 [character]
 disabled = false
-success_symbol = '[](bold fg:color_green)'
-error_symbol = '[](bold fg:color_red)'
-vimcmd_symbol = '[](bold fg:color_green)'
-vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
-vimcmd_replace_symbol = '[](bold fg:color_purple)'
-vimcmd_visual_symbol = '[](bold fg:color_yellow)'
+format = '[ $symbol  ](bg:color_bg2)'
+success_symbol = '[󰣇](bold fg:color_blue bg:color_bg2)'
+error_symbol = '[󰣇](bold fg:color_red bg:color_bg2)'
+vimcmd_symbol = '[󰣇](bold fg:color_green bg:color_bg2)'
+vimcmd_replace_one_symbol = '[](bold fg:color_purple bg:color_bg2)'
+vimcmd_replace_symbol = '[](bold fg:color_purple bg:color_bg2)'
+vimcmd_visual_symbol = '[](bold fg:color_yellow bg:color_bg2)'

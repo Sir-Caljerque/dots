@@ -171,3 +171,39 @@ begins with:
 		- Time
 		- Money
 		- Change and control
+
+
+# Zero trust
+
+Networks are generally open once inside, meaning that there are a few security controls apart from the firewall
+**Zero trust** refers to the need to authenticate oneself every time you want to control another device
+- ***Nothing*** is trusted
+	- MFA
+	- encryption
+	- *more* firewalls
+	- logging
+
+A way to achieve this is to split the network into *functional planes*
+- basically break security devices into smaller components
+
+Imagine it as having 2 different planes of operation
+- **Data plane**:
+	- part of device that performs the actual security process
+		- switch
+		- NAT
+		- routing
+- **Control plane**
+	- Manages the actions of the data plane
+		- policies or rules
+		- determines how packets should be forwarded
+		- Configuration of the device
+
+**Zero trust** requires more implementation of security controls and their evaluation
+> For example
+- Adaptive identity
+	- analyze user's identity and adapt security controls based on not just what the user tells us, but other information gathered, like the
+		-  source
+            - imagine someone that wants to access a resource that is in the US, is using an IP from china
+            - If so, you want to perform additional security to confirm identity
+        - Relationship to the organization - physical location, type of connection, IP address, etc.
+        - Make authentication stronger, if needed

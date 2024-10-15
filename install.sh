@@ -44,3 +44,5 @@ case "$choice" in
     *) echo invalid choice
     ;;
 esac
+
+symlinks
