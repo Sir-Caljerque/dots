@@ -150,7 +150,7 @@ To create a custom baseline for your specific use case, you can start by looking
 	- Current training
 	- Knowledge of policies and frameworks
 
-## Gap <u>analysis</u>
+## Gap analysis
 begins with:
 - Comparing/Evaluating your existing systems
 - ID'ing weaknesses and the most effective processes of compensating with those weaknesses
@@ -164,7 +164,7 @@ begins with:
 ## Finally...
 
 - Have a **Final Comparison**
-	- Detailed baseline objs
+	- Detailed baseline objectives
 	- Clear view of the current state
 - Include a path of getting from where you are now to the goal
 	- Can include:
@@ -207,3 +207,68 @@ Imagine it as having 2 different planes of operation
             - If so, you want to perform additional security to confirm identity
         - Relationship to the organization - physical location, type of connection, IP address, etc.
         - Make authentication stronger, if needed
+		- **Threat scope reduction**
+			- Decrease the attack surface as much as possible - decrease the possible amount of entry points into the network
+		- *Policy-driven access control*
+			- combine the adaptive identity with a predefined set of rules
+
+**Security is more then a 1-1 relationship**
+- Broad categorizations provide a security related foundation called ***security zones*** - (Understand where they are connecting from)
+    - **Security zones** allow us to move from something that is simply a 1-1 relationship and instead looks at the overall path of the conversation. 
+        - examine where we're connecting *from* and where we're connecting *to*
+            - Trusted, Untrusted
+            - Internal, External network
+            - VPN x (1, 2, 3, ...)
+            - Marketing, IT, Accounting, HR
+        - You can use these zones to deny or allow access based on, for example:
+            - Untrusted to Trusted zone traffic
+            - *Implicit trust*, trust traffic on an internal zone
+
+**Policy enforcement point**
+- *Subjects and systems*
+    - End users, applications, non-human entities
+    - All traffic that communicates through the network, is subject to evaluation by the *Policy enforcement point (PEP)*
+        - the PEP is the gatekeeper -  it allows, monitors and terminates connections.
+            - can consist if multiple components working together
+            - this of this as multiple devices working together to provide identification of the users and traffic
+
+**Applying trust in the planes**
+- The PEP is *not* what ultimately makes the decision of allowing, denial, or termination. Instead, it gathers all of the information about the traffic and provides it to a **Policy Decision Point**
+    - The PDP is responsible for evaluating the request made by the PEP and *making the decision* based on policy and other information sources
+- Policy administrator
+    - Takes the decision made by the PDP and forwards it to the PEP
+    - Access tokes and credentials may be an outcome of This
+    - Everything is then sent to the PEP to tell it to allow, deny, or revoke access (using the policy administrator)
+
+![[Pasted image 20241018014743.png]]
+
+# Physical Security
+
+**Prevent access**
+- Barricades
+
+*Made to channel people through a specific access point*
+- Or keep out other things
+- allow people, prevent cars and trucks
+
+*identify safety concerns*
+- And prevent injuries
+- Can be used to an extreme
+    - Concrete barriers/bollards
+    - moat
+
+**Access control vestibule**
+eg. a room you have to pass through to get access to the entire building
+- All doors are normally locked
+    - Opening one door causes others to lock
+    - Unlocking one doors prevents others from being unlocked
+- One door open / other closed
+    - While one is open, the other cannot be unlocked
+- One at a times, controlled group's
+    - Managed control through an area
+*Common for data centers or buildings in which only the appropriate individual should be able to access it
+n
+
+**Fencing**
+Is an obvious example of physical security because you can clearly see it
+May not be exactly what you are looking for, but it *does* provide a good way of preventing access through the area

@@ -108,7 +108,7 @@ return {
 							keymap = "",
 							key = "C",
 							icon = "  ",
-							action = "Telescope find_files cwd=~/.config/nvim",
+							action = "Telescope find_files cwd=$HOME/.config/nvim",
 						},
                         {
 							desc = "Config files",
