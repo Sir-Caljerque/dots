@@ -6,15 +6,13 @@ local opts = {
 		"clangd",
 		"pyright",
 		"bashls",
-		-- "gopls",
+		"gopls",
 		"jsonls",
-    "ts_ls",
-		-- "tsserver",
+        "ts_ls",
 		"emmet_ls",
 		"ruff_lsp",
 	},
-
-	automatic_installation = true,
+	automatic_installation = false, -- true,
 }
 
 return {

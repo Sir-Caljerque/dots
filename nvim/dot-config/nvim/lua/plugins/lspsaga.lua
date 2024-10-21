@@ -1,6 +1,6 @@
 return {
 	"glepnir/lspsaga.nvim",
-	lazy = false,
+    event = "VeryLazy",
 	config = function()
 		require("lspsaga").setup({
 			-- keybinds for navigation in lspsaga window
@@ -13,19 +13,6 @@ return {
 				folder_level = 1, --Show how many folder layers before the file name
 				color_mode = true, --true mean the symbol name and icon have same color. Otherwise, symbol name is light-white
 				delay = 300, --Dynamic render delay
-			},
-			callhireatchy = {
-				layout = "float",
-				keys = {
-					edit = "e",
-					vsplit = "s", --vsplit
-					split = "i", -- split
-					tabe = "t", -- open in new tab
-					quit = "q", -- quit layout
-					shuttle = "[w", -- shuttle between the layout left and right
-					toggle_or_req = "u", -- toggle or do request
-					close = "<C-c>k", -- close layout
-				},
 			},
 			code_action = {
 				num_shortcut = true,
@@ -45,27 +32,18 @@ return {
 			-- use enter to open file with definition preview
 			definition = {
 				keys = {
-					edit = "<CR>",
+					edit = "<C-c>o",
+                    vsplit = "<C-c>v",
+                    split = "<C-c>h",
+                    quit = "q",
+                    close = "<C-c>k",
 				},
 			},
 			diagnostic = {
-				show_code_action = true,
-				jump_num_shortcut = true,
-				text_hl_follow = true,
-
 				extend_relatedInformation = true,
-				show_layout = "float",
-				diagnostic_only_current = false,
 			},
 			finder = {
 				default = "def+tyd+ref+imp",
-				methods = {
-					--Keys are alias of LSP methods. Values are LSP methods, which you want show in finder. More info below
-					-- For instance, methods = { 'tyd' = 'textDocument/typeDefinition' }
-				},
-				layout = "float", -- normal
-				filter = {},
-				silent = false,
 				keys = {
 					shuttle = "[w", --shuttle bettween the finder layout window
 					toggle_or_open = "o", -- toggle expand or open
@@ -80,16 +58,17 @@ return {
 			outline = {
 				win_position = "left",
 			},
+            lightbulb = {
+                enable = false,
+            },
 			keys = {
 				toggle_or_jump = "<A-o>",
 				quit = "<A-O>",
 				-- jump = '', -- idk what to set this to
 			},
 			rename = {
-				keys = {
-					select = "]w",
-					exec = "<CR>",
-				},
+                in_select = false,
+                auto_save = true,
 			},
 		})
 	end,

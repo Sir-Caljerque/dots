@@ -7,8 +7,11 @@ return {
 		config = function()
 			local cmp = require("cmp")
 			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+            local cmp_action = require("lsp-zero").cmp_action()
+            local cmp_format = require("lsp-zero").cmp_format({ details = true })
 			local luasnip = require("luasnip")
 			local lspkind = require("lspkind")
+
 			local has_words_before = function()
 				unpack = unpack or table.unpack
 				local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -27,15 +30,17 @@ return {
 					end,
 				},
 				window = {
-					completion = cmp.config.window.bordered(),
-					documentation = cmp.config.window.bordered(),
+					-- completion = cmp.config.window.bordered(),
+					-- documentation = cmp.config.window.bordered(),
 				},
 				mapping = cmp.mapping.preset.insert({
-					["<C-p>"] = cmp.mapping.select_prev_item(), -- previous suggestion
-					["<C-n>"] = cmp.mapping.select_next_item(), -- next suggestion
+                    ["<Tab>"] = cmp_action.luasnip_supertab(),
+                    ["<S-Tab>"] = cmp_action.luasnip_shift_supertab(),
+					["<C-p>"] = cmp_action.vim_snippet_prev(), -- cmp.mapping.select_prev_item(), -- previous suggestion
+					["<C-n>"] = cmp_action.vim_snippet_next(), -- cmp.mapping.select_next_item(), -- next suggestion
 					["<C-b>"] = cmp.mapping.scroll_docs(-4),
 					["<C-f>"] = cmp.mapping.scroll_docs(4),
-					["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
+					["<C-Space>"] = cmp_action.toggle_completion(), -- cmp.mapping.complete(), -- show completion suggestions
 					["<C-e>"] = cmp.mapping.abort(), -- close completion window
 					["<CR>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
@@ -51,25 +56,25 @@ return {
 						end
 					end),
 
-					["<Tab>"] = cmp.mapping(function(fallback)
-						if cmp.visible() then
-							cmp.select_next_item()
-						elseif luasnip.locally_jumpable(1) then
-							luasnip.jump(1)
-						else
-							fallback()
-						end
-					end, { "i", "s" }),
-
-					["<S-Tab>"] = cmp.mapping(function(fallback)
-						if cmp.visible() then
-							cmp.select_prev_item()
-						elseif luasnip.locally_jumpable(-1) then
-							luasnip.jump(-1)
-						else
-							fallback()
-						end
-					end, { "i", "s" }),
+					-- ["<Tab>"] = cmp.mapping(function(fallback)
+					-- 	if cmp.visible() then
+					-- 		cmp.select_next_item()
+					-- 	elseif luasnip.locally_jumpable(1) then
+					-- 		luasnip.jump(1)
+					-- 	else
+					-- 		fallback()
+					-- 	end
+					-- end, { "i", "s" }),
+					--
+					-- ["<S-Tab>"] = cmp.mapping(function(fallback)
+					-- 	if cmp.visible() then
+					-- 		cmp.select_prev_item()
+					-- 	elseif luasnip.locally_jumpable(-1) then
+					-- 		luasnip.jump(-1)
+					-- 	else
+					-- 		fallback()
+					-- 	end
+					-- end, { "i", "s" }),
 				}),
 				-- sources for autocompletion
 				sources = cmp.config.sources({
@@ -89,13 +94,13 @@ return {
 					},
 				}),
 				-- configure lspkind for vs-code like icons
-				formatting = {
-					format = lspkind.cmp_format({
-						maxwidth = 50,
-						ellipsis_char = "...",
-						show_labelDetails = true,
-					}),
-				},
+				formatting = cmp_format, -- {
+				-- 	format = lspkind.cmp_format({
+				-- 		maxwidth = 50,
+				-- 		ellipsis_char = "...",
+				-- 		show_labelDetails = true,
+				-- 	}),
+				-- },
 				enabled = function()
 					-- disable completion in comments
 					local context = require("cmp.config.context")

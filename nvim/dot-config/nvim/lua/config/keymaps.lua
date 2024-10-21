@@ -26,9 +26,9 @@ km.set("n", "<C-a>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Wi
 km.set("n", "<C-d>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
 -- Pane Navigation
-km.set("n", "<C-h>", "<C-w>h", { desc = "navigate left window" }) -- Navigate Left
-km.set("n", "<C-j>", "<C-w>j", { desc = "navigate down window" }) -- Navigate Down
-km.set("n", "<C-k>", "<C-w>k", { desc = "navigate up window" }) -- Navigate Up
+km.set("n", "<C-h>", "<C-w>h", { desc = "navigate left window" })  -- Navigate Left
+km.set("n", "<C-j>", "<C-w>j", { desc = "navigate down window" })  -- Navigate Down
+km.set("n", "<C-k>", "<C-w>k", { desc = "navigate up window" })    -- Navigate Up
 km.set("n", "<C-l>", "<C-w>l", { desc = "navigate right window" }) -- Navigate Right
 
 -- buffers
@@ -40,7 +40,7 @@ km.set("n", "<A-t>", ":Neotree filesystem reveal right toggle<CR>", { noremap = 
 km.set("n", "<A-d>", ":Neotree focus<CR>", { noremap = true, silent = true })
 
 -- Indenting
-km.set("v", "<", "<gv", { desc = "left shift indent" }) -- Shift Indentation to Left
+km.set("v", "<", "<gv", { desc = "left shift indent" })  -- Shift Indentation to Left
 km.set("v", ">", ">gv", { desc = "right shift indent" }) -- Shift Indentation to Right
 
 -- Comments
@@ -54,173 +54,176 @@ local duck = require("duck") -- for `duck` plugin keymap
 local builtin = require("telescope.builtin")
 
 wk.add({
-	-- Code group - <leader>{cf,cF,cdf,cdl}
-	{
-		mode = { "n", "v" },
-		{ "<leader>c", group = "+Code" },
-		{ "<leader>cf", vim.lsp.buf.format, desc = "Format" },
-		{ "<leader>cF", vim.lsp.buf.format({ name = "efm", async = true }), desc = "Conform format" },
-		{ "<leader>cd", group = "Diagnostics" },
-		{
-			"<leader>cdf",
-			vim.diagnostic.open_float,
-			desc = "Open diagnostics in floating window",
-		},
-		{
-			"<leader>cdl",
-			vim.diagnostic.setloclist,
-			desc = "Add buffer diagnostics to the location list",
-		},
-	},
-	-- End code section
-	-- Window management section
-	{ "<leader>s", group = "+Split window" },
-	{ "<leader>sv", "<cmd>vsplit<CR>", desc = "Vertical" },
-	{ "<leader>sh", "<cmd>split<CR>", desc = "Horizontal" },
-	{ "<leader>st", group = "To terminal" },
-	{ "<leader>stt", "<cmd>terminal<CR>i", desc = "Open term here" },
-	{ "<leader>sth", "<cmd>split<CR><cmd>terminal<CR>i", desc = "In horizontal window" },
-	{ "<leader>stv", "<cmd>vsplit<CR><cmd>terminal<CR>i", desc = "In vertical window" },
-	{ "<leader>stf", "<cmd><CR>", desc = "In floating window" },
-	-- End window management section
-	-- Telescope section
-	{ "<leader>f", group = "+Find" },
-	{ "<leader>ff", builtin.find_files, desc = "Files" },
-	{ "<leader>fg", builtin.live_grep, desc = "Live grep" },
-	{ "<leader>fb", builtin.buffers, desc = "Buffers" },
-	{ "<leader>fk", builtin.keymaps, desc = "Keymaps" },
-	{ "<leader>fh", builtin.help_tags, desc = "Help tags" },
-	-- End telescope section
-	-- Trouble section
-	{ "<leader>t", group = "+Trouble" },
-	{ "<leader>td", "<cmd>Trouble diagnostics toggle<CR>", desc = "Diagnostics" },
-	{ "<leader>tb", "<cmd>Trouble diagnostics toggle focus=false<CR>", desc = "Buffer diagnostics" },
-	{
-		"<leader>ts",
-		"<cmd>Trouble symbols toggle focus=false<cr>",
-		desc = "Symbols (Trouble)",
-	},
-	{
-		"<leader>tl",
-		"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-		desc = "LSP Definitions / references / ... (Trouble)",
-	},
-	{
-		"<leader>tL",
-		"<cmd>Trouble loclist toggle<cr>",
-		desc = "Location List (Trouble)",
-	},
-	{
-		"<leader>tq",
-		"<cmd>Trouble qflist toggle<cr>",
-		desc = "Quickfix List (Trouble)",
-	},
-	-- End trouble section
-	-- Cursors section
-	{ "<leader>m", group = "+Add Cursors" },
-	{ "<leader>ma", "<cmd>MultipleCursorsAddMatches<CR>", desc = "All matches" },
-	{ "<leader>mA", "<cmd>MultipleCursorsAddMatchesV<CR>", desc = "All V matches", mode = { "n", "v" } },
-	{ "<leader>mD", "<cmd>MultipleCursorsAddJumpNextMatch<CR>", desc = "Next match" },
-	{ "<leader>md", "<cmd>MultipleCursorsJumpNextMatch<CR>", desc = "GOTO next match" },
-	{ "<leader>ml", "<cmd>MultipleCursorsLock<CR>", desc = "Lock cursors" },
-	{
-		mode = { "n", "i" },
-		{ "<C-Up>", "<cmd>MultipleCursorsAddUp<CR>", desc = "Up" },
-		{ "<C-Down>", "<cmd>MultipleCursorsAddDown<CR>", desc = "Down" },
-		{ "<C-LeftMouse>", "<cmd>MultipleCursorsMouseAddDelete<CR>", desc = "Mouse click" },
-	},
-	-- End cursors section
-	-- YankBank
-	{ "<leader>y", group = "+YankBank" },
-	{ "<leader>yy", "<cmd>YankBank<CR>", desc = "Open" },
-	-- End YankBank
-	-- Duck section
-	{ "<leader>D", group = "+Spawn" },
-	{
-		"<leader>Dd",
-		function()
-			duck.hatch("🦆", 5)
-		end,
-		desc = "Duck",
-	},
-	{
-		"<leader>Dc",
-		function()
-			duck.hatch("🐈", 5)
-		end,
-		desc = "Cat",
-	},
-	{
-		"<leader>Do",
-		function()
-			duck.hatch("🦮", 8)
-		end,
-		desc = "Dog",
-	},
-	{
-		"<leader>Dk",
-		function()
-			duck.cook()
-		end,
-		desc = "Kill last",
-	},
-	{
-		"<leader>DK",
-		function()
-			duck.cook_all()
-		end,
-		desc = "Kill all",
-	},
-	-- End duck section
-	-- Flash
-	{
-		mode = { "n", "x", "o" },
-		{
-			"s",
-			function()
-				require("flash").jump()
-			end,
-			desc = "Flash",
-		},
-		{
-			"S",
-			function()
-				require("flash").treesitter()
-			end,
-			desc = "Flash treesitter",
-		},
-		{
-			"S",
-			function()
-				require("flash").treesitter()
-			end,
-			desc = "Flash treesitter",
-		},
-	},
-	{
-		"r",
-		function()
-			require("flash").remote()
-		end,
-		desc = "Remote Flash",
-		mode = "o",
-	},
-	{
-		"R",
-		function()
-			require("flash").treesitter_search()
-		end,
-		desc = "Treesitter Search",
-		mode = { "o", "x" },
-	},
-	{
-		"<c-s>",
-		function()
-			require("flash").toggle()
-		end,
-		desc = "Toggle Flash Search",
-		mode = "c",
-	},
+    -- Code group - <leader>{cf,cF,cdc,cdl}
+    {
+        mode = { "n", "v" },
+        { "<leader>c",  group = "+Code" },
+        { "<leader>cd", group = "Diagnostics" },
+        {
+            "<leader>cdc",
+            "<cmd>Lspsaga show_cursor_diagnostics<CR>",
+            desc = "Cursor diagnostics",
+        },
+        {
+            "<leader>cdl",
+            "<cmd>Lspsaga show_line_diagnostics<CR>",
+            desc = "Line diagnostics",
+        },
+        {
+            "<leader>cdw",
+            "<cmd>Lspsaga show_workspace_diagnostics<CR>",
+            desc = "Workspace diagnostics",
+        }
+    },
+    -- End code section
+    -- Window management section
+    { "<leader>s",   group = "+Split window" },
+    { "<leader>sv",  "<cmd>vsplit<CR>",                                 desc = "Vertical" },
+    { "<leader>sh",  "<cmd>split<CR>",                                  desc = "Horizontal" },
+    { "<leader>st",  group = "To terminal" },
+    { "<leader>stt", "<cmd>terminal<CR>i",                              desc = "Open term here" },
+    { "<leader>sth", "<cmd>split<CR><cmd>terminal<CR>i",                desc = "In horizontal window" },
+    { "<leader>stv", "<cmd>vsplit<CR><cmd>terminal<CR>i",               desc = "In vertical window" },
+    { "<leader>stf", "<cmd><CR>",                                       desc = "In floating window" },
+    -- End window management section
+    -- Telescope section
+    { "<leader>f",   group = "+Find" },
+    { "<leader>ff",  builtin.find_files,                                desc = "Files" },
+    { "<leader>fg",  builtin.live_grep,                                 desc = "Live grep" },
+    { "<leader>fb",  builtin.buffers,                                   desc = "Buffers" },
+    { "<leader>fk",  builtin.keymaps,                                   desc = "Keymaps" },
+    { "<leader>fh",  builtin.help_tags,                                 desc = "Help tags" },
+    -- End telescope section
+    -- Trouble section
+    { "<leader>t",   group = "+Trouble" },
+    { "<leader>td",  "<cmd>Trouble diagnostics toggle<CR>",             desc = "Diagnostics" },
+    { "<leader>tb",  "<cmd>Trouble diagnostics toggle focus=false<CR>", desc = "Buffer diagnostics" },
+    {
+        "<leader>ts",
+        "<cmd>Trouble symbols toggle focus=false<cr>",
+        desc = "Symbols (Trouble)",
+    },
+    {
+        "<leader>tl",
+        "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+        desc = "LSP Definitions / references / ... (Trouble)",
+    },
+    {
+        "<leader>tL",
+        "<cmd>Trouble loclist toggle<cr>",
+        desc = "Location List (Trouble)",
+    },
+    {
+        "<leader>tq",
+        "<cmd>Trouble qflist toggle<cr>",
+        desc = "Quickfix List (Trouble)",
+    },
+    -- End trouble section
+    -- Cursors section
+    { "<leader>m",  group = "+Add Cursors" },
+    { "<leader>ma", "<cmd>MultipleCursorsAddMatches<CR>",       desc = "All matches" },
+    { "<leader>mA", "<cmd>MultipleCursorsAddMatchesV<CR>",      desc = "All V matches",  mode = { "n", "v" } },
+    { "<leader>mD", "<cmd>MultipleCursorsAddJumpNextMatch<CR>", desc = "Next match" },
+    { "<leader>md", "<cmd>MultipleCursorsJumpNextMatch<CR>",    desc = "GOTO next match" },
+    { "<leader>ml", "<cmd>MultipleCursorsLock<CR>",             desc = "Lock cursors" },
+    {
+        mode = { "n", "i" },
+        { "<C-Up>",        "<cmd>MultipleCursorsAddUp<CR>",          desc = "Up" },
+        { "<C-Down>",      "<cmd>MultipleCursorsAddDown<CR>",        desc = "Down" },
+        { "<C-LeftMouse>", "<cmd>MultipleCursorsMouseAddDelete<CR>", desc = "Mouse click" },
+    },
+    -- End cursors section
+    -- YankBank
+    { "<leader>y",  group = "+YankBank" },
+    { "<leader>yy", "<cmd>YankBank<CR>", desc = "Open" },
+    -- End YankBank
+    -- Duck section
+    { "<leader>D",  group = "+Spawn" },
+    {
+        "<leader>Dd",
+        function()
+            duck.hatch("🦆", 5)
+        end,
+        desc = "Duck",
+    },
+    {
+        "<leader>Dc",
+        function()
+            duck.hatch("🐈", 5)
+        end,
+        desc = "Cat",
+    },
+    {
+        "<leader>Do",
+        function()
+            duck.hatch("🦮", 8)
+        end,
+        desc = "Dog",
+    },
+    {
+        "<leader>Dk",
+        function()
+            duck.cook()
+        end,
+        desc = "Kill last",
+    },
+    {
+        "<leader>DK",
+        function()
+            duck.cook_all()
+        end,
+        desc = "Kill all",
+    },
+    -- End duck section
+    -- Flash
+    {
+        mode = { "n", "x", "o" },
+        {
+            "s",
+            function()
+                require("flash").jump()
+            end,
+            desc = "Flash",
+        },
+        {
+            "S",
+            function()
+                require("flash").treesitter()
+            end,
+            desc = "Flash treesitter",
+        },
+        {
+            "S",
+            function()
+                require("flash").treesitter()
+            end,
+            desc = "Flash treesitter",
+        },
+    },
+    {
+        "r",
+        function()
+            require("flash").remote()
+        end,
+        desc = "Remote Flash",
+        mode = "o",
+    },
+    {
+        "R",
+        function()
+            require("flash").treesitter_search()
+        end,
+        desc = "Treesitter Search",
+        mode = { "o", "x" },
+    },
+    {
+        "<c-s>",
+        function()
+            require("flash").toggle()
+        end,
+        desc = "Toggle Flash Search",
+        mode = "c",
+    },
 })
 
 -- ############### OLD KEYMAPPINGS!!! ###############

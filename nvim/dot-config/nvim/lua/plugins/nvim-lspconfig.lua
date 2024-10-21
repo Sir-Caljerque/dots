@@ -5,6 +5,7 @@ local config = function()
     require("neoconf").setup({})
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
     local lspconfig = require("lspconfig")
+    local lsp_zero = require("lsp-zero")
     -- [[ THIS IS A TEST FMT/LINT TOOL ]]
     -- local ft = require("guard.filetype")
     --
@@ -20,6 +21,7 @@ local config = function()
     --
     -- [[ END TEST FMT/LINT TOOL ]]
 
+
     for type, icon in pairs(diagnostic_signs) do
         local hl = "DiagnosticSign" .. type
         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
@@ -27,6 +29,11 @@ local config = function()
 
     local capabilities = cmp_nvim_lsp.default_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+    lsp_zero.extend_lspconfig({
+        capabilities = capabilities,
+        on_attach = on_attach,
+    })
 
     -- lua
     lspconfig.lua_ls.setup({
@@ -111,8 +118,8 @@ local config = function()
 
     -- c
     lspconfig.clangd.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
+        -- capabilities = capabilities,
+        -- on_attach = on_attach,
         require("clangd_extensions.inlay_hints").setup_autocmd(),
         require("clangd_extensions.inlay_hints").set_inlay_hints(),
         cmd = {
@@ -184,8 +191,20 @@ local config = function()
 
     -- GO
     lspconfig.gopls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
+        -- capabilities = capabilities,
+        -- on_attach = on_attach,
+        settings = {
+            gopls = {
+                analyses = {
+                    shadow = true,
+                    unusedvariable = true,
+                },
+                staticcheck = true,
+                usePlaceHolders = true,
+                hoverKind = "FullDocumentation",
+                gofumpt = true,
+            }
+        }
     })
 
     -- json
@@ -277,7 +296,7 @@ local config = function()
     local clang_format = require("efmls-configs.formatters.clang_format") -- C
     local rustfmt = require("efmls-configs.formatters.rustfmt")           -- Rust
     local taplo = require("efmls-configs.formatters.taplo")
-    local golangci_lint = require("efmls-configs.linters.golangci_lint")  -- Go
+    local staticcheck = require("efmls-configs.linters.staticcheck")  -- Go
     local gofumpt = require("efmls-configs.formatters.gofumpt")           -- Go
     local eslint_d = require("efmls-configs.linters.eslint_d")            -- Typescript(react), Json, Jsonc, Javascript(react), Svelte, Vue,
     local prettierd = require("efmls-configs.formatters.prettier_d")      -- HTML, Typescript(react), Javascript(react), Svelte, Vue, Markdown, Docker
@@ -344,7 +363,7 @@ local config = function()
                 markdown = { alex, prettierd },
                 docker = { hadolint, prettierd },
                 solidity = { solhint },
-                go = { golangci_lint, gofumpt },
+                go = { staticcheck, gofumpt },
                 css = { prettierd },
             },
         },

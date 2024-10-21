@@ -8,14 +8,20 @@ M.on_attach = function(client, bufnr)
 	km.set(
 		"n",
 		"<leader>ca",
-		"<cmd>Lspsaga code_action<CR>",
-		{ noremap = true, silent = true, buffer = bufnr, desc = "code actions" }
+		"<cmd>lua vim.lsp.buf.code_action()<CR>",
+		{ noremap = true, silent = true, buffer = bufnr, desc = "Actions" }
+	)
+    km.set(
+		"n",
+		"<leader>cf",
+		"<cmd>lua vim.lsp.buf.format({async = true})<CR>",
+		{ noremap = true, silent = true, buffer = bufnr, desc = "Format" }
 	)
 	km.set(
 		"n",
 		"<leader>rn",
-		"<cmd>Lspsaga rename<CR>",
-		{ noremap = true, silent = true, buffer = bufnr, desc = "smart rename" }
+		"<cmd>lua vim.lsp.buf.rename()<CR>",
+		{ noremap = true, silent = true, buffer = bufnr, desc = "Rename" }
 	)
 	km.set(
 		"n",
@@ -23,33 +29,58 @@ M.on_attach = function(client, bufnr)
 		"<cmd>Lspsaga project_replace<CR>",
 		{ noremap = true, silent = true, buffer = bufnr, desc = "wide smart rename" }
 	)
-	km.set(
+	-- km.set(
+	-- 	"n",
+	-- 	"<leader>gd",
+	-- 	"<cmd>lua vim.lsp.buf.definition()<CR>",
+	-- 	{ noremap = true, silent = true, buffer = bufnr, desc = "Go to definition" }
+	-- )
+    km.set(
 		"n",
-		"<leader>lgD",
-		"<cmd>Lspsaga goto_definition<CR>",
-		{ noremap = true, silent = true, buffer = bufnr, desc = "go to definition" }
+		"<leader>gd",
+		"<cmd>Lspsaga peek_definition<CR>",
+		{ noremap = true, silent = true, buffer = bufnr, desc = "Peek definition" }
+	)
+
+    km.set(
+		"n",
+		"<leader>gD",
+		"<cmd>lua vim.lsp.buf.declaration()<CR>",
+		{ noremap = true, silent = true, buffer = bufnr, desc = "Go to declaration" }
+	)
+    km.set(
+		"n",
+		"<leader>gi",
+		"<cmd>lua vim.lsp.buf.implementation()<CR>",
+		{ noremap = true, silent = true, buffer = bufnr, desc = "Go to implementation" }
+	)
+    km.set(
+		"n",
+		"<leader>gt",
+		"<cmd>Lspsaga peek_type_definition<CR>",
+		{ noremap = true, silent = true, buffer = bufnr, desc = "Peek type definition" }
+	)
+    km.set(
+		"n",
+		"<leader>gr",
+		"<cmd>lua vim.lsp.buf.references()<CR>",
+		{ noremap = true, silent = true, buffer = bufnr, desc = "Go to reference" }
+	)
+    km.set(
+		"n",
+		"<leader>gs",
+		"<cmd>lua vim.lsp.buf.signature_help()<CR>",
+		{ noremap = true, silent = true, buffer = bufnr, desc = "Go to Signature help" }
 	)
 	km.set(
 		"n",
-		"<leader>llD",
-		"<cmd>Lspsaga show_line_diagnostics<CR>",
-		{ noremap = true, silent = true, buffer = bufnr, desc = "diagnostics for line" }
-	)
-	km.set(
-		"n",
-		"<leader>lcd",
-		"<cmd>Lspsaga show_cursor_diagnostics<CR>",
-		{ noremap = true, silent = true, buffer = bufnr, desc = "diagnostics for cursor" }
-	)
-	km.set(
-		"n",
-		"<leader>lpd",
+		"<S-p>",
 		"<cmd>Lspsaga diagnostic_jump_prev<CR>",
 		{ noremap = true, silent = true, buffer = bufnr, desc = "jump to prev diagnostic" }
 	)
 	km.set(
 		"n",
-		"<leader>lnd",
+		"<S-n>",
 		"<cmd>Lspsaga diagnostic_jump_next<CR>",
 		{ noremap = true, silent = true, buffer = bufnr, desc = "jump to next diagnostic" }
 	)
@@ -61,13 +92,13 @@ M.on_attach = function(client, bufnr)
 	)
 	km.set(
 		"n",
-		"<leader>ltf",
+		"<leader>lf",
 		"<cmd>Lspsaga finder<CR>",
 		{ noremap = true, silent = true, buffer = bufnr, desc = "toggle finder" }
 	)
 	km.set(
 		"n",
-		"<leader>lto",
+		"<leader>lo",
 		"<cmd>Lspsaga outline<CR>",
 		{ noremap = true, silent = true, buffer = bufnr, desc = "toggle outline" }
 	)
