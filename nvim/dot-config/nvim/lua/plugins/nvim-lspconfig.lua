@@ -37,8 +37,8 @@ local config = function()
 
     -- lua
     lspconfig.lua_ls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
+        -- capabilities = capabilities,
+        -- on_attach = on_attach,
         settings = { -- custom settings for lua
             Lua = {
                 -- make the language server recognize "vim" global
@@ -58,8 +58,8 @@ local config = function()
 
     -- python
     lspconfig.pyright.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
+        -- capabilities = capabilities,
+        -- on_attach = on_attach,
         settings = {
             pyright = {
                 disableOrganizeImports = false,
@@ -75,8 +75,8 @@ local config = function()
 
     -- Python #2
     lspconfig.ruff_lsp.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
+        -- capabilities = capabilities,
+        -- on_attach = on_attach,
         init_options = {
             settings = {
                 args = {},
@@ -98,14 +98,14 @@ local config = function()
     })
 
     lspconfig.hyprls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
+        -- capabilities = capabilities,
+        -- on_attach = on_attach,
     })
 
     -- bash
     lspconfig.bashls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
+        -- capabilities = capabilities,
+        -- on_attach = on_attach,
         filetypes = { "sh" },
         settings = {
             bashIde = {
@@ -136,8 +136,8 @@ local config = function()
 
     -- zig
     lspconfig.zls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
+        -- capabilities = capabilities,
+        -- on_attach = on_attach,
         settings = {
             zls = {
                 enable_snippets = true,
@@ -152,8 +152,8 @@ local config = function()
 
     -- rust
     lspconfig.rust_analyzer.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
+        -- capabilities = capabilities,
+        -- on_attach = on_attach,
         -- function(client, bufnr)
         -- vim.lsp.inlay_hint.enable(bufnr)
         settings = {
@@ -178,8 +178,8 @@ local config = function()
 
     -- Assembly
     lspconfig.asm_lsp.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
+        -- capabilities = capabilities,
+        -- on_attach = on_attach,
         filetypes = { "asm", "s", "S" },
     })
 
@@ -209,8 +209,8 @@ local config = function()
 
     -- json
     lspconfig.jsonls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
+        -- capabilities = capabilities,
+        -- on_attach = on_attach,
         filetypes = { "json", "jsonc" },
         settings = {
             json = {
@@ -221,8 +221,8 @@ local config = function()
 
     -- typescript
     lspconfig.ts_ls.setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
+        -- on_attach = on_attach,
+        -- capabilities = capabilities,
         filetypes = {
             "typescript",
             "javascript",
@@ -256,8 +256,8 @@ local config = function()
 
     -- html, typescriptreact, javascriptreact, css, sass, scss, less, svelte, vue
     lspconfig.emmet_ls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
+        -- capabilities = capabilities,
+        -- on_attach = on_attach,
         filetypes = {
             "html",
             "typescriptreact",
@@ -274,15 +274,15 @@ local config = function()
 
     -- solidity
     lspconfig.solidity.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
+        -- capabilities = capabilities,
+        -- on_attach = on_attach,
         filetypes = { "solidity" },
     })
 
     -- docker
     lspconfig.dockerls.setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
+        -- capabilities = capabilities,
+        -- on_attach = on_attach,
     })
 
     -- null-ls
