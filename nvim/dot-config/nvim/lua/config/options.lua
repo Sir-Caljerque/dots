@@ -1,9 +1,9 @@
 local opt = vim.opt
 
 -- Tabs / Indentations
-opt.tabstop = 4
-opt.shiftwidth = 4
-opt.softtabstop = 4
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.softtabstop = 2
 opt.expandtab = true
 opt.smartindent = true
 opt.wrap = true -- false
@@ -26,7 +26,7 @@ opt.completeopt = "menuone,noinsert,noselect"
 
 -- Fold opts
 vim.o.foldcolumn = "1" -- '0' is not bad
-vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 

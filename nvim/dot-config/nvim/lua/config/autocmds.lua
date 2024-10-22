@@ -1,13 +1,16 @@
--- Dont fortmat on save
--- Hyprlang LSP
--- vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
--- 	pattern = { "*.hl", "hypr*.conf" },
--- 	callback = function(event)
--- 		print(string.format("starting hyprls for %s", vim.inspect(event)))
--- 		vim.lsp.start({
--- 			name = "hyprlang",
--- 			cmd = { "hyprls" },
--- 			root_dir = vim.fn.getcwd(),
--- 		})
--- 	end,
--- })
+-- Format on save async lsp-zero
+vim.api.nvim_create_autocmd("LspAttach", {
+    callback = function(event)
+        local id = vim.tbl_get(event, "data", "client_id")
+        local client = id and vim.lsp.get_client_by_id(id)
+        if client == nil then
+            return
+        end
+
+        -- make sure there is at least one client with formatting capabilities
+        if client.supports_method("textDocument/formatting") then
+            require("lsp-zero").buffer_autoformat()
+        end
+    end
+})
+
