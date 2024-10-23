@@ -1,0 +1,3 @@
+- CloudTrail helps you enable governance, compliance, and auditing of your AWS account.
+- Actions taken by a user, role, or an AWS service are recorded as events.
+- CloudTrail records important information about each API call, including the identity of the caller, time of the API call in UTC, and origin of the call.

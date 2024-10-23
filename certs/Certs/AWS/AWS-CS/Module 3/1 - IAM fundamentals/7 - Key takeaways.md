@@ -1,0 +1,3 @@
+- IAM is a web service that helps you securely control access to AWS resources.
+- Authentication deals with who is requesting access. Authorization determines what they have access to.
+- IAM uses users, groups, roles, and policies to provide authentication and authorization to AWS resources.

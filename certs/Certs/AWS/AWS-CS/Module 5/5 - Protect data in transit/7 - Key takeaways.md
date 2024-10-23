@@ -1,0 +1,4 @@
+- Protect data in transit by using SSL or client-side encryption when you run applications in the cloud
+- Use VPC endpoints to limit access to S3 buckets
+- The ACM service handles th complexity of creating and managing SSL/TLS certificates for your AWS based websites and applications
+- ACM Private CA can manage the lifestyle of your private certificates centrally in a highly available way

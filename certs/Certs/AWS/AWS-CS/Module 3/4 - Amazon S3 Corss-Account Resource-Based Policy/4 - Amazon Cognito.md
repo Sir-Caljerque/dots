@@ -1,0 +1,5 @@
+![[Pasted image 20240309170905.png]]
+
+Amazon Cognito is a service that provides authentication, authorization, and user management (sign-up, sign-in, and access control) for mobile and web applications. The service provides a secure identity store, which can help you to scale effectively for millions of users. Amazon Cognito supports direct sign-in through user name and password. But it also supports third-party authentication through social identity providers such as Apple, Google, Facebook, and Amazon.
+
+Amazon Cognito relies on two main components to provide its services to you: user pools and identity pools. User pools are directories that provide sign-up and sign-in options for your application users. This integrates with social identity providers and supports security features such as MFA and phone verification. With identity pools, you can grant your users access to AWS services through temporary, limited-privilege AWS credentials.

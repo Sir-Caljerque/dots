@@ -1,0 +1,7 @@
+AWS offers a broad set of cloud-based services. There are 23 different product or service categories, and each category consists of one or more services. This course will not attempt to introduce you to each service. Rather, the focus of this course is on the services that are most widely used and offer the best introduction to the AWS Cloud. This course also focuses on services that are more likely to be covered in the AWS Certified Cloud Practitioner exam.
+
+The categories that this course will discuss are highlighted on the slide: Compute, Cost Management, Database, Management and Governance, Networking and Content Delivery, Security, Identity, and Compliance, and Storage.
+
+To learn more about AWS products, see Cloud Products at https://aws.amazon.com/products/. All AWS products are organized into the service categories that are shown here. For example, if you click **Compute**, you will see that Amazon Elastic Compute Cloud (Amazon EC2) is first on the list. The compute category also lists many other products and services.
+
+If you click **Amazon EC2,**it takes you to the Amazon EC2 page. Each product page provides a detailed description of the product and lists some of its benefits. Explore the different service groups to understand the categories and services within them. Now that you know how to locate information about different services, this module will discuss the highlighted service categories. **The next seven slides list the individual services — within each of the categories highlighted above — that this course will discuss.**

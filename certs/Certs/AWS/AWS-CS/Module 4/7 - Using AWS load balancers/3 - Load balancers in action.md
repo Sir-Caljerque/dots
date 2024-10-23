@@ -1,0 +1,5 @@
+![[Pasted image 20240419163522.png]]
+
+This diagram shows how load balancers work. This VPC has subnets in two Availability Zones. Each Availability Zone has a public subnet and multiple private subnets.
+
+Internet traffic goes from an internet gateway to each Availability Zone. A load balancer in each public subnet directs traffic to web servers in a private subnet in either Availability Zone. Traffic from the web servers goes to a load balancer, which directs the traffic to application servers in another private subnet in either Availability Zone. Traffic from the application servers goes to the primary database server in another private subnet in the first Availability Zone. The primary database can communicate with a standby database server in a private subnet in the second Availability Zone.

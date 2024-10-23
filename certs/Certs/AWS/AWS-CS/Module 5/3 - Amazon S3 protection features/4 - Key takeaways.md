@@ -1,0 +1,3 @@
+- Block Public Access ensures that objectives never has public access, now in the futre.
+- versioning preserves, retrieves, and restores every version of every object stored in the S3 bucket
+- Object Lock prevents an object version from being deleted or overwritten for a fixed amount of time or indefinitely.

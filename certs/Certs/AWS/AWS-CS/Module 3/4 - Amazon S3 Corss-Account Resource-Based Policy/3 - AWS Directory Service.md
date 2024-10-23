@@ -1,0 +1,3 @@
+![[Pasted image 20240309170812.png]]
+
+AWS Directory Service for Microsoft Active Directory is also commonly referred to as AWS Managed Microsoft AD. AWS Managed Microsoft AD makes it possible for directory-aware workload and AWS resources to use managed Active Directory in the AWS Cloud. The service is built on Microsoft Active Directory, which eliminates the requirement to synchronize or replicate your existing Active Directory data to the cloud. With this service, you can use your existing on-premises user credentials to access cloud resources, which simplifies the process to extend your existing Active Directory to AWS.

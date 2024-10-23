@@ -1,0 +1,3 @@
+- Amazon Inspector is an automated security assessment service that helps improve the security and compliance of applications developed on AWS.
+- Systems Manager gives you visibility and control of your infrastructure on AWS
+- Scan your compute resources regularly for vulnerabilities, and patch them accordingly. You can automate this task by using AWS services such as Lambda and Systems Manager

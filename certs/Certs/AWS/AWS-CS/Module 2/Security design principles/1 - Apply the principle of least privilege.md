@@ -1,0 +1,8 @@
+# Grant access as needed
+Only grant access to data and other resources to the people who really need that access. You can start with denying access to everything and grant access as needed, based on job role.
+# Enforce separation of duties
+A security best practice is to enforce separation of duties with appropriate authorization for each interaction with your AWS resources. Set expectations for how authority will be delegated down through software engineers, operations staff, and other job functions that are involved in cloud adoption.
+# Avoid long-term credentials
+By reducing or even ending reliance on long - term credentials, you can diminish your attack surface area. You can use temporary credentials and require identities to dynamically acquire them. For workforce identities, use AWS Single Sign - On or federation with IAM to access AWS accounts. For machine identities, such as EC2 instances or AWS Lambda functions, require the use of IAM roles, instead of IAM users with long - term access keys.
+
+Identity and access management are key parts of an information security program to ensure that only authorized and authenticated users and components are able to access your resources, and only in a manner that you intend. In AWS, IAM is the primary service for permissions management. The service provides the ability to control user and programmatic access to AWS services and resources.

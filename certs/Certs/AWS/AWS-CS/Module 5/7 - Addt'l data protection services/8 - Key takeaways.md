@@ -1,0 +1,2 @@
+- Secrets Manager helps protect access to application, services, and IT resources
+- Macie uses machine learning and pattern matching to discover and protect sensitive data in AWS

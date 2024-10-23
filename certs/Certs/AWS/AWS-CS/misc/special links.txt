@@ -1,0 +1,6 @@
+--- AWS ---
+Services Whitepaper
+  https://docs.aws.amazon.com/pdfs/whitepapers/latest/aws-overview/aws-overview.pdf
+
+Well-Architected Framework
+  https://docs.aws.amazon.com/pdfs/wellarchitected/latest/framework/wellarchitected-framework.pdf#welcome

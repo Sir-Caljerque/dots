@@ -1,0 +1,3 @@
+![[Pasted image 20240420205754.png]]
+
+A Macie job analyzes data in specific S3 buckets for sensitive data. Each job uses managed data identifiers that Macie provides and, optionally, custom data identifiers that you create. The service provides the ability to run one-time, daily, weekly, or monthly sensitive data discovery jobs for all or a subset of objects in an S3 bucket. For sensitive data discovery jobs, Macie automatically tracks changes to the bucket and only evaluates new or modified objects over time.

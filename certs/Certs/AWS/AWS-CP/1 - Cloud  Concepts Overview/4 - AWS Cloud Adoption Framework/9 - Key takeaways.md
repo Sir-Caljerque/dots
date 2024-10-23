@@ -1,0 +1,4 @@
+- Cloud adoption is not instantaneous for most organizations and requires a thoughtful, deliberate strategy and alignment across the whole organization.
+- The AWS CAF was created to help organizations develop efficient and effective plans for their cloud adoption journey.
+- The AWS CAF organizes guidance into six areas of focus, called perspectives.
+- Perspectives consist of sets of business or technology capabilities that are the responsibility of key stakeholders.

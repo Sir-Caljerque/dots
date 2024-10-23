@@ -1,0 +1,3 @@
+- ELB automatically distributes incoming application traffic across multiple targets, such as EC2 instances, containers, IP addresses, and Lambda functions
+- ELB can handle the varying load of your application traffic in a single Availability Zone or across multiple Availability Zones
+- You can add and remove instances from your load balancer as your need change, without disrupting the overall flow of requests to your application

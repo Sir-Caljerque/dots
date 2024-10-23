@@ -1,0 +1,3 @@
+- Logging is the collection of activity and event data
+- Monitoring is the continuous verification of the security and performance of your resources, applications, and data
+- AWS provides several services that you can use to log and monitor your resources

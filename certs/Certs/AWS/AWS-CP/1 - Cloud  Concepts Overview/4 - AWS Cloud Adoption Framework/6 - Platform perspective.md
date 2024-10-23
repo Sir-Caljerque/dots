@@ -1,0 +1,3 @@
+![[Pasted image 20240515061431.png]]
+
+Stakeholders from the Platform perspective (for example, Chief Technology Officer or CTO, IT managers, and solutions architects) use a variety of architectural dimensions and models to understand and communicate the nature of IT systems and their relationships. They must be able to describe the architecture of the target state environment in detail. The AWS CAF includes principles and patterns for implementing new solutions on the cloud, and for migrating on-premises workloads to the cloud.

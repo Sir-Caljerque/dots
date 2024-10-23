@@ -1,0 +1,5 @@
+![[Pasted image 20240420220355.png]]
+
+CloudTrail records important information about each API call. Information includes the name of the API, identity of the caller, time of the API call (captured in Universal Time Coordinated, or UTC), location that the call originated from, request parameters, and response elements returned by the AWS service. This information helps you to track changes made to your AWS resources, troubleshoot operational issues, and ensure compliance with internal policies and regulatory standards
+
+You can use the AWS API call history that CloudTrail produces to track changes to AWS resources. Changes include creation, modification, and deletion of AWS resources, such as Amazon Elastic Compute Cloud (Amazon EC2) instances and Amazon VPC security groups. The log file record example on the next few slides shows actions from an AWS Identity and Access Management (IAM) user named Jane. Jane used the ec2-stop-instances command in the AWS CLI to call the Amazon EC2 StopInstances action.

@@ -1,0 +1,8 @@
+- Automate tasks to help you respond to security issues
+	- When you use Amazon EventBridge events with Amazon Inspector, you can automate tasks to help you respond to security issues that Amazon Inspector findings reveal.
+- Regularly monitor your resources
+	- Amazon Inspector helps to find security vulnerabilities in applications and departures from security best practices. The service find these issues before your application is deployed and while it's running in production. This improves the overall security of your applications hosted on AWS
+- Benefit from AWS security expertise
+	- Amazon Inspector includes a knowledge base of rules charted to common security best practices and vulnerability definitions. AWS constantly updates the security best practices and rules
+- Integrate security into DevOps
+	- Amazon Inspector is an API-bound service that analyzes network configurations in your AWS account. Moreover, the service uses an optional agent for visibility into EC2 instances. The agent can help you to build Amazon Inspector assessments into your existing DevOps process. This helps you to empower both development and operations teams to make security assessments an essential part of the deployment process

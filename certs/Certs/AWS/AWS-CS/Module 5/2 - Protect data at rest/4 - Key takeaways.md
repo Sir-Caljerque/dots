@@ -1,0 +1,5 @@
+- Encrypting data at rest makes it more difficult for attackers to compromise data
+- Data stored in Amazon S3 is private by default and requires AWS credentials for access
+- Amazon S3 prodicts supports 2 tyypes of access control mechanisms:
+    - ID-based (or user based)
+    - Resource-based

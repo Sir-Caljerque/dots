@@ -1,0 +1,5 @@
+![[Pasted image 20240309170710.png]]
+
+With AWS Single Sign-On (AWS SSO), you can create or connect identities once in AWS, and centrally manage access across your AWS accounts. AWS SSO provides a unified administration experience to define, customize, and assign fine-grained permissions based on common job functions.
+
+Users in your AWS SSO environment can use their directory credentials to access their user portal. Users can access all their assigned AWS accounts or cloud applications. You can flexibly configure access to run parallel to or replace AWS account access management by using IAM. AWS SSO supports commonly used cloud applications such as Microsoft 365 and Salesforce. The service provides application integration instructions that eliminate the need for administrators to learn the configuration nuances of each cloud application.

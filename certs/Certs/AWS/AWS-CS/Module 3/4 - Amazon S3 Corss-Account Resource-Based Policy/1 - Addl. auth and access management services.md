@@ -1,0 +1,5 @@
+![[Pasted image 20240309170452.png]]
+
+Identity federation is a system of trust between two parties to authenticate users and convey information needed to authorize access to resources. Identity providers (IdPs) are responsible for user authentication. Service providers (SPs), such as services or applications, are responsible for controlling access to resources. Through administrative agreement and configuration, the SP trusts the IdP to authenticate users, and grants them access to the requested resources.
+
+Two AWS services are available to provide federation to AWS accounts and applications: AWS Single Sign-On (AWS SSO) and IAM. If you are using a single centralized directory, AWS SSO is a great option to employ. If you are using multiple directories within your organization, or if you wish to use attribute-based permissions, consider IAM.

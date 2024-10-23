@@ -1,0 +1,5 @@
+- Systems Manager gives you visibility and control of your infrastructure on AWS.
+- With CloudFormation, you can create and provision AWS infrastructure deployments predictably and repeatedly.
+- Lambda is an event-driven response service that provides the ability to run code without provisioning or managing servers.
+- Amazon SNSis an event-driven response web service that coordinates and manages delivering or sending messages to subscribing endpoints or clients.
+- Step Functions is an event-driven response service that makes it easy to coordinate the components of distributed applications as a series of steps in a visual workflow.

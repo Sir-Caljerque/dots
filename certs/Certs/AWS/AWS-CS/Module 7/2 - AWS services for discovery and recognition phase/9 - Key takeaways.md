@@ -1,0 +1,12 @@
+- Trusted Advisor
+    - Inspects your AWS environment, and then makes recommendations when opportunities exist to save money, improve system availability and performance, or help close security gaps.
+- CloudWatch
+    - Provides a reliable, scalable, and flexible monitoring solution.
+- AWS Config
+    - is a continuous monitoring and assessment service that provides you with an inventory of your AWS resources and records changes to the configuration of those resources.
+- Amazon Inspector 
+    - Is a vulnerability management service that continuously scans your AWS workloads for vulnerabilities.
+- Shield
+    - Offers protection against DDoS attacks.
+- GuardDuty 
+    - is a continuous security monitoring service that can help to identify unexpected and potentially unauthorized or malicious activity in your AWS environment.
