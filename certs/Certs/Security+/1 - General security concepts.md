@@ -272,3 +272,5 @@ n
 **Fencing**
 Is an obvious example of physical security because you can clearly see it
 May not be exactly what you are looking for, but it *does* provide a good way of preventing access through the area
+It is **robust** because it is *difficult* to cut the fence
+it *prevents climbing* through its razor wire and its stature
