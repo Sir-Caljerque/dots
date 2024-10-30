@@ -39,7 +39,11 @@ source ~/.zsh/Sources/options
 # themes/plugin sources
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/plugins/archlinux/archlinux.zsh
+source ~/.zsh/plugins/archlinux.zsh
+source ~/.zsh/plugins/firewalld.zsh
+source ~/.zsh/plugins/systemd.zsh
+source ~/.zsh/plugins/python.zsh
+source ~/.zsh/plugins/sysadmin.zsh
 source ~/.zsh/plugins/completions/starship.zsh
 source ~/.zsh/plugins/completions/rustup.zsh
 
