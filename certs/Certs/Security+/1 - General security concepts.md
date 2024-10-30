@@ -489,4 +489,77 @@ If nay problems are encountered, it is fast to switch to secondary system, which
 
 ### Restarts
 
-When implementing
+Can be useful to measure
+When implementing changes, you may need to restart the entire system to get it onto effect
+
+### Legacy applications
+
+Making a change that could affect a legacy application that have been running for a long time.
+These applications are often no longer supported by the developer - you're now the support team
+Updating these systems may not be as bad as you think, its better to face your fears and document the system
+However, they could be quirky
+
+## Dependencies
+
+"To complete A, you must complete B"
+Updating can be tricky because of dependencies, as you may need to update or install another application that an existing application requires (could be multiple)
+Dependencies may occur across systems - For example, to update firewall management console, you might need to update firewalls themselves to then install the update to the console
+
+## Documentation
+
+The only constant is change
+Any documentation that is not being constantly updated can quickly become out of date, which is why the change management process requires it
+
+Adding new systems may require new procedures
+
+## Version control
+
+Refers to tracking changes to a file or configuration data over time
+This can help revert to a previous setting
+- Router configurations
+- OS patches
+- App registry entries
+
+# Public key infrastructure (PKI)
+
+[[SecurityPlus#Public Key Infrastructure (PKI)]]
+
+Refers to policies, procedures, hardware, or people that that is responsible for distributing, revoking, etc. relating to digital cetrificates
+
+This is a big endeavor because it requires planning and a lot of decisions about what to use
+Can also refer to the binding of public keys to people or devices
+- The certificate authority (CA)
+- Its all about trust
+
+## Symmetric encryption
+
+**A single, shared key** that is used for both encryption and decryption
+
+AKA *secret key algorithm*
+Does not scale well, due to the need do share the key between **everyone** involved
+
+Its very fast due to having little overhead.
+
+Usually combined with asymmetric encryption
+
+## Asymmetric encryption
+
+**Public key cryptography** requires 2 mathematically related keys
+One of them is the *private key* and the other is the *public key*
+The private key is the only one that can decrypt the data that was encrypted with the public key
+> <u>You cannot derive the private key from the public key</u>
+
+PGP/GPG use asymmetric keys
+
+### Key generation
+
+Both public and private keys are generated at the same time
+Requires lots of randomizations and large prime numbers
+Lotsa math
+
+## Key escrow
+
+When dealing with an individual, they themselves usually are the only ones that manage their own decryption keys
+However, when dealing with large organizations, another party might hold and maintain the private keys
+For use in case data decryption is needed without the original user
+

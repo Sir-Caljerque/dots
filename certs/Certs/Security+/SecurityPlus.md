@@ -479,7 +479,7 @@ Continued...
 - Limiting failed login attempts
 
 ### Public Key Infrastructure (PKI)
-A system based on assymetric encryption.
+A system based on asymmetric encryption.
 - An example is the process of a [secure SSL/TLS tunnel process](<https://www.sectigo.com/uploads/browser/Sectigo-Quantum-Lab-Diagram.png>).
 - Ensure secure communication and data exchange on the internet.
 
