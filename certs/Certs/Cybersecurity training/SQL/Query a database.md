@@ -26,7 +26,7 @@
 					- The underscore symbol only substitutes for one other character.
 				- These wildcards can be placed after a string, before a string, or in both locations depending on the pattern you’re filtering for.
 				- The following table includes these wildcards applied to the string 'a' and examples of what each pattern would return.
-				- ![[Pasted image 20240209190724.png]]
+                - [!SEE BELOW]
 				- ex.
 					- `*** WHERE` [column] `LIKE `[w] `string` [w];
 					- [ w ] is a wildcard
@@ -44,20 +44,59 @@
 			[type]`JOIN` [right table] `ON` [right table].[column] `=` [left table].[column]
 			- `INNER JOIN`
 				- `INNER JOIN` returns rows matching on a specified column that exists in more than one table.
-				- ![[Pasted image 20240209191853.png]]
+				- ![[inner_join.png]]
 			- `LEFT JOIN`
 				- `LEFT JOIN` returns all the records of the first table, but only returns rows of the second table that match on a specified column
-				- ![[Pasted image 20240209192628.png]]
+				- ![[left_join.png]]
 			- `RIGHT JOIN`
 				- `RIGHT JOIN` returns all of the records of the second table, but only returns rows from the first table that match on a specified column
-				- ![[Pasted image 20240209192751.png]]
+				- ![[right_join.png]]
 			- `FULL OUTER JOIN`
 				- `FULL OUTER JOIN` returns all records from both tables. You can think of it as a way of completely merging two tables
-				- ![[Pasted image 20240209192837.png
+				- ![[full_outer_join.png]]
 	* Extras
 		* **aggregate functions** are functions that perform a calculation over multiple data points and return the result of the calculation. The actual data is not returned
 			* `COUNT` returns a single number that represents the number of rows returned from your query
 				* ![[Pasted image 20240209193012.png]]
 				* ![[Pasted image 20240209193053.png]]
+				- See below for non-image code
 			* `AVG` returns a single number that represents the average of the numerical data in a column
 			* `SUM` returns a single number that represents the sum of the numerical data in a column
+
+
+| Pattern | Results that could be returned |
+| ------- | ------------------------------ |
+| 'a%'    | apple123, art, a               |
+| 'a_'    | as, an, a7                     |
+| 'a__'   | ant, add, a1c                  |
+| '_a'    | ma, la, Ha                     |
+| '%a'    | pizza, Z6ra, a                 |
+| '%a%'   | Again, back, a                 |
+| '__a__' | Car, ban, ea7                  |
+
+```sql
+SELECT COUNT(firstname)
+FROM customers
+```
+outputs
+```
++------------------+
+| COUNT(firstname) |
++------------------+
+|                59|
++------------------+
+```
+
+```sql
+SELECT COUNT(firstname)
+FROM customers
+WHERE country = 'USA';
+```
+outputs
+```
++------------------+
+| COUNT(firstname) |
++------------------+
+|                13|
++------------------+
+```

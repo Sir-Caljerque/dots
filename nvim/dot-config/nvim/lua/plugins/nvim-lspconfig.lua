@@ -57,20 +57,27 @@ local config = function()
   })
 
   -- python
-  lspconfig.pyright.setup({
-    -- capabilities = capabilities,
-    -- on_attach = on_attach,
+  -- lspconfig.pyright.setup({
+  --   -- capabilities = capabilities,
+  --   -- on_attach = on_attach,
+  --   settings = {
+  --     pyright = {
+  --       disableOrganizeImports = false,
+  --       analysis = {
+  --         useLibraryCodeForTypes = true,
+  --         autoSearchPaths = true,
+  --         diagnosticMode = "workspace",
+  --         autoImportCompletions = true,
+  --       },
+  --     },
+  --   },
+  -- })
+
+  lspconfig.pylsp.setup({
     settings = {
-      pyright = {
-        disableOrganizeImports = false,
-        analysis = {
-          useLibraryCodeForTypes = true,
-          autoSearchPaths = true,
-          diagnosticMode = "workspace",
-          autoImportCompletions = true,
-        },
-      },
-    },
+      pylsp = {
+      }
+    }
   })
 
   -- Python #2
@@ -272,6 +279,20 @@ local config = function()
     },
   })
 
+  lspconfig.markdown_oxide.setup({
+    capabilities = vim.tbl_deep_extend(
+      'force',
+      capabilities,
+      {
+        workspace = {
+          didChangeWatchedFiles = {
+            dynamicRegistration = true,
+          },
+        },
+      }
+    ),
+  })
+
   -- solidity
   lspconfig.solidity.setup({
     -- capabilities = capabilities,
@@ -373,7 +394,7 @@ end
 return {
   "neovim/nvim-lspconfig",
   config = config,
-  lazy = false,
+  event = { "BufRead", "BufNewFile" },
   dependencies = {
     { "folke/neoconf.nvim",     cmd = "Neoconf" },
     { "folke/neodev.nvim",      opts = {} },

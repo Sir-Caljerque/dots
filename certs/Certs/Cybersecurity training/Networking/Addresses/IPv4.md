@@ -5,7 +5,7 @@
 * the world had more devices than there are IPv4 addresses
 	* the solution was [[IPv6]]
 
-![[Pasted image 20231216062835.png]]
+![[IPv4_header.png]]
 see [[IPv6]] for differences
 
 13 fields in an IPv4 [[packets]]:

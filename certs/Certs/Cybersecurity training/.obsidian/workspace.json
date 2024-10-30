@@ -11,8 +11,14 @@
             "id": "5e33859f45c26b4b",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "SQL/Query a database.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Query a database"
             }
           }
         ]
@@ -35,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -50,7 +58,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -58,7 +68,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
@@ -88,7 +100,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
             }
           },
           {
@@ -99,7 +113,9 @@
               "state": {
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
             }
           },
           {
@@ -110,7 +126,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -118,7 +136,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {},
+              "icon": "lucide-list",
+              "title": "Outline"
             }
           }
         ]
@@ -130,6 +150,9 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-importer:Open Importer": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "remotely-save:Remotely Save": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -141,5 +164,32 @@
     }
   },
   "active": "5e33859f45c26b4b",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "Networking/Packets/Tools/wireshark.md",
+    "Networking/Packets/Tools/tcpdump.md",
+    "workshop notes/Live machine Hacking.md",
+    "zzzIMAGES/Pasted image 20240209193053.png",
+    "zzzIMAGES/Pasted image 20240209193012.png",
+    "zzzIMAGES/sql_wildcards.png",
+    "zzzIMAGES/Pasted image 20240202144622.png",
+    "zzzIMAGES/Pasted image 20240125203456.png",
+    "zzzIMAGES/Pasted image 20240125203423.png",
+    "zzzIMAGES/Pasted image 20231219052655.png",
+    "zzzIMAGES/Pasted image 20231219050655.png",
+    "zzzIMAGES/Pasted image 20231219044815.png",
+    "zzzIMAGES/Pasted image 20231218142754.png",
+    "Networking/Packets/packets.md",
+    "SQL/Query a database.md",
+    "Networking/Addresses/IPv4.md",
+    "Linux/Zsh archlinux plugin.md",
+    "Linux/Commands/What went wrong.md",
+    "Linux/Commands/nmap.md",
+    "Linux/Commands/linuxCommands.md",
+    "Linux/Commands/grep.md",
+    "Linux/Commands/extra.md",
+    "Linux/Commands/chmod.md",
+    "Linux/Commands/address commands.md",
+    "Linux/Bash scripting/ping every IP in  a dash-24 CIDR.md",
+    "CEH-notes/CEH-notes.md"
+  ]
 }

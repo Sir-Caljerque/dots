@@ -299,7 +299,7 @@ Chapter  2 Networking Foundations
     
       Main problem, if the backbone gets damaged all connectivity is lost. Similar to current Xmas trees, if one light bulb gets disconnected,  then all the light bulbs are turn off.
 
-      Coaxil Cable
+      Coaxial Cable
       https://en.wikipedia.org/wiki/Coaxial_cable google 
 	  
       https://images.search.yahoo.com/search/images?p=network+using+coaxial+cable+bus+topology+using&fr=mcafee&type=E210US91088G91275&imgurl=https%3A%2F%2F4.bp.blogspot.com%2F-kJR8AcV9ujM%2FUAa8TOtVtmI%2FAAAAAAAAAx8%2F5LCOFeM6XaM%2Fs640%2Fbustopology3.JPG#id=1&iurl=https%3A%2F%2F4.bp.blogspot.com%2F-kJR8AcV9ujM%2FUAa8TOtVtmI%2FAAAAAAAAAx8%2F5LCOFeM6XaM%2Fs640%2Fbustopology3.JPG&action=click

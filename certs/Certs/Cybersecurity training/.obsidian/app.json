@@ -3,6 +3,15 @@
   "attachmentFolderPath": "zzzImages",
   "strictLineBreaks": true,
   "showLineNumber": true,
-  "vimMode": false,
-  "showUnsupportedFiles": false
+  "vimMode": true,
+  "showUnsupportedFiles": false,
+  "readableLineLength": false,
+  "alwaysUpdateLinks": true,
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  }
 }

@@ -20,7 +20,7 @@
 			- you can try converting CIDR to[[IPv4]] addresses and vice versa
 	- reduces the number of entries in routing tables and provides more available IP addresses within networks
 
-![[Pasted image 20231219042756.png]]
+![[CIDR_cheatsheet.png]]
 ![[Pasted image 20231219044815.png]]
 ![[Pasted image 20231219050655.png]]
 (mine!!)
