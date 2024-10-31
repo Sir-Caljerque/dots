@@ -563,3 +563,318 @@ When dealing with an individual, they themselves usually are the only ones that 
 However, when dealing with large organizations, another party might hold and maintain the private keys
 For use in case data decryption is needed without the original user
 
+# Encrypting stored data
+
+[[SecurityPlus#Levels of Encrytion]]
+
+AKA encrypting data at rest - full-disk and partition/volume encryption
+There are different techniques to encrypt database data
+- Transparent encryption refers to symmetric encryption
+- Record-level encryption refers to only encrypting certain parts of a public database
+    - for example, only encrypting the SSN on a public employee record DB
+
+## Transport encryption
+
+Protect data traversing the network
+**TLS** - transport layer encryption
+- HTTPS
+- VPN - Virtual private network
+    - SSL/TLS
+    - IPSec
+
+For successful communication, both sides must use the same encryption algorithms, as there are many
+- Details are hidden
+- Pros/Cons to different algorithms
+    - Security level, speed, complexity, etc.
+
+![[Pasted image 20241031013648.png]]
+
+## Obscurity =/= security
+
+There is very little that is not known about the cryptographic <u>process</u>, and even then, its hard to break
+
+Larger keys tend to be more secure - prevents brute force attacks
+
+## Key stretching
+
+A weak key is a weak key
+key stretching means making a key stronger by performing multiple processes
+- Hash a key - H(K)
+- H(H(K))
+- H(H(H(K)))
+- And so on...
+
+# Key exchange
+
+**How do you share an encryption key across an insecure medium without compromising it?**
+- Out of band key exhange means physically exchanging keys
+- Out of band means on the network key exchange
+    - Asymmetric encryption
+
+## RT encryption/decryption
+
+Theres a need for fast security without compromising on security
+Usually done by sharing a *random, symmetric key* with *asymmetric encryption*
+- Need to be changed often and be unpredictable (session keys)
+
+# Encryption technologies
+
+[[SecurityPlus#Encryption Tools]]
+
+Trusted platform module (TPM) - specifically for cryptographic purposes
+- Password-protected
+
+Hardware Security Module (HSM) - Used in large environments to store thousands of cryptographic keys
+- Secure storage in hardware - has backups
+- Cryptographic accelerators
+
+## Key management system
+
+Could be anywhere, cloud or on-premises
+- Keep data separate from keys
+- allow you to manage keys from one console
+
+## Keeping data private
+
+Our data is stored in many different places, like phones or laptops; The most private data is usually physically closest to us
+
+### Secure enclave
+
+A protected area for our secrets, often a physical hardware processor that is isolated from main CPU
+- Has its own boot ROM
+- Monitos system boot process
+- RT memory encryption
+- True RNG
+- AES ancryption in hardware
+
+# Obfuscation
+
+Process of making something **unclear**
+**Not impossible** to understand if you know *how* it was abfuscated
+- Hidden in plain sight
+- Steganography
+	- Security through obscurity
+	- TCP packets
+	- Images
+	- Audio
+	- Videos
+- Tokenization - replace sensitive data with a *Token* of that sensitive data
+	- Token is unusable
+	- How credit cards work
+		- One time use token
+	- Original data and token not mathematically related
+	- ![[Pasted image 20241031034239.png]]
+- Data masking
+	- Hide some of the original data
+		- CCN: 4684 3884 8432 8853
+		- out: *\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*853
+
+# Hashing and Digital signatures
+
+AKA *message digests* or data *fingerprints*
+*One-way* functions - output **cannot** be reversed
+Provides **integrity**
+Can be a **Digital signature**, which provide **authentication**, **non-repudiation**, and **integrity**
+
+> [!Example]
+> This message's sha256 hash: 15af49405b3b7b6c272a98ab7fa5cbfacffffa4237e287d8ed2bdd8c374c5e23<br>This message's sha256 hash!: 56c3890b64ddecad1b14fa96fd92cfaaaaa79fb1d189f9446f1f1d1169d81dc5
+
+One minor change to the original message will massively change the hash output
+*MD5* has a collition problem (different strings produce same results)
+
+## In practice
+
+Verify a downloaded file
+- Hashes are provided on the website, so you compare the downloaded hash file with the one posted
+Password storage
+- Good way to store passwords, as encrypted passwords can be decrypted
+
+### Salting
+**Salt** adds a random string to the original password to prevent brute force/*rainbow table* attacks
+- Rainbow tables are tables precompiled hashes.
+
+## Digital signatures
+
+[[SecurityPlus#**Digital Signature**]]
+
+*Like* a normal signature, its used to provide *non-repudiation* and *authentication*
+It can also me used to provide *Integrity*, as it contains an encrypted *hash* of the plaintext
+
+**Private key** is used to make the signature (because only you have access to it)
+**Public key** is used to verify the signature, opposite to *encryption*
+
+# Blockchain
+
+Described as a **distributed ledger** made to keep track of transactions
+Everyone on the blockchain network maintains the ledger, and once changes are recorded on the ledger, it is distributed again to everyone
+Cab be used for:
+- Payment
+- Digital identification
+- Digital voting
+When a transaction is requested, the information is sent to everyone participating in the blockchain this transaction is then added to a larger **block** of transactions that are processed into the **blockchain**
+For integrity, a *hash* is added to the block and is then integrated
+If hash is invalid, block is thrown out
+
+# Certificates
+
+[[SecurityPlus#Digital Certificates]]
+
+Consists of a **public key** and **digital signature** plus other details about a keyholder, like an ID card
+Adds trust
+- PKI uses CAs for additional trust
+- Web of Trust adds other users for additional trust
+	- If you trust your friend, and your friend trusts C, you trust C
+
+X.509 is the standard format and contains
+- Serial \#
+- Version
+- Signature algorithm
+- Name of certificate holder
+- Public key
+- Extensions
+- ...
+
+## Root of trust
+
+Everything in IT requires trust
+
+> How is that built from something unknown?
+
+A third party can vouch for the (for example) website
+This is referred to as the *Root of Trust*
+- Can be supplied by hardware, software, or other component
+
+## Certificate Authorities (CA)
+
+Trusted third party that digitally signs certificates on the untrusted websites, and since you trust the CA, you trust the website
+Provides *Real-time validation*
+**Built-in to your browser**
+You can buy a certificate by a CA, and your website will be trusted by everyone
+- You are really buying trust from CA
+
+CAs sign CSRs (Certificate Signing Requests) with their private key to validate them, then returns them to you
+
+### Private CAs
+
+You are your own CA
+For use in-house, and installed on *everyone's systems*
+
+That way you can use **self-signed certificates** if you dont want to go online to a public CA
+There is no need to purchase trust anymore because you issue your own digital certificates
+
+## Wildcard certificates
+
+Subject Alternative Name
+
+> For examople, `*.domain` trusts <u>every</u> domain with the `.domain` extension
+
+## Certificate Revocation Lists (CRLs)
+
+A list that is maintained by the CA for certificate that should no longer be used
+- Heartbleed
+- Expired certificate
+- Certificate no longer safe
+
+Multi-step process
+Works by connecting to website, getting its certificate, connecting to another website to download the CRL list, and checking the certificate's validity
+
+## Online Certificate Status Protocol OCSP
+
+Provides scalability for OCSP checks, and is maintained my the CA
+Made so that you don't have to download a massive CRL and checking against that
+
+**OCSP stapling**
+
+Instead, the status of the certificate is held in the certificate holder's server itself, verified by the initial SSL/TLS handshake
+Status digitally signed by the CA
+Can also be verified by a third party
+
+# Threat actors
+
+Refers to an entity responsible for a safety event, AKA malicious actor
+- Why is this happening?
+- Is this directed or random?
+
+## Attributes of threat actors
+
+- Internal/external
+- Resources/funding
+	- Access to resources
+- Level of sophistication
+	- Script kiddie or master hecker (TM)
+
+**What motivates them?**
+- Data exfiltration
+- Competition
+- Espionage
+- Service disruption
+- Blackmail
+- Financial gain
+- Revenge
+- Ethical
+
+## Types of threat actors
+
+### Nation state
+
+A government trying to heck you
+- data exfiltration
+- political reasons
+- war
+- control of other govts resources
+Constant, massive attacks due to large resources
+Referred to as Advanced Persistent Threat (APT)
+> **Highest sophistication**
+
+> [!STUXNET worm]
+
+### Unskilled attackers
+
+Script kiddies
+Run premade scripts without any additional knowledge
+Motivated by the attack itself
+*Usually external*, but could be internal
+Not a lot of resources
+No formal funding
+
+### Hacktivist
+
+Hacker with a purpose
+Often internal, with potential to infiltrate
+Can be remarkably sophisticated, with very specific attacks
+Funding may be limited
+
+### Insider threat
+
+More than passwords on sticky notes
+Extensive resources, eating away from the inside
+Medium level of sophistication
+
+### Organized crime
+
+Professional criminals, motivated by money and almost always external
+Very sophisticated
+*Organized* Crime
+Very hard to track
+
+### Shadow IT
+
+A group or department that go around IT rules
+Build own infrastructure
+Unencumbered, as they are not moderated by the company
+Limited resources, although they might be able to innovate
+Medium sophistication
+
+### Threat actor attribute table
+
+| <center>Threat actor</center>    | <center>Location</center> | <center>Resources</center>       | <center>Sophistication</center> | <center>Possible motivations</center>                                 |
+| --------------- | -------- | --------------- | -------------- | ---------------------------------------------------- |
+| <center>Nation state</center>    | <center>External</center> | <center>Extensive</center>       | <center>Very high</center>      | <center>Data exfiltration, philosophical, revenge, war</center>       |
+| <center>Unskilled</center>       | <center>External</center> | <center>Limited</center>         | <center>Very low</center>       | <center>Disruption, Data exfiltration, philosophical beliefs</center> |
+| <center>Hacktivist</center>      | <center>External</center> | <center>Some funding</center>    | <center>Can be high</center>    | <center>Philosophical beliefs, revenge, disruption/chaos</center>     |
+| <center>Insider threat</center>  | <center>Internal</center> | <center>Many resources</center>  | <center>Medium</center>         | <center>Revenge, financial gain</center>                              |
+| <center>Organized crime</center> | <center>External</center> | <center>Often extensive</center> | <center>Very high</center>      | <center>Financial</center>                                            |
+| <center>Shadow IT</center>       | <center>Internal</center> | <center>Many resources</center>  | <center>Limited</center>        | <center>Philosophical beliefs, revenge</center>                       |
+
+# Common threat vectors
+A threat vector is a method used by the attacker to gain access to the target
