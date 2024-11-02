@@ -10,7 +10,7 @@ remove_dirs() {
 symlinks() {
   for app in ./*; do
     if [ -d "$app" ]; then
-      stow -v --dotfiles --taget="$HOME" "$app"
+      stow -v --dotfiles --taget=$HOME "$app"
     fi
   done
 }
