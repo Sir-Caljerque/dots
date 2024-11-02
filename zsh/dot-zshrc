@@ -34,7 +34,7 @@ compinit
 # End of lines added by compinstall
 
 # Source options and zstyle config
-source ~/.zsh/Sources/options
+source ~/.zsh/Sources/options.zsh
 
 # themes/plugin sources
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -53,7 +53,7 @@ source ~/.zsh/Sources/keybindings/zkbd
 source ~/.zsh/Sources/keybindings/history-search
 
 # Source aliases
-source ~/.zsh/Sources/aliases
+source ~/.zsh/Sources/aliases.zsh
 # trash-put/trash   trash files and directories. 
 # trash-empty         empty the trashcan(s).
 # trash-list          list trashed files.
@@ -61,7 +61,7 @@ source ~/.zsh/Sources/aliases
 # trash-rm            remove individual files from the trashcan.
 
 # Source functions
-source ~/.zsh/Sources/functions
+source ~/.zsh/Sources/functions.zsh
 
 # Change starship config location
 export STARSHIP_CONFIG=~/.config/starship/starship.toml

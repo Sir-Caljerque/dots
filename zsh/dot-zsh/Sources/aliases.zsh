@@ -20,5 +20,4 @@ alias rmlst='trash-list'
 # trash-list          list trashed files.
 # trash-restore       restore a trashed file.
 # trash-rm            remove individual files from the trashcan.
-alias fzf='nvim $(\fzf)'
 alias paru='paru -a'
