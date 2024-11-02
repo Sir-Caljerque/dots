@@ -621,7 +621,7 @@ Usually done by sharing a *random, symmetric key* with *asymmetric encryption*
 
 [[SecurityPlus#Encryption Tools]]
 
-Trusted platform module (TPM) - specifically for cryptographic purposes
+*Trusted platform module (TPM)* - specifically for cryptographic purposes
 - Password-protected
 
 Hardware Security Module (HSM) - Used in large environments to store thousands of cryptographic keys
@@ -646,7 +646,7 @@ A protected area for our secrets, often a physical hardware processor that is is
 - RT memory encryption
 - True RNG
 - AES ancryption in hardware
-
+w
 # Obfuscation
 
 Process of making something **unclear**
@@ -877,4 +877,5 @@ Medium sophistication
 | <center>Shadow IT</center>       | <center>Internal</center> | <center>Many resources</center>  | <center>Limited</center>        | <center>Philosophical beliefs, revenge</center>                       |
 
 # Common threat vectors
+
 A threat vector is a method used by the attacker to gain access to the target
