@@ -88,6 +88,7 @@ fi
 
 
 if (( $+commands[paru] )); then
+  alias paru='paru -a'
   alias parconf='paru -Pg'
   alias parclean='paru -Sc'
   alias parclr='paru -Scc'

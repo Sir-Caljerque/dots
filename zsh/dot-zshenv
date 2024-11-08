@@ -2,7 +2,7 @@
 # Default apps
 export EDITOR="nvim"
 export VISUAL="nvim"
-export BROWSER="zen-twilight"
+export BROWSER="brave-nightly"
 
 # PATH config
 typeset -U path PATH

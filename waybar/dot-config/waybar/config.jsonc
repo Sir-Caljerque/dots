@@ -1,0 +1,321 @@
+[{
+  "position": "top",
+  "name": "systemBar",
+  "output": "!HDMI-A-1",
+  "height": 25,
+  "spacing": 10,
+  "reload_style_on_change": true,
+  "modules-left": [
+    "keyboard-state",
+    "tray",
+    "privacy"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "wireplumber",
+    "network",
+    "cpu",
+    "memory",
+    "temperature",
+    "backlight",
+    "clock",
+    "group/group-power"
+  ],
+  "hyprland/workspaces": {
+    "active-only": false,
+    "all-outputs": false,
+    "format": "{name}", // <sub>{icon}</sub> {windows}",
+    "format-icons": {
+      "active": "",
+      "default": "",
+      "empty": "∅",
+      "persistent": "∅",
+      "urgent": ""
+    },
+    "persistent-workspaces": {
+      "*": 5
+    },
+    "show-special": true,
+    "special-visible-only": true,
+    "sort-by": "number",
+    "window-rewrite": {
+      "title<.*youtube.*>": "",
+      "class<pavucontrol> title<Volume Control>": "󰕾",
+      "title<Easy Effects>": "󰕾",
+      "class<firefox>": "",
+      "class<kitty>": "",
+      "class<webcord>": "󰙯",
+      "class<obsidian>": "🪨",
+      "class<steam>": "",
+      "class<heroic>": "󰒙",
+      "class<kitty> title<nv.*>": "󰐡",
+      "class<kitty> title<.*.conf>": "",
+      "class<kitty> title<.*.c> && !title<.*.jsonc>": "",
+      "class<kitty> title<.*.zig>": "",
+      "class<kitty> title<.*.rs>": "",
+      "class<kitty> title<.*.py>": "",
+      "class<kitty> title<.*.sh>": "",
+      "class<kitty> title<.*.js>": "",
+      "class<kitty> title<.*.jsonc>": "󰘦",
+      "class<kitty> title<.*.json>": "",
+      "class<kitty> title<.*vim.*>": ""
+    },
+    "window-rewrite-default": "",
+    "format-window-separator": "",
+    "move-to-monitor": false
+  },
+  "hyprland/window": {
+    "format": "", // "[{class}] - {title}",
+    "separate-outputs": true,
+    "icon": true,
+    "icon-size": 20
+  },
+  "hyprland/language": {
+    "format": "Lang: {}",
+    "format-en": "AMERICA, HELL YEAH!"
+  },
+  "hyprland/submap": {
+    "format": "sub: {}",
+    // "max-length": ,
+    // "on-click": ,
+    // "on-click-middle": ,
+    // "on-click-right": ,
+    // "on-scroll-up": ,
+    // "on-scroll-down": ,
+    // "rotate": ,
+    // "smooth-scrolling-threshold": ,
+    "tooltip": true,
+    "always-on": true,
+    "default-submap": "Default"
+  },
+  "keyboard-state": {
+    "numlock": true,
+    "capslock": true,
+    "format": "{name}",
+    "format-icons": {
+      "locked": "",
+      "unlocked": ""
+    },
+    "binding-keys": [58, 69, 70]
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "tray": {
+    "icon-size": 15,
+    "show-passive-items": false,
+    "spacing": 5
+  },
+  "clock": {
+    "interval": 60,
+    "format": "{:%H:%M ☀}",
+    "tooltip": true,
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%m/%d }",
+    "calendar": {
+      "mode": "month",
+      "weeks-pos": "left",
+      "format": {
+        "weeks": "{:%U|}",
+        "today": "<b><u><i>{}</i></u></b>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode"
+    }
+  },
+  "cpu": {
+    "interval": 1,
+    "format": "{usage}%{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}",
+    "format-icons": [
+      "<span color='#69ff94'>▁</span>",
+      "<span color='#2aa9ff'>▂</span>",
+      "<span color='#f8f8f2'>▃</span>",
+      "<span color='#f8f8f2'>▄</span>",
+      "<span color='#ffffa5'>▅</span>",
+      "<span color='#ffffa5'>▆</span>",
+      "<span color='#ff9977'>▇</span>",
+      "<span color='#dd532e'>█</span>"
+    ],
+    "tooltip": true
+  },
+  "memory": {
+    "interval": 10,
+    "format": "{used:0.1f}GiB 󰍛",
+    "tooltip": true,
+    "tooltip-format": "{swapUsed:0.1f}GiB swap"
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "{temperatureC}°C {icon}",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
+  },
+  "backlight": {
+    "format": "{percent}% {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-full": "{capacity}% {icon}",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "{time} {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "battery#bat2": {
+    "bat": "BAT2"
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+  "network": {
+    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "wireplumber": {
+    "format": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
+    "on-click": "pavucontrol",
+    "on-click-right": "easyeffects",
+    "max-volume": 150,
+    "scroll-step": 5
+  },
+  "privacy": {
+    "icon-spacing": 4,
+    "icon-size": 18,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 20
+      },
+      {
+        "type": "audio-out",
+        "tooltip": true,
+        "tooltip-icon-size": 20
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 20
+      }
+    ]
+  },
+  "group/group-power": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-power",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/power", // First element is the "group leader" and won't ever be hidden
+      "custom/quit",
+      "custom/lock",
+      "custom/reboot",
+      "custom/hibernate"
+    ]
+  },
+  "custom/quit": {
+    "format": "󰗼",
+    "tooltip": false,
+    "on-click": "hyprctl dispatch exit"
+  },
+  "custom/lock": {
+    "format": "󰍁",
+    "tooltip": false,
+    "on-click": "hyprlock"
+  },
+  "custom/reboot": {
+    "format": "󰜉",
+    "tooltip": false,
+    "on-click": "reboot"
+  },
+  "custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "shutdown now"
+  },
+  "custom/hibernate": {
+    "format": "󰜗",
+    "tooltip": false,
+    "on-click": "systemctl hibernate"
+  }
+},
+{
+  "position": "bottom",
+  "name": "workspacesBar",
+  "output": "!HDMI-A-1",
+  "height": 25,
+  "spacing": 0,
+  "reload_style_on_change": true,
+  "modules-left": [],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [],
+  "hyprland/workspaces": {
+    "active-only": false,
+    "all-outputs": false,
+    "format": "", // <sub>{icon}</sub> {windows}",
+    "format-icons": {},
+    "persistent-workspaces": {
+      "*": 5
+    },
+    "show-special": true,
+    "special-visible-only": true,
+    "sort-by": "number",
+    "window-rewrite": {},
+    "window-rewrite-default": "",
+    "format-window-separator": "",
+    "move-to-monitor": false
+  }
+}]
