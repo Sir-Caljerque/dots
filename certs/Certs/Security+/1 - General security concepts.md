@@ -879,3 +879,98 @@ Medium sophistication
 # Common threat vectors
 
 A threat vector is a method used by the attacker to gain access to the target
+
+# Phishing
+
+# Impersonation
+
+[[SecurityPlus#Different Types of Impersonation]]
+
+Refers to when attackers pretend to be someone they arent
+They use the trust from authority/familiar figures to extract info from victim
+
+Before the attack, the trap is set
+- "Congrats on perfect payment history, you now qualify for 0% interest credit. Enter your password to redeem"
+
+*Identity fraud*
+
+# Watering hole attacks
+
+[[SecurityPlus#Different Types of Impersonation]]
+
+Refers to when attackers cannot get in directly, so they try to get in through a proxy
+For example, company A issues paychecks with bank B, so attacker infects B so that it in turn will infect A with malware
+
+# Other social engineering attacks
+
+**{Mis/Dis}information**
+**Brand impersonation**
+
+# Memory injections
+
+**Malware runs in memory**, so malware has to get into memory to be effective
+- DLLs
+- Threads
+- Buffers
+- Memory management functions
+It can do this through *memory injection*
+
+Essentially, when a process runs, all the code that it is going to execute is on memory addresses
+start <----------------------------------------> end
+A vulnerable application may allow that memory to be changed, and in turn, executed
+start <-----------injected code----------------> end
+
+# Buffer overflows
+
+When too much data is written to a memory buffer, and leaks onto the memory of another process
+**Not simple**
+
+In this example, a B value > 24,000 gives admin rights to the application, while a B value < 2000 only gives user rights
+A is vulnerable to *buffer overflow*
+A                                       | B
+null                                    | 1979
+\[00] \[00] \[00] \[00] \[00] \[00] \[00] \[00] | \[07] \[BB] 
+The string "excessive" is written to A, however, A can only handle 8 characters, so hex value 65 (E) is written as first byte in B
+A (null)                                B (1979)
+\[E]  \[X]  \[C]  \[E]  \[S]  \[S]  \[I]  \[V]  | 25856 
+\[65] \[78] \[63] \[65] \[73] \[73] \[69] \[76] | \[65] \[00] 
+
+# Race condition
+
+When 2 events run at (almost) the same time, and the application does not expect that
+
+**TOCTOU** attack:
+A checks value ... A retrieves value ... A uses value in a function                                             O :)
+A checks value ... A retrieves value ... B changes value ... A uses (changed) value in a function               X :(
+
+# Malicious updates
+
+# --Study areas--
+
+## 5.2
+Q: Which of the following describers a monetary loss if one event occurs
+A. **ALE** <u>Annual loss expectancy</u> - How much money you lose in a span of 12 months
+B. **SLE** <u>single loss expectancy</u> - money loss if one event occurs, like a server going down
+C. **RTO** <u>Recovry time objective</u> - how fast you can get everything ready if event occurs ... How long it takes to get service up
+    **PO** <u>Recovery point objective</u> - How much tolerance you have / how much data you're willing to lose until action needs to be taken
+D. **ARO** <u>annualized rate of occurance</u> - event frequency / how many times a server crashes in a span of time
+extra: MTTR Mean time to repair 
+![[Pasted image 20241108203712.png]]
+
+## Study port numbers
+
+- 20, 21
+- 22
+- 23
+- 25
+- 53
+- 67/68
+- 80/443
+- 110
+- 143
+- 161
+- 389
+- 445
+- 514
+- 1433
+- 3389

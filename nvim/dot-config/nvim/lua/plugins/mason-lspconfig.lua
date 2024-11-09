@@ -10,7 +10,6 @@ local opts = {
     "jsonls",
     "ts_ls",
     "emmet_ls",
-    "ruff_lsp",
   },
   automatic_installation = false, -- true,
 }

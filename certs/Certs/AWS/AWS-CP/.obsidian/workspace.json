@@ -1,36 +1,24 @@
 {
   "main": {
-    "id": "56f4c4b3f2310e0e",
+    "id": "eba7b136ac6b3262",
     "type": "split",
     "children": [
       {
-        "id": "fb01735118620fb6",
+        "id": "bb6a83ee82153ab5",
         "type": "tabs",
         "children": [
           {
-            "id": "7da071b164ad39ec",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "class/Lecture13-UserAuth.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "Lecture13-UserAuth"
-            }
-          },
-          {
-            "id": "a4356933ff4f61f0",
+            "id": "508981014282d7d2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SecurityPlus.md",
+                "file": "9 - Cloud Architecture/3 - Reliability and availability.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SecurityPlus"
+              "title": "3 - Reliability and availability"
             }
           }
         ]
@@ -39,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "c158dd2770d51b50",
+    "id": "8699e9fba62b792d",
     "type": "split",
     "children": [
       {
-        "id": "658c1dbc40667bde",
+        "id": "f6830bd4e6871c39",
         "type": "tabs",
         "children": [
           {
-            "id": "8130dc707501ad88",
+            "id": "dd875c54d31640bd",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -59,7 +47,7 @@
             }
           },
           {
-            "id": "ed1ed250cebbfc60",
+            "id": "f14bc96ce20bb1d5",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -76,7 +64,7 @@
             }
           },
           {
-            "id": "6cceab78a240b8ab",
+            "id": "96e1c171cbdae540",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -92,20 +80,20 @@
     "width": 300
   },
   "right": {
-    "id": "22a824513b2aec92",
+    "id": "31225a89c27de8c0",
     "type": "split",
     "children": [
       {
-        "id": "6a9095b31ecef77e",
+        "id": "752433906c4574a2",
         "type": "tabs",
         "children": [
           {
-            "id": "0f6e8627bb8280b4",
+            "id": "5a9a330cc5c7dfe5",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "1 - General security concepts.md",
+                "file": "9 - Cloud Architecture/3 - Reliability and availability.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,25 +103,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 1 - General security concepts"
+              "title": "Backlinks for 3 - Reliability and availability"
             }
           },
           {
-            "id": "e94faa92174cee39",
+            "id": "ffb44247444adc06",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "1 - General security concepts.md",
+                "file": "9 - Cloud Architecture/3 - Reliability and availability.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 1 - General security concepts"
+              "title": "Outgoing links from 3 - Reliability and availability"
             }
           },
           {
-            "id": "203c691695dc665b",
+            "id": "9a2a76b88c84baaa",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -146,29 +134,18 @@
             }
           },
           {
-            "id": "be4c5a565df7888a",
+            "id": "e10a5de7417f6264",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "1 - General security concepts.md"
+                "file": "9 - Cloud Architecture/3 - Reliability and availability.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of 1 - General security concepts"
-            }
-          },
-          {
-            "id": "809f076ffe9f3ed3",
-            "type": "leaf",
-            "state": {
-              "type": "advanced-tables-toolbar",
-              "state": {},
-              "icon": "spreadsheet",
-              "title": "Advanced Tables"
+              "title": "Outline of 3 - Reliability and availability"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -190,28 +167,9 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "7da071b164ad39ec",
+  "active": "508981014282d7d2",
   "lastOpenFiles": [
-    "class/Lecture12-IDS.pdf",
-    "class/Lecture11-Firewalls.pdf",
-    "class/Lecture9-SSL-TLS.pdf",
-    "class/Lecture8-NetworkAttacks.pdf",
-    "class/Lecture6-PKI.pdf",
-    "class/Lecture4-Hash.pdf",
-    "class/Lecture2-SymmetricEncryption.pdf",
-    "1 - General security concepts.md",
-    "zzzImages/Pasted image 20241108203712.png",
-    "SecurityPlus.md",
-    "class/Firewalls.md",
-    "class/Lecture6-PKI.pptx",
-    "class/Lecture12-IDS.pptx",
-    "class/Lecture4-Hash.pptx",
-    "class/Lecture10-IPSec.pptx",
-    "zzzImages/Pasted image 20241031034239.png",
-    "zzzImages/Pasted image 20241031013648.png",
-    "zzzImages/Pasted image 20241018014743.png",
-    "Class.md",
-    "zzzImages/Pasted image 20240924201240.png",
-    "Untitled.canvas"
+    "zzzImages/Pasted image 20240826213236.png",
+    "9 - Cloud Architecture/3 - Reliability and availability.md"
   ]
 }

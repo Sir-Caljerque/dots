@@ -37,8 +37,8 @@ local config = function()
 
   -- lua
   lspconfig.lua_ls.setup({
-    -- capabilities = capabilities,
-    -- on_attach = on_attach,
+    capabilities = capabilities,
+    on_attach = on_attach,
     settings = { -- custom settings for lua
       Lua = {
         -- make the language server recognize "vim" global
@@ -74,34 +74,28 @@ local config = function()
   -- })
 
   lspconfig.pylsp.setup({
+    cmd = { "pylsp", "-vvv", "--log-file", "/tmp/lsp.log" },
     settings = {
       pylsp = {
+        plugins = {
+          ruff = {
+            enabled = true,
+            formatEnabled = true,
+            lineLength = 88,
+            preview = true,
+          },
+          pylsp_mypy = {
+            enabled = true,
+            live_mode = true,
+          },
+          pylsp_rope = {
+            enabled = true,
+            rename = true,
+          },
+          isort = { enabled = true },
+        }
       }
     }
-  })
-
-  -- Python #2
-  lspconfig.ruff_lsp.setup({
-    -- capabilities = capabilities,
-    -- on_attach = on_attach,
-    init_options = {
-      settings = {
-        args = {},
-        enable = true,
-        lineLength = 100,
-        run = "onType",
-        fixAll = true,
-        organizeImports = true,
-        showSyntaxErrors = true,
-        lint = {
-          enable = true,
-          preview = true,
-        },
-        format = {
-          preview = true,
-        }
-      },
-    },
   })
 
   lspconfig.hyprls.setup({
