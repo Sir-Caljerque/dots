@@ -13,10 +13,10 @@
             "state": {
               "type": "pdf",
               "state": {
-                "file": "class/Lecture13-UserAuth.pdf"
+                "file": "ExamOBJs.pdf"
               },
               "icon": "lucide-file-text",
-              "title": "Lecture13-UserAuth"
+              "title": "ExamOBJs"
             }
           },
           {
@@ -192,6 +192,7 @@
   },
   "active": "7da071b164ad39ec",
   "lastOpenFiles": [
+    "class/Lecture13-UserAuth.pdf",
     "class/Lecture12-IDS.pdf",
     "class/Lecture11-Firewalls.pdf",
     "class/Lecture9-SSL-TLS.pdf",
@@ -206,7 +207,6 @@
     "class/Lecture6-PKI.pptx",
     "class/Lecture12-IDS.pptx",
     "class/Lecture4-Hash.pptx",
-    "class/Lecture10-IPSec.pptx",
     "zzzImages/Pasted image 20241031034239.png",
     "zzzImages/Pasted image 20241031013648.png",
     "zzzImages/Pasted image 20241018014743.png",

@@ -21,12 +21,12 @@ opt.termguicolors = true
 opt.colorcolumn = "100"
 opt.signcolumn = "yes"
 opt.cmdheight = 1
-opt.scrolloff = 40
+opt.scrolloff = 10
 opt.completeopt = "menuone,noinsert,noselect"
 
 -- Fold opts
-vim.o.foldcolumn = "1" -- '0' is not bad
-vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldcolumn = "auto" -- '0' is not bad
+vim.o.foldlevel = 99      -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
@@ -41,8 +41,8 @@ opt.undofile = true
 opt.backspace = "indent,eol,start"
 opt.splitright = true
 opt.splitbelow = true
-opt.autochdir = false
-opt.iskeyword:append("-")
+opt.autochdir = true
+-- opt.iskeyword:append("-")
 opt.mouse:append("a")
 opt.clipboard:append("unnamedplus")
 opt.modifiable = true

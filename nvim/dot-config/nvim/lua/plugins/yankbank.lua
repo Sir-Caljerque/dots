@@ -1,7 +1,7 @@
 return {
 	{
 		"ptdewey/yankbank-nvim",
-		event = "VeryLazy",
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("yankbank").setup({
 				max_entries = 5,

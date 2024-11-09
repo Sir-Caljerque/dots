@@ -21,7 +21,6 @@ local config = function()
   --
   -- [[ END TEST FMT/LINT TOOL ]]
 
-
   for type, icon in pairs(diagnostic_signs) do
     local hl = "DiagnosticSign" .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
@@ -37,8 +36,36 @@ local config = function()
 
   -- lua
   lspconfig.lua_ls.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
+    -- capabilities = capabilities,
+    -- on_attach = on_attach,
+    on_init = function(client)
+      if client.workspace_folders then
+        local path = client.workspace_folders[1].name
+        if vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc") then
+          return
+        end
+      end
+
+      client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
+        runtime = {
+          -- Tell the language server which version of Lua you're using
+          -- (most likely LuaJIT in the case of Neovim)
+          version = "LuaJIT",
+        },
+        -- Make the server aware of Neovim runtime files
+        workspace = {
+          checkThirdParty = false,
+          library = {
+            vim.env.VIMRUNTIME,
+            -- Depending on the usage, you might want to add additional paths here.
+            -- "${3rd}/luv/library"
+            -- "${3rd}/busted/library",
+          },
+          -- or pull in all of 'runtimepath'. NOTE: this is a lot slower and will cause issues when working on your own configuration (see https://github.com/neovim/nvim-lspconfig/issues/3189)
+          -- library = vim.api.nvim_get_runtime_file("", true)
+        },
+      })
+    end,
     settings = { -- custom settings for lua
       Lua = {
         -- make the language server recognize "vim" global
@@ -57,36 +84,36 @@ local config = function()
   })
 
   -- python
-  -- lspconfig.pyright.setup({
-  --   -- capabilities = capabilities,
-  --   -- on_attach = on_attach,
+  -- lspconfig.basedpyright.setup({
   --   settings = {
-  --     pyright = {
-  --       disableOrganizeImports = false,
+  --     basedpyright = {
+  --       disableLanguageServices = false,
+  --       disableOrganizeImports = true,
+  --       disableTaggedHints = false,
   --       analysis = {
-  --         useLibraryCodeForTypes = true,
-  --         autoSearchPaths = true,
-  --         diagnosticMode = "workspace",
   --         autoImportCompletions = true,
+  --         autoSearchPaths = true,
+  --         diagnosticMode = "openFilesOnly",
+  --         useLibraryCodeForTypes = true,
+  --         inlayHints = {
+  --           variableTypes = true,
+  --           callArgumentNames = true,
+  --           functionReturnTypes = true,
+  --           genericTypes = true,
+  --         },
   --       },
   --     },
   --   },
   -- })
 
   lspconfig.pylsp.setup({
-    cmd = { "pylsp", "-vvv", "--log-file", "/tmp/lsp.log" },
     settings = {
       pylsp = {
         plugins = {
-          ruff = {
-            enabled = true,
-            formatEnabled = true,
-            lineLength = 88,
-            preview = true,
-          },
           pylsp_mypy = {
             enabled = true,
             live_mode = true,
+            disable_error_code = "annotation-unchecked"
           },
           pylsp_rope = {
             enabled = true,
@@ -97,6 +124,30 @@ local config = function()
       }
     }
   })
+
+  -- Python #2
+  -- lspconfig.ruff_lsp.setup({
+  --   -- capabilities = capabilities,
+  --   -- on_attach = on_attach,
+  --   init_options = {
+  --     settings = {
+  --       args = {},
+  --       enable = true,
+  --       lineLength = 100,
+  --       run = "onType",
+  --       fixAll = true,
+  --       organizeImports = true,
+  --       showSyntaxErrors = true,
+  --       lint = {
+  --         enable = true,
+  --         preview = true,
+  --       },
+  --       format = {
+  --         preview = true,
+  --       }
+  --     },
+  --   },
+  -- })
 
   lspconfig.hyprls.setup({
     -- capabilities = capabilities,
@@ -204,8 +255,8 @@ local config = function()
         usePlaceHolders = true,
         hoverKind = "FullDocumentation",
         gofumpt = true,
-      }
-    }
+      },
+    },
   })
 
   -- json
@@ -250,7 +301,7 @@ local config = function()
         tsserver = {
           useSyntaxServer = "auto",
         },
-      }
+      },
     },
     root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
   })
@@ -274,17 +325,13 @@ local config = function()
   })
 
   lspconfig.markdown_oxide.setup({
-    capabilities = vim.tbl_deep_extend(
-      'force',
-      capabilities,
-      {
-        workspace = {
-          didChangeWatchedFiles = {
-            dynamicRegistration = true,
-          },
+    capabilities = vim.tbl_deep_extend("force", capabilities, {
+      workspace = {
+        didChangeWatchedFiles = {
+          dynamicRegistration = true,
         },
-      }
-    ),
+      },
+    }),
   })
 
   -- solidity
@@ -307,21 +354,22 @@ local config = function()
   local stylua = require("efmls-configs.formatters.stylua")             -- Lua
   local rufff = require("efmls-configs.formatters.ruff")                -- Python
   local ruffl = require("efmls-configs.linters.ruff")                   -- Python
+  local mypy = require("efmls-configs.linters.mypy")                    -- Python
   local gcc = require("efmls-configs.linters.gcc")                      -- C
   local clang_format = require("efmls-configs.formatters.clang_format") -- C
   local rustfmt = require("efmls-configs.formatters.rustfmt")           -- Rust
   local taplo = require("efmls-configs.formatters.taplo")
   local staticcheck = require("efmls-configs.linters.staticcheck")      -- Go
   local gofumpt = require("efmls-configs.formatters.gofumpt")           -- Go
-  local eslint_d = require("efmls-configs.linters.eslint_d")            -- Typescript(react), Json, Jsonc, Javascript(react), Svelte, Vue,
+  -- local eslint_d = require("efmls-configs.linters.eslint_d")            -- Typescript(react), Json, Jsonc, Javascript(react), Svelte, Vue,
   local prettierd = require("efmls-configs.formatters.prettier_d")      -- HTML, Typescript(react), Javascript(react), Svelte, Vue, Markdown, Docker
-  local djlint = require("efmls-configs.linters.djlint")                -- HTML
+  -- local djlint = require("efmls-configs.linters.djlint")                -- HTML
   local alex = require("efmls-configs.linters.alex")                    -- Markdown
   local fixjson = require("efmls-configs.formatters.fixjson")           -- Json, Jsonc
   local shellcheck = require("efmls-configs.linters.shellcheck")        -- Shell
   local shfmt = require("efmls-configs.formatters.shfmt")               -- Shell
   local hadolint = require("efmls-configs.linters.hadolint")            -- Docker
-  local solhint = require("efmls-configs.linters.solhint")              -- Solidity
+  -- local solhint = require("efmls-configs.linters.solhint")              -- Solidity
 
   -- none-ls - see none-ls.lua_ls
 
@@ -361,7 +409,7 @@ local config = function()
       languages = {
         lua = { luacheck, stylua },
         -- python = { flake8, black },
-        python = { ruffl, rufff },
+        python = { ruffl, mypy, rufff },
         sh = { shellcheck, shfmt },
         c = { gcc, clang_format },
         rust = { rustfmt },
