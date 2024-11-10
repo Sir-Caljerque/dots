@@ -6,6 +6,8 @@ function yy() {
 	fi
 	rm -f -- "$tmp"
 }
+# Set ctrl+x to yy
+bindkey -s '^x' 'yy\n'
 
 function fz() {
   local dir="$(fzf)"

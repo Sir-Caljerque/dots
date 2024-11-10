@@ -1,4 +1,3 @@
-
 # Default apps
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -20,8 +19,6 @@ export LC_ALL="en_US.UTF-8"
 
 # Colors!
 export MANPAGER="nvim +Man!"
-
-_comp_options+=(globdots) # With hidden files
 
 # Set wayland env variables
 export GDK_BACKEND=wayland

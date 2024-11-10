@@ -1,9 +1,3 @@
-# Check if hyprland is running and if tty is tty1
-# if hyprland ISNT running, run it
-if [[ -z "$HYPRLAND_INSTANCE_SIGNATURE" && "$(tty)" == "/dev/tty1" ]]; then
-    Hyprland
-fi
-
 clear
 
 rand=$((RANDOM))
@@ -31,13 +25,39 @@ setopt autocd extendedglob nomatch
 
 unsetopt beep
 bindkey -v
+export KEYTIMEOUT=1
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/fran/.zshrc'
+zstyle :compinstall filename '$HOME/.zsh/.zshrc'
 
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+_comp_options+=(globdots) # With hidden files
+
+# Enable editing prompt in vim
+autoload edit-command-line; zle -N edit-command-line
+bindkey '' edit-command-line
+
+# Blocky cursor on normal, but line on insert
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+zle-line-init() {
+    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    echo -ne "\e[5 q"
+}
+zle -N zle-line-init
+echo -ne '\e[5 q' # Use beam shape cursor on startup.
+preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # Source options and zstyle config
 source ~/.zsh/Sources/options.zsh
@@ -54,9 +74,9 @@ source ~/.zsh/plugins/completions/starship.zsh
 source ~/.zsh/plugins/completions/rustup.zsh
 
 # keybinding sources
-source ~/.zsh/Sources/keybindings/ViKeys
-source ~/.zsh/Sources/keybindings/zkbd
-source ~/.zsh/Sources/keybindings/history-search
+source ~/.zsh/Sources/keybindings/ViKeys.zsh
+source ~/.zsh/Sources/keybindings/zkbd.zsh
+source ~/.zsh/Sources/keybindings/history-search.zsh
 
 # Source aliases
 source ~/.zsh/Sources/aliases.zsh
