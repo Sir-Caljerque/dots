@@ -1,5 +1,5 @@
 # aliases
-alias zconf="nvim ~/.zshrc"
+alias zconf="nvim ~/.zsh/.zshrc"
 alias nv='nvim'
 
 alias ls='lsd -hF --color=auto'
@@ -21,3 +21,4 @@ alias rmlst='trash-list'
 # trash-restore       restore a trashed file.
 # trash-rm            remove individual files from the trashcan.
 alias paru='paru -a'
+alias ssh='kitty +kitten ssh'

@@ -208,6 +208,7 @@ local config = function()
     -- on_attach = on_attach,
     -- function(client, bufnr)
     -- vim.lsp.inlay_hint.enable(bufnr)
+    cmd = { "$HOME/.cargo/bin/rust-analyzer" },
     settings = {
       ["rust-analyzer"] = {
         imports = {

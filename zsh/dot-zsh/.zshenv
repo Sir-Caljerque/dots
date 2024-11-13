@@ -5,7 +5,7 @@ export BROWSER="zen-twilight"
 
 # PATH config
 typeset -U path PATH
-path=($path ~/.local/bin)
+path=($path ~/.local/bin ~/.cargo/bin)
 
 # Default folders
 export XDG_CONFIG_HOME="$HOME/.config"
