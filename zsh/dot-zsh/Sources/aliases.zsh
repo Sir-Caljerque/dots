@@ -20,5 +20,5 @@ alias rmlst='trash-list'
 # trash-list          list trashed files.
 # trash-restore       restore a trashed file.
 # trash-rm            remove individual files from the trashcan.
-alias paru='paru -a'
+alias paru='paru --bottomup -a'
 alias ssh='kitty +kitten ssh'
