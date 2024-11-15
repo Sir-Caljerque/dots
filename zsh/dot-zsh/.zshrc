@@ -12,6 +12,7 @@ fi
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
 
+
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
 # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
@@ -59,24 +60,26 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
+# fpath=(~/.zsh/functions $fpath)
+# autoload -Uz $functions_in_path
+
 # Source options and zstyle config
 source ~/.zsh/Sources/options.zsh
 
 # themes/plugin sources
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/plugins/archlinux.zsh
-source ~/.zsh/plugins/firewalld.zsh
-source ~/.zsh/plugins/systemd.zsh
-source ~/.zsh/plugins/python.zsh
-source ~/.zsh/plugins/sysadmin.zsh
-source ~/.zsh/plugins/completions/starship.zsh
-source ~/.zsh/plugins/completions/rustup.zsh
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+for file in $ZDOTDIR/plugins/*.zsh; do
+  source "$file"
+done
+# source ~/.zsh/plugins/completions/rustup.zsh
 
 # keybinding sources
-source ~/.zsh/Sources/keybindings/ViKeys.zsh
-source ~/.zsh/Sources/keybindings/zkbd.zsh
-source ~/.zsh/Sources/keybindings/history-search.zsh
+for file in $ZDOTDIR/keybindings/*.zsh; do
+  source "$file"
+done
 
 # Source aliases
 source ~/.zsh/Sources/aliases.zsh
@@ -87,7 +90,9 @@ source ~/.zsh/Sources/aliases.zsh
 # trash-rm            remove individual files from the trashcan.
 
 # Source functions
-source ~/.zsh/Sources/functions.zsh
+for file in $ZDOTDIR/functions/*.zsh; do
+  source "$file"
+done
 
 # Change starship config location
 export STARSHIP_CONFIG=~/.config/starship/starship.toml

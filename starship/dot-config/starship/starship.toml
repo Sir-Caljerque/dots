@@ -76,11 +76,11 @@ Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
 
 [username]
-show_always = false # true
+show_always = false                                           # true
 style_user = "bg:color_blue fg:color_bg1"
 style_root = "bg:color_orange fg:color_red"
-format = '[$user ]($style)'
-aliases = { "fmart" = "SirCaljerque", "placeholder" = "jaz"}
+format = '[ $user ]($style)'
+aliases = { "fmart" = "SirCaljerque", "placeholder" = "jaz" }
 
 [sudo]
 symbol = "󰡗 "

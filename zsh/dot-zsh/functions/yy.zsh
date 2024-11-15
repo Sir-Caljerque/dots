@@ -8,10 +8,3 @@ function yy() {
 }
 # Set ctrl+x to yy
 bindkey -s '^x' 'yy\n'
-
-function fz() {
-  local dir="$(fzf)"
-  if [[ ! -z $dir ]]; then
-    nvim $dir
-  fi
-}

@@ -10,9 +10,25 @@ remove_dirs() {
 symlinks() {
   for app in ./*; do
     if [ -d "$app" ]; then
-      stow -v --dotfiles --target="$HOME" "$(basename $app)"
+      stow -v --dotfiles --target="$HOME" "$(basename "$app")"
     fi
   done
+}
+
+install_pkgs() {
+  pacin fzf \
+    fuzzel \
+    hyprland hyprpaper hypridle hyprlock \
+    kitty \
+    neovim \
+    starship \
+    yazi \
+    zoxide \
+    zsh \
+    zsh-autosuggestions \
+    zsh-completions \
+    zsh-history-substring-search \
+    zsh-syntax-highlighting
 }
 
 symlinks

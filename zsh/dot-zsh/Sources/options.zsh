@@ -14,10 +14,9 @@ zstyle ':completion:*' rehash true
 zstyle ':completion:*' verbose true
 zstyle ':completion:*' group-name
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-#zstyle ':completion:*' file-list all
-#zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the characters to insert
-#zstyle ':completion:*' auto-description 'specify: %d'
-#zstyle ':completion:*' completer _expand _complete
-#zstyle ':completion:*' format 'Completing %d'
-#zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-#zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*:match:*' original only
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
+zstyle -e ':completion:*:approximate:*' max-errors 'reply=($((($#PREFIX+$#SUFFIX)/3))numeric)'
+zstyle ':completion:*' squeeze-slashes true
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
