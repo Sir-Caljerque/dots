@@ -1,4 +1,4 @@
-#files: 988	version: 5.9
+#files: 991	version: 5.9
 
 _comps=(
 '-' '_precommand'
@@ -143,6 +143,7 @@ _comps=(
 'cal' '_cal'
 'calendar' '_calendar'
 'cap' '_cap'
+'cargo' '_cargo'
 'cask' '_cask'
 'cat' '_cat'
 'catchsegv' '_precommand'
@@ -1229,6 +1230,7 @@ _comps=(
 'run-help' '_run-help'
 'rup' '_hosts'
 'rusage' '_precommand'
+'rustup' '_rustup'
 'rview' '_vim'
 'rvim' '_vim'
 'rwho' '_hosts'
@@ -2059,7 +2061,7 @@ autoload -Uz _afew _android _archlinux-java _artisan _atach \
             _widgets _zargs _zattr _zcalc _zcalc_line \
             _zcompile _zed _zftp _zle _zmodload \
             _zmv _zparseopts _zpty _zsh-mime-handler _zsocket \
-            _zstyle _ztodo
+            _zstyle _ztodo _cargo _rustup _starship
 autoload -Uz +X _call_program
 
 typeset -gUa _comp_assocs

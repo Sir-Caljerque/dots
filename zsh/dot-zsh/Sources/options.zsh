@@ -1,5 +1,5 @@
 # new opts
-setopt correct interactivecomments numericglobsort 
+setopt correct interactivecomments numericglobsort
 setopt hist_expire_dups_first hist_ignore_dups
 setopt appendhistory
 setopt notify

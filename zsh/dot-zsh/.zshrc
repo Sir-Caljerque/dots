@@ -3,15 +3,14 @@ clear
 rand=$((RANDOM))
 
 [[ -z "$NVIM" ]] &&
-if (( rand % 2 == 0 )); then
+  if ((rand % 2 == 0)); then
     fastfetch --logo ~/Pictures/wallpaps/bridWithKicks.png --logo-width 48 --logo-height 27
-else
+  else
     fastfetch --logo ~/Pictures/wallpaps/bridNoKicks.png --logo-width 48 --logo-height 27
-fi
+  fi
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
-
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -20,7 +19,7 @@ ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
 HISTFILE=~/.zsh_history
-HISTSIZE=1000
+HISTSIZE=2000
 SAVEHIST=2000
 setopt autocd extendedglob nomatch
 
@@ -31,59 +30,41 @@ export KEYTIMEOUT=1
 # The following lines were added by compinstall
 zstyle :compinstall filename '$HOME/.zsh/.zshrc'
 
+fpath+=("$ZDOTDIR/completions")
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 _comp_options+=(globdots) # With hidden files
 
-# Enable editing prompt in vim
-autoload edit-command-line; zle -N edit-command-line
-bindkey '' edit-command-line
-
-# Blocky cursor on normal, but line on insert
-function zle-keymap-select {
-  if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
-    echo -ne '\e[1 q'
-  elif [[ ${KEYMAP} == main ]] ||
-       [[ ${KEYMAP} == viins ]] ||
-       [[ ${KEYMAP} = '' ]] ||
-       [[ $1 = 'beam' ]]; then
-    echo -ne '\e[5 q'
-  fi
-}
-zle -N zle-keymap-select
-zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[5 q"
-}
-zle -N zle-line-init
-echo -ne '\e[5 q' # Use beam shape cursor on startup.
-preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
-
 # fpath=(~/.zsh/functions $fpath)
 # autoload -Uz $functions_in_path
-
-# Source options and zstyle config
-source ~/.zsh/Sources/options.zsh
 
 # themes/plugin sources
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+# Substring search keybinds
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 for file in $ZDOTDIR/plugins/*.zsh; do
   source "$file"
 done
-# source ~/.zsh/plugins/completions/rustup.zsh
+
+# for file in $ZDOTDIR/completions/*.zsh; do
+#   source "$file"
+# done
 
 # keybinding sources
 for file in $ZDOTDIR/keybindings/*.zsh; do
   source "$file"
 done
 
-# Source aliases
-source ~/.zsh/Sources/aliases.zsh
-# trash-put/trash   trash files and directories. 
+# Source aliases, options and zstyle config
+for file in $ZDOTDIR/Sources/*.zsh; do
+  source "$file"
+done
+# trash-put/trash   trash files and directories.
 # trash-empty         empty the trashcan(s).
 # trash-list          list trashed files.
 # trash-restore       restore a trashed file.

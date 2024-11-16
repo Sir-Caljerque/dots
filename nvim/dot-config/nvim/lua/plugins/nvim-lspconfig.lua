@@ -158,7 +158,7 @@ local config = function()
   lspconfig.bashls.setup({
     -- capabilities = capabilities,
     -- on_attach = on_attach,
-    filetypes = { "sh" },
+    filetypes = { "sh", "zsh" },
     settings = {
       bashIde = {
         shfmt = {
@@ -198,6 +198,7 @@ local config = function()
         operator_completions = true,
         include_at_in_builtins = true,
         use_comptime_interpreter = true,
+        zig_exe_path = "$HOME/Code/zig/zig-latest/zig"
       },
     },
   })

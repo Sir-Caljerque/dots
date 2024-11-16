@@ -1,35 +1,34 @@
-    ✓ alex
-    ✓ asm-lsp asm_lsp
-    ✓ basedpyright
-    ✓ bash-debug-adapter
-    ✓ bash-language-server bashls
-    ✓ clang-format
-    ✓ clangd
-    ✓ debugpy
-    ✓ delve
-    ✓ dockerfile-language-server dockerls
-    ✓ efm
-    ✓ emmet-ls emmet_ls
-    ✓ fixjson
-    ✓ gofumpt
-    ✓ gopls
-    ✓ hadolint
-    ✓ hyprls
-    ✓ json-lsp jsonls
-    ✓ lua-language-server lua_ls
-    ✓ luacheck
-    ✓ markdown-oxide markdown_oxide
-    ✓ mypy
-    ✓ prettierd
-    ✓ python-lsp-server pylsp
-    ✓ ruff
-    ✓ rust-analyzer rust_analyzer
-    ✓ shellcheck
-    ✓ shfmt
-    ✓ solidity-ls solidity
-    ✓ staticcheck
-    ✓ stylua
-    ✓ taplo
-    ✓ typescript-language-server ts_ls
-    ✓ zls
-
+alex
+asm-lsp asm_lsp
+basedpyright
+bash-debug-adapter
+bash-language-server bashls
+clang-format
+clangd
+debugpy
+delve
+dockerfile-language-server dockerls
+efm
+emmet-ls emmet_ls
+fixjson
+gofumpt
+gopls
+hadolint
+hyprls
+json-lsp jsonls
+lua-language-server lua_ls
+luacheck
+markdown-oxide markdown_oxide
+mypy
+prettierd
+python-lsp-server pylsp
+ruff
+rust-analyzer rust_analyzer
+shellcheck
+shfmt
+solidity-ls solidity
+staticcheck
+stylua
+taplo
+typescript-language-server ts_ls
+zls
