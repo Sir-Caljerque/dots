@@ -18,7 +18,7 @@ ENABLE_CORRECTION="true"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 COMPLETION_WAITING_DOTS="true"
 
-HISTFILE=~/.zsh_history
+HISTFILE="$ZDOTDIR/.zsh_history"
 HISTSIZE=2000
 SAVEHIST=2000
 setopt autocd extendedglob nomatch
@@ -28,7 +28,7 @@ bindkey -v
 export KEYTIMEOUT=1
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '$HOME/.zsh/.zshrc'
+zstyle :compinstall filename "$ZDOTDIR/.zshrc"
 
 fpath+=("$ZDOTDIR/completions")
 autoload -Uz compinit
@@ -61,7 +61,7 @@ for file in $ZDOTDIR/keybindings/*.zsh; do
 done
 
 # Source aliases, options and zstyle config
-for file in $ZDOTDIR/Sources/*.zsh; do
+for file in $ZDOTDIR/sources/*.zsh; do
   source "$file"
 done
 # trash-put/trash   trash files and directories.
