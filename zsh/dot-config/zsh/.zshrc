@@ -4,9 +4,9 @@ rand=$((RANDOM))
 
 [[ -z "$NVIM" ]] &&
   if ((rand % 2 == 0)); then
-    fastfetch --logo ~/Pictures/wallpaps/bridWithKicks.png --logo-width 48 --logo-height 27
+    fastfetch --logo ~/Pictures/bridWithKicks.png --logo-width 48 --logo-height 27
   else
-    fastfetch --logo ~/Pictures/wallpaps/bridNoKicks.png --logo-width 48 --logo-height 27
+    fastfetch --logo ~/Pictures/bridNoKicks.png --logo-width 48 --logo-height 27
   fi
 
 # Uncomment the following line to enable command auto-correction.
@@ -47,7 +47,7 @@ source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
-for file in $ZDOTDIR/plugins/*.zsh; do
+for file in "$ZDOTDIR"/plugins/*.zsh; do
   source "$file"
 done
 
@@ -56,12 +56,12 @@ done
 # done
 
 # keybinding sources
-for file in $ZDOTDIR/keybindings/*.zsh; do
+for file in "$ZDOTDIR"/keybindings/*.zsh; do
   source "$file"
 done
 
 # Source aliases, options and zstyle config
-for file in $ZDOTDIR/sources/*.zsh; do
+for file in "$ZDOTDIR"/sources/*.zsh; do
   source "$file"
 done
 # trash-put/trash   trash files and directories.
@@ -71,12 +71,13 @@ done
 # trash-rm            remove individual files from the trashcan.
 
 # Source functions
-for file in $ZDOTDIR/functions/*.zsh; do
+for file in "$ZDOTDIR"/functions/*.zsh; do
   source "$file"
 done
 
 # Change starship config location
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
+export DEFAULT_DISPLAY="DP-2"
 
 # Start up programs
 eval "$(zoxide init --cmd cd zsh)"

@@ -1,5 +1,5 @@
 # aliases
-alias zconf="nvim ~/.zsh/.zshrc"
+alias zconf="nvim $ZDOTDIR/.zshrc"
 alias nv='nvim'
 
 alias ls='lsd -hF --color=auto'

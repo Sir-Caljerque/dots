@@ -36,10 +36,10 @@ function pacdisowned() {
 
   trap "rm -rf $tmp_dir" EXIT
 
-  pacman -Qlq | sort -u > "$db"
+  pacman -Qlq | sort -u >"$db"
 
   find /etc /usr ! -name lost+found \
-    \( -type d -printf '%p/\n' -o -print \) | sort > "$fs"
+    \( -type d -printf '%p/\n' -o -print \) | sort >"$fs"
 
   comm -23 "$fs" "$db"
 
@@ -58,7 +58,7 @@ function pacmansignkeys() {
   done
 }
 
-if (( $+commands[xdg-open] )); then
+if (($+commands[xdg - open])); then
   function pacweb() {
     if [[ $# = 0 || "$1" =~ '--help|-h' ]]; then
       local underline_color="\e[${color[underline]}m"
@@ -74,26 +74,22 @@ if (( $+commands[xdg-open] )); then
     if [[ -z "$infos" ]]; then
       return
     fi
-    local repo="$(grep -m 1 '^Repo' <<< "$infos" | grep -oP '[^ ]+$')"
-    local arch="$(grep -m 1 '^Arch' <<< "$infos" | grep -oP '[^ ]+$')"
+    local repo="$(grep -m 1 '^Repo' <<<"$infos" | grep -oP '[^ ]+$')"
+    local arch="$(grep -m 1 '^Arch' <<<"$infos" | grep -oP '[^ ]+$')"
     xdg-open "https://www.archlinux.org/packages/$repo/$arch/$pkg/" &>/dev/null
   }
 fi
-
-
 
 #################################
 #          AUR helpers          #
 #################################
 
-
-if (( $+commands[paru] )); then
+if (($+commands[paru])); then
   alias paru='paru -a'
   alias parconf='paru -Pg'
   alias parclean='paru -Sc'
   alias parclr='paru -Scc'
   alias parupg='paru -Syu'
-  alias parsu='paru -Syu --noconfirm'
   alias parin='paru -S'
   alias parins='paru -U'
   alias parre='paru -R'
@@ -109,7 +105,6 @@ if (( $+commands[paru] )); then
   alias parupd='paru -Sy'
 fi
 
-
 # Check Arch Linux PGP Keyring before System Upgrade to prevent failure.
 function upgrade() {
   echo ":: Checking Arch Linux PGP Keyring..."
@@ -124,8 +119,8 @@ function upgrade() {
     echo " Proceeding with full system upgrade."
   fi
 
-  if (( $+commands[pacman])); then
-    sudo pacman -Syu
+  if (($+commands[pacman])); then
+    sudo pacman --noconfirm -Syu
     paru -Syu
   fi
 }

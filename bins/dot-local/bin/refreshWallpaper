@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+# #ff0000 WARNING: I dont think this works if you have spaces or any blank-type characters in the path to your wallpapers
+wallpap() (
+  for d in $(hyprctl monitors all | grep -i monitor | cut -d' ' -f2 | grep -v "1" | sort -r); do
+    # TODO make this better
+    bg="$(find "$HOME"/Pictures/wallpaps -type f | shuf -n1)"
+    hyprctl hyprpaper preload "$bg"
+    hyprctl hyprpaper wallpaper "$d,$bg"
+  done
+  hyprctl hyprpaper unload all
+  pap=$(hyprctl hyprpaper listactive G -i "$DEFAULT_DISPLAY" | cut -d' ' -f3)
+  wal -i "$pap"
+)
+wallpap &>/dev/null &

@@ -1,7 +1,8 @@
 # Default apps
 export EDITOR="nvim"
 export VISUAL="nvim"
-export BROWSER="zen-twilight"
+# export BROWSER="zen-twilight" ### Kinda useless, keeping it just in case
+# better off running something like `sed "%s/old-browser/new-browser/g"` on /usr/share/applications/mimeinfo.cache
 
 # PATH config
 typeset -U path PATH
