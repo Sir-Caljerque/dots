@@ -8,8 +8,9 @@ wallpap() (
     hyprctl hyprpaper preload "$bg"
     hyprctl hyprpaper wallpaper "$d,$bg"
   done
-  hyprctl hyprpaper unload all
-  pap=$(hyprctl hyprpaper listactive G -i "$DEFAULT_DISPLAY" | cut -d' ' -f3)
+  pap=$(hyprctl hyprpaper listactive | grep -i "$DEFAULT_DISPLAY" | cut -d' ' -f3)
   wal -i "$pap"
+  hyprctl hyprpaper unload all
 )
 wallpap &>/dev/null &
+hyprctl hyprpaper unload all

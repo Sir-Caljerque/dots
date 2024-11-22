@@ -64,7 +64,8 @@ nkm("v", "<C-/>", "gcc", { noremap = false })
 -- nkm("i", "<C-i>", "<Right>", { noremap = true, silent = true })
 
 -- Floating term secondary keys
-km.set({ "n", "v", "i", "o", "x", "t" }, "<C-\\>", "<cmd>ToggleTerm<CR>", { desc = "Toggle floating term" })
+km.set({ "n", "v", "i", "o", "x", "t" }, "<A-\\>", "<cmd>ToggleTerm<CR>", { desc = "Toggle bottom term" })
+km.set({ "n", "v", "i", "o", "x", "t" }, "<C-\\>", "<cmd>Lspsaga term_toggle<CR>", { desc = "Toggle floating term" })
 
 local duck = require("duck") -- for `duck` plugin keymap
 local builtin = require("telescope.builtin")

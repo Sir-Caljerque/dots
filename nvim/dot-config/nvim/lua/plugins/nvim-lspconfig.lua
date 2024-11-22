@@ -84,70 +84,71 @@ local config = function()
   })
 
   -- python
-  -- lspconfig.basedpyright.setup({
-  --   settings = {
-  --     basedpyright = {
-  --       disableLanguageServices = false,
-  --       disableOrganizeImports = true,
-  --       disableTaggedHints = false,
-  --       analysis = {
-  --         autoImportCompletions = true,
-  --         autoSearchPaths = true,
-  --         diagnosticMode = "openFilesOnly",
-  --         useLibraryCodeForTypes = true,
-  --         inlayHints = {
-  --           variableTypes = true,
-  --           callArgumentNames = true,
-  --           functionReturnTypes = true,
-  --           genericTypes = true,
-  --         },
-  --       },
-  --     },
-  --   },
-  -- })
-
-  lspconfig.pylsp.setup({
+  lspconfig.basedpyright.setup({
     settings = {
-      pylsp = {
-        plugins = {
-          pylsp_mypy = {
-            enabled = true,
-            live_mode = true,
-            disable_error_code = "annotation-unchecked"
+      basedpyright = {
+        disableLanguageServices = false,
+        disableOrganizeImports = true,
+        disableTaggedHints = false,
+        analysis = {
+          autoImportCompletions = true,
+          autoSearchPaths = true,
+          diagnosticMode = "openFilesOnly",
+          useLibraryCodeForTypes = true,
+          inlayHints = {
+            variableTypes = true,
+            callArgumentNames = true,
+            functionReturnTypes = true,
+            genericTypes = true,
           },
-          pylsp_rope = {
-            enabled = true,
-            rename = true,
-          },
-          isort = { enabled = true },
-        }
-      }
-    }
+        },
+      },
+    },
   })
 
-  -- Python #2
-  -- lspconfig.ruff_lsp.setup({
-  --   -- capabilities = capabilities,
-  --   -- on_attach = on_attach,
-  --   init_options = {
-  --     settings = {
-  --       args = {},
-  --       enable = true,
-  --       lineLength = 100,
-  --       run = "onType",
-  --       fixAll = true,
-  --       organizeImports = true,
-  --       showSyntaxErrors = true,
-  --       lint = {
-  --         enable = true,
-  --         preview = true,
-  --       },
-  --       format = {
-  --         preview = true,
+  -- lspconfig.pylsp.setup({
+  --   settings = {
+  --     pylsp = {
+  --       plugins = {
+  --         pylsp_mypy = {
+  --           enabled = true,
+  --           live_mode = true,
+  --           disable_error_code = "annotation-unchecked"
+  --         },
+  --         isort = { enabled = true },
+  --         rope_completion = { enabled = true },
+  --         pylint = { enabled = false },
+  --         autopep8 = { enabled = false },
+  --         flake8 = { enabled = false },
+  --         mccabe = { enabled = false },
+  --         yapf = { enabled = false },
+  --         pyflakes = { enabled = false },
+  --         pycodestyle = { enabled = false },
+  --         pydocstyle = { enabled = false }
   --       }
-  --     },
-  --   },
+  --     }
+  --   }
   -- })
+
+  -- Python #2
+  lspconfig.ruff.setup({
+    -- capabilities = capabilities,
+    -- on_attach = on_attach,
+    init_options = {
+      settings = {
+        configurationPreference = "filesystemFirst",
+        lineLength = 100,
+        organizeImports = true,
+        showSyntaxErrors = true,
+        codeAction = true,
+        lint = {
+          enable = true,
+          preview = true,
+          ignore = { "E501" },
+        }
+      },
+    },
+  })
 
   lspconfig.hyprls.setup({
     -- capabilities = capabilities,
@@ -158,7 +159,7 @@ local config = function()
   lspconfig.bashls.setup({
     -- capabilities = capabilities,
     -- on_attach = on_attach,
-    filetypes = { "sh", "zsh" },
+    filetypes = { "sh", },
     settings = {
       bashIde = {
         shfmt = {
@@ -352,10 +353,10 @@ local config = function()
   -- null-ls
 
   -- efmls
-  local luacheck = require("efmls-configs.linters.luacheck")            -- Lua
-  local stylua = require("efmls-configs.formatters.stylua")             -- Lua
-  local rufff = require("efmls-configs.formatters.ruff")                -- Python
-  local ruffl = require("efmls-configs.linters.ruff")                   -- Python
+  local luacheck = require("efmls-configs.linters.luacheck") -- Lua
+  local stylua = require("efmls-configs.formatters.stylua")  -- Lua
+  -- local rufff = require("efmls-configs.formatters.ruff")                -- Python
+  -- local ruffl = require("efmls-configs.linters.ruff")                   -- Python
   local mypy = require("efmls-configs.linters.mypy")                    -- Python
   local gcc = require("efmls-configs.linters.gcc")                      -- C
   local clang_format = require("efmls-configs.formatters.clang_format") -- C
@@ -411,7 +412,8 @@ local config = function()
       languages = {
         lua = { luacheck, stylua },
         -- python = { flake8, black },
-        python = { ruffl, mypy, rufff },
+        -- python = { ruffl, mypy, rufff },
+        python = { mypy },
         sh = { shellcheck, shfmt },
         c = { gcc, clang_format },
         rust = { rustfmt },
