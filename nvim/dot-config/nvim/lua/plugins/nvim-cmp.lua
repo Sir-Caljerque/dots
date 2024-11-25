@@ -27,6 +27,7 @@ return {
         snippet = {
           expand = function(args)
             luasnip.lsp_expand(args.body)
+            vim.snippet.expand(args.body)
           end,
         },
         window = {
@@ -41,7 +42,7 @@ return {
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
           ["<C-Space>"] = cmp_action.toggle_completion(), -- cmp.mapping.complete(), -- show completion suggestions
-          ["<C-e>"] = cmp.mapping.abort(),           -- close completion window
+          ["<C-e>"] = cmp.mapping.abort(),                -- close completion window
           ["<CR>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
               if luasnip.expandable() then
@@ -85,17 +86,18 @@ return {
                 keyword_pattern = [[\(\k\| \|\/\|#\)\+]]
               }
             }
-          },                             -- lsp
-          { name = "luasnip" },          -- snippets
-          { name = "buffer" },           -- text within current buffer
-          { name = "path" },             -- file system paths
+          },                    -- lsp
+          { name = "nvim_lsp_signature_help" },
+          { name = "luasnip" }, -- snippets
+          { name = "buffer" },  -- text within current buffer
+          {
+            name = "async_path",
+            show_hidden_files_by_default = true,
+          }, -- file system paths
           {
             name = "spell",
             option = {
               keep_all_entries = false,
-              enable_in_context = function()
-                return true
-              end,
               preselect_correct_word = false, -- true,
             },
           },
@@ -119,12 +121,37 @@ return {
           end
         end,
       })
+      cmp.setup.cmdline("/", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = 'nvim_lsp_document_symbol' }
+        }, {
+          { name = 'buffer' }
+        })
+      })
+      cmp.setup.cmdline(":", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+            { name = 'path' }
+          },
+          {
+            {
+              name = 'cmdline',
+              option = {
+                ignore_cmds = { 'Man', '!' }
+              }
+            }
+          })
+      })
       cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
     end,
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-nvim-lsp-signature-help",  -- Testing
+      "hrsh7th/cmp-nvim-lsp-document-symbol", -- Testing
+      -- "hrsh7th/cmp-path",
+      "FelipeLema/cmp-async-path",            -- !! but async
       "hrsh7th/cmp-cmdline",
       "onsails/lspkind.nvim",
       "L3MON4D3/LuaSnip",

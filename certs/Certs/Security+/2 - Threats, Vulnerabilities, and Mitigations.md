@@ -153,6 +153,22 @@ A checks value ... A retrieves value ... A uses value in a function             
 A checks value ... A retrieves value ... B changes value ... A uses (changed) value in a function               X :(
 
 # Malicious updates
+Always keep your operating system up to date
+
+When you update software, you are basically installing a new application, so you have to be careful not letting hackers inject malicious code into the app
+
+Follow best practices
+- Have backups
+- Install from trusted sources
+- BACKUPS~~
+- Dont trust a random download buttons
+- Dont disable security controls
+
+## SolarWinds Orion supply attack
+
+Dec 2020
+Attackers gained access to development system
+Added their own malicious codes to the update
 
 # --Study areas--
 
@@ -183,3 +199,13 @@ extra: MTTR Mean time to repair
 - 514
 - 1433
 - 3389
+
+## IT structure
+
+### Escalation
+
+does not necessarily mean privilege escalation
+
+for example, you make a support ticket because your OS crashes,
+it goes to L1s, who *dont know* how to solve it, so they **escalate** to L2s
+L2s dont have the privileges, so they **escalate** to the next group

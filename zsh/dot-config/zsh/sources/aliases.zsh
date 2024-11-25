@@ -1,4 +1,6 @@
 # aliases
+alias ...='../..'
+alias ....='../../..'
 alias zconf="nvim $ZDOTDIR/.zshrc"
 alias nv='nvim'
 
@@ -19,6 +21,8 @@ alias rmlst='trash-list'
 # trash-rm            remove individual files from the trashcan.
 alias paru='paru --bottomup -a'
 alias ssh='kitty +kitten ssh'
+
+alias rsdoc='rustup doc --book &>/dev/null'
 
 ### GLOBAL ALIAS ###
 alias -g ip='ip --color=auto'
