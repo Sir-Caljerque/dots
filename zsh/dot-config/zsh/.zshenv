@@ -1,4 +1,6 @@
 # Default apps
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+
 export EDITOR="nvim"
 export VISUAL="nvim"
 # export BROWSER="zen-twilight" ### Kinda useless, keeping it just in case
