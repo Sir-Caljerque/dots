@@ -27,15 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SecurityPlus.md",
+                "file": "practice_exam_questiions.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SecurityPlus"
+              "title": "practice_exam_questiions"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -192,23 +193,25 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "7da071b164ad39ec",
+  "active": "a4356933ff4f61f0",
   "lastOpenFiles": [
-    "ExamOBJs.pdf",
-    "2 - Threats, Vulnerabilities, and Mitigations.md",
+    "study-areas.md",
+    "practice_exam_questiions.md",
+    "practice_exam_questiions.md~",
+    "practice_exam.pdf",
+    "PortsCheatSheet.pdf",
     "2 - Threats, Vulnerabilities, and Mitigations.md~",
+    "study-areas.md~",
+    "SecurityPlus.md",
+    "2 - Threats, Vulnerabilities, and Mitigations.md",
+    "ExamOBJs.pdf",
     "1 - General security concepts.md",
     "class/Intrusion detection systems.md",
     "class/Lecture13-UserAuth.pdf",
     "class/Lecture12-IDS.pdf",
     "class/Lecture11-Firewalls.pdf",
     "class/Lecture9-SSL-TLS.pdf",
-    "class/Lecture8-NetworkAttacks.pdf",
-    "class/Lecture6-PKI.pdf",
-    "class/Lecture4-Hash.pdf",
-    "class/Lecture2-SymmetricEncryption.pdf",
     "zzzImages/Pasted image 20241108203712.png",
-    "SecurityPlus.md",
     "class/Firewalls.md",
     "zzzImages/Pasted image 20241031034239.png",
     "zzzImages/Pasted image 20241031013648.png",
