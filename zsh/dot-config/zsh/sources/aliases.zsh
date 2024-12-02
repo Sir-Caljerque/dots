@@ -22,7 +22,8 @@ alias rmlst='trash-list'
 alias paru='paru --bottomup -a'
 alias ssh='kitty +kitten ssh'
 
-alias rsdoc='rustup doc --book &>/dev/null'
+alias rsbook='rustup doc --book &>/dev/null'
+alias rsstd='rustup doc --std &>/dev/null'
 
 ### GLOBAL ALIAS ###
 alias -g ip='ip --color=auto'

@@ -1,4 +1,4 @@
-ex() {
+extract() {
   if [ -f "$1" ]; then
     case "$1" in
     *.7z)

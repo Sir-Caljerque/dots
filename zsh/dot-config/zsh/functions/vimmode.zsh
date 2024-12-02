@@ -1,6 +1,6 @@
 # Enable editing prompt in vim
 autoload edit-command-line; zle -N edit-command-line
-bindkey '' edit-command-line
+bindkey '^e' edit-command-line
 
 # Blocky cursor on normal, but line on insert
 function zle-keymap-select {

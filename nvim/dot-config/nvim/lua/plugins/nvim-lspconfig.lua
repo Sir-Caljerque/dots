@@ -204,41 +204,41 @@ local config = function()
     })
 
     -- rust
-    lspconfig.rust_analyzer.setup({
-        -- capabilities = capabilities,
-        -- on_attach = on_attach,
-        -- function(client, bufnr)
-        -- vim.lsp.inlay_hint.enable(bufnr)
-        cmd = { "$HOME/.cargo/bin/rust-analyzer" },
-        settings = {
-            ["rust-analyzer"] = {
-                checkOnSave = true,
-                diagnostics = {
-                    enable = true,
-                },
-                imports = {
-                    granularity = {
-                        group = "module",
-                    },
-                    prefix = "self",
-                },
-                cargo = {
-                    buildScripts = {
-                        enable = true,
-                    },
-                },
-                procMacro = {
-                    enable = true,
-                },
-                completion = {
-                    fullFunctionSignatures = true,
-                    termSearch = {
-                        enable = true
-                    }
-                }
-            },
-        },
-    })
+    -- lspconfig.rust_analyzer.setup({
+    --     -- capabilities = capabilities,
+    --     -- on_attach = on_attach,
+    --     -- function(client, bufnr)
+    --     -- vim.lsp.inlay_hint.enable(bufnr)
+    --     cmd = { "$HOME/.cargo/bin/rust-analyzer" },
+    --     settings = {
+    --         ["rust-analyzer"] = {
+    --             checkOnSave = true,
+    --             diagnostics = {
+    --                 enable = true,
+    --             },
+    --             imports = {
+    --                 granularity = {
+    --                     group = "module",
+    --                 },
+    --                 prefix = "self",
+    --             },
+    --             cargo = {
+    --                 buildScripts = {
+    --                     enable = true,
+    --                 },
+    --             },
+    --             procMacro = {
+    --                 enable = true,
+    --             },
+    --             completion = {
+    --                 fullFunctionSignatures = true,
+    --                 termSearch = {
+    --                     enable = true
+    --                 }
+    --             }
+    --         },
+    --     },
+    -- })
 
     -- Assembly
     lspconfig.asm_lsp.setup({

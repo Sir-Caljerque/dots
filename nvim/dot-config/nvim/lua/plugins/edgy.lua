@@ -9,7 +9,13 @@ return {
         config = function()
             require("edgy").setup({
 
-                left = {}, ---@type (Edgy.View.Opts|string)[]
+                left = {
+                    {
+                        ft = "sagaoutline",
+                        pinned = true,
+                        open = "Lspsaga outline",
+                    },
+                }, ---@type (Edgy.View.Opts|string)[]
                 -- Left
                 bottom = {
                     -- toggleterm / lazyterm at the bottom with a height of 40% of the screen
@@ -67,11 +73,6 @@ return {
                         end,
                         pinned = true,
                         open = "Neotree position=right git_status",
-                    },
-                    {
-                        ft = "Outline",
-                        pinned = true,
-                        open = "SymbolsOutlineOpen",
                     },
                     -- any other neo-tree windows
                     "neo-tree",
