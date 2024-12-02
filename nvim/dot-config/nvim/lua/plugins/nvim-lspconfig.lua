@@ -4,6 +4,7 @@ local diagnostic_signs = require("util.lsp").diagnostic_signs
 local config = function()
     require("neoconf").setup({})
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
+    local util = require("lspconfig.util")
     local lspconfig = require("lspconfig")
     local lsp_zero = require("lsp-zero")
     -- [[ THIS IS A TEST FMT/LINT TOOL ]]
@@ -204,12 +205,22 @@ local config = function()
     })
 
     -- rust
+    lspconfig.rust_analyzer.setup({
+        filetypes = { "rust" },
+        root_dir = util.root_pattern("Cargo.toml"),
+        settings = {
+            ['rust-analyzer'] = {
+                cargo = {
+                    allFeatures = true,
+                }
+            }
+        }
+    })
     -- lspconfig.rust_analyzer.setup({
     --     -- capabilities = capabilities,
     --     -- on_attach = on_attach,
     --     -- function(client, bufnr)
     --     -- vim.lsp.inlay_hint.enable(bufnr)
-    --     cmd = { "$HOME/.cargo/bin/rust-analyzer" },
     --     settings = {
     --         ["rust-analyzer"] = {
     --             checkOnSave = true,

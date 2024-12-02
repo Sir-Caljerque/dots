@@ -97,7 +97,11 @@ wk.add({
         { "<leader>gs",  function() vim.lsp.buf.signature_help() end,         desc = "Signature help",          silent = true, noremap = true },
     },
     -- End code section
+    -- Debug section
     { "<leader>d",   group = "+Debug" },
+    { "<leader>dt",  function() require("dap").toggle_breakpoint() end,            desc = "Toggle breakpoint",                            silent = true, noremap = true, },
+    { "<leader>dc",  function() require("dap").continue() end,                     desc = "Continue",                                     silent = true, noremap = true, },
+    -- End debug section
     -- Window management section
     { "<leader>s",   group = "+Split window" },
     { "<leader>sv",  "<cmd>vsplit<CR>",                                            desc = "Vertical" },
@@ -157,9 +161,10 @@ wk.add({
         { "s", function() require("flash").jump() end,       desc = "Flash", },
         { "S", function() require("flash").treesitter() end, desc = "Flash treesitter", },
     },
-    { "r",     function() require("flash").remote() end,            desc = "Remote Flash",        mode = { "o" } },
-    { "R",     function() require("flash").treesitter_search() end, desc = "Treesitter Search",   mode = { "o", "x" } },
-    { "<c-s>", function() require("flash").toggle() end,            desc = "Toggle Flash Search", mode = { "c" } },
+    { "r",       function() require("flash").remote() end,            desc = "Remote Flash",        mode = { "o" } },
+    { "R",       function() require("flash").treesitter_search() end, desc = "Treesitter Search",   mode = { "o", "x" } },
+    { "<c-s>",   function() require("flash").toggle() end,            desc = "Toggle Flash Search", mode = { "c" } },
+    { "<S-Esc>", "<C-\\><C-n>",                                       desc = "Exit terminal mode",  mode = { "t" } },
 })
 
 -- ############### OLD KEYMAPPINGS!!! ###############

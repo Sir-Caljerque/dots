@@ -87,7 +87,7 @@ return {
                             }
                         }
                     },                    -- lsp
-                    -- { name = "nvim_lsp_signature_help" },
+                    { name = "nvim_lsp_signature_help" },
                     { name = "luasnip" }, -- snippets
                     { name = "buffer" },  -- text within current buffer
                     {
