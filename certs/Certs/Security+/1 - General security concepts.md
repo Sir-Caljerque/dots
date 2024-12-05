@@ -1,3 +1,9 @@
+---
+id: 1 - General security concepts
+aliases: []
+tags: []
+---
+
 # Security controls
 
 [[SecurityPlus#The Six Basic Types of Security Controls]]
@@ -193,7 +199,7 @@ begins with:
 
 ### For example:
 
-![[Pasted image 20240924201240.png]]
+![GAP](assets/imgs/GAP.png)
 
 ## Finally...
 
@@ -279,7 +285,7 @@ Imagine it as having 2 different planes of operation
   - Access tokes and credentials may be an outcome of This
   - Everything is then sent to the PEP to tell it to allow, deny, or revoke access (using the policy administrator)
 
-![[Pasted image 20241018014743.png]]
+![Policy Enforcement Point](assets/imgs/PEP.png)
 
 # Physical Security
 
@@ -587,7 +593,7 @@ For successful communication, both sides must use the same encryption algorithms
 - Pros/Cons to different algorithms
     - Security level, speed, complexity, etc.
 
-![[Pasted image 20241031013648.png]]
+![AES DES](assets/imgs/Encryption_algos.png)
 
 ## Obscurity =/= security
 
@@ -646,7 +652,7 @@ A protected area for our secrets, often a physical hardware processor that is is
 - RT memory encryption
 - True RNG
 - AES ancryption in hardware
-w
+
 # Obfuscation
 
 Process of making something **unclear**
@@ -663,7 +669,7 @@ Process of making something **unclear**
 	- How credit cards work
 		- One time use token
 	- Original data and token not mathematically related
-	- ![[Pasted image 20241031034239.png]]
+	- ![Tokenization](assets/imgs/Tokenization.png)
 - Data masking
 	- Hide some of the original data
 		- CCN: 4684 3884 8432 8853
@@ -788,4 +794,3 @@ Made so that you don't have to download a massive CRL and checking against that
 Instead, the status of the certificate is held in the certificate holder's server itself, verified by the initial SSL/TLS handshake
 Status digitally signed by the CA
 Can also be verified by a third party
-

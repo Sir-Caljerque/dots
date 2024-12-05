@@ -4,11 +4,11 @@ alias ....='../../..'
 alias zconf="nvim $ZDOTDIR/.zshrc"
 alias nv='nvim'
 
-alias ls='lsd -hF --color=auto'
+alias ls='eza -h --icons=auto --color=auto --hyperlink'
 alias l='ls -A'
-alias ll='ls -l'
+alias ll='ls -ol'
 alias la='l -l'
-alias lall='la -R'
+alias lall='la -T'
 
 alias icat='kitten icat'
 alias rm='trash'
@@ -24,6 +24,8 @@ alias ssh='kitty +kitten ssh'
 
 alias rsbook='rustup doc --book &>/dev/null'
 alias rsstd='rustup doc --std &>/dev/null'
+
+alias we='watchexec --stop-timeout 2s'
 
 ### GLOBAL ALIAS ###
 alias -g ip='ip --color=auto'

@@ -1,3 +1,9 @@
+---
+id: study-areas
+aliases: []
+tags: []
+---
+
 # --Study areas--
 
 ## 5.2
@@ -8,7 +14,7 @@ C. **RTO** <u>Recovry time objective</u> - how fast you can get everything ready
     **PO** <u>Recovery point objective</u> - How much tolerance you have / how much data you're willing to lose until action needs to be taken
 D. **ARO** <u>annualized rate of occurance</u> - event frequency / how many times a server crashes in a span of time
 extra: MTTR Mean time to repair 
-![[Pasted image 20241108203712.png]]
+![Reparation lifecycle](assets/imgs/Reparation_lifecycle.png)
 
 ## Study port numbers
 

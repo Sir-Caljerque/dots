@@ -1,0 +1,191 @@
+{
+  "main": {
+    "id": "5358f100e2eef504",
+    "type": "split",
+    "children": [
+      {
+        "id": "81265a4ea16a956c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "be0246bcbd9203bb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2 - Source Material/Uni Lessons/COP3530 Lecture 5 - Lists.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "92dbd287e27f3ec1",
+    "type": "split",
+    "children": [
+      {
+        "id": "c24728d04ab22f0e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "838269070904481f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "9475514f717646b9",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "494dafff12b7a9bd",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "e1177415505edeab",
+    "type": "split",
+    "children": [
+      {
+        "id": "a0e26fe52528d516",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4a26b5adb09c8f78",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "2 - Source Material/Uni Lessons/COP3530 Lecture 5 - Lists.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f48821b5bed30279",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "2 - Source Material/Uni Lessons/COP3530 Lecture 5 - Lists.md",
+                "linksCollapsed": true,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "1dfbd79fb2852fc5",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "2c62b58086ce0571",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "2 - Source Material/Uni Lessons/COP3530 Lecture 5 - Lists.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 436.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "be0246bcbd9203bb",
+  "lastOpenFiles": [
+    "2 - Source Material/Uni Lessons/COP3530 Lectures 3 & 4 - Algorithm Analysis.md",
+    "2 - Source Material/Uni Lessons/COP3530 Lecture 5 - Lists.md",
+    "6 - Main Notes/COP3530 Lecture 5 - Lists.md",
+    "2 - Source Material/Uni Lessons/CDA3102 Module 1 - Transistors, Gates, and Digital Circuits.md",
+    "Pasted image 20240914155741.png",
+    "3 - Tags/binary-numbers.md",
+    "Untitled.canvas",
+    "Pasted image 20240910140519.png",
+    "Pasted image 20240910140203.png",
+    "Pasted image 20240909195128.png",
+    "Pasted image 20240909194517.png",
+    "Pasted image 20240909192545.png",
+    "Pasted image 20240908183737.png",
+    "Pasted image 20240908185638.png",
+    "Pasted image 20240908185614.png",
+    "Pasted image 20240908184009.png",
+    "6 - Main Notes/Signing Methods for Binary Numbers.md",
+    "6 - Main Notes/Float Structure in 32-bit Binary.md",
+    "6 - Main Notes/Why Floats Lose Precision in Binary.md",
+    "6 - Main Notes/Overflows in Binary Arithmetic.md",
+    "6 - Main Notes/IEC prefixes.md",
+    "5 - Templates/Basic Template.md",
+    "3 - Tags/data-storage.md",
+    "6 - Main Notes/2024-09-04.md",
+    "6 - Main Notes/Binary.md",
+    "3 - Tags/Bits.md",
+    "2 - Source Material/Untitled/Untitled",
+    "2 - Source Material/Uni Lessons",
+    "desktop.ini",
+    "6 - Main Notes/DLL Injection.md",
+    "Welcome.md",
+    "6 - Main Notes",
+    "5 - Templates",
+    "4 - Indexes",
+    "3 - Tags",
+    "2 - Source Material",
+    "1 - Rough Notes"
+  ]
+}

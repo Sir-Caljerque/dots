@@ -209,47 +209,35 @@ local config = function()
         filetypes = { "rust" },
         root_dir = util.root_pattern("Cargo.toml"),
         settings = {
-            ['rust-analyzer'] = {
+            ["rust-analyzer"] = {
+                checkOnSave = true,
+                diagnostics = {
+                    enable = true,
+                },
+                imports = {
+                    granularity = {
+                        group = "module",
+                    },
+                    prefix = "self",
+                },
                 cargo = {
                     allFeatures = true,
+                    buildScripts = {
+                        enable = true,
+                    },
+                },
+                procMacro = {
+                    enable = true,
+                },
+                completion = {
+                    fullFunctionSignatures = { enable = true },
+                    termSearch = {
+                        enable = true
+                    }
                 }
-            }
-        }
+            },
+        },
     })
-    -- lspconfig.rust_analyzer.setup({
-    --     -- capabilities = capabilities,
-    --     -- on_attach = on_attach,
-    --     -- function(client, bufnr)
-    --     -- vim.lsp.inlay_hint.enable(bufnr)
-    --     settings = {
-    --         ["rust-analyzer"] = {
-    --             checkOnSave = true,
-    --             diagnostics = {
-    --                 enable = true,
-    --             },
-    --             imports = {
-    --                 granularity = {
-    --                     group = "module",
-    --                 },
-    --                 prefix = "self",
-    --             },
-    --             cargo = {
-    --                 buildScripts = {
-    --                     enable = true,
-    --                 },
-    --             },
-    --             procMacro = {
-    --                 enable = true,
-    --             },
-    --             completion = {
-    --                 fullFunctionSignatures = true,
-    --                 termSearch = {
-    --                     enable = true
-    --                 }
-    --             }
-    --         },
-    --     },
-    -- })
 
     -- Assembly
     lspconfig.asm_lsp.setup({

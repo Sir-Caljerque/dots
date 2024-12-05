@@ -1,0 +1,197 @@
+{
+  "main": {
+    "id": "e815b0e72231dd2a",
+    "type": "split",
+    "children": [
+      {
+        "id": "edaeabc2f31bf43f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "de0dc746095d97b6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2 - Source Material/Uni Lessons/CDA3102 Module 2 - MUXes,  ALUs, Registers, RAM.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "CDA3102 Module 2 - MUXes,  ALUs, Registers, RAM"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f055504c529c1760",
+    "type": "split",
+    "children": [
+      {
+        "id": "8ea2364a68c61848",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2e4292598ae3a087",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "e415690cac67a2c5",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "11e1966f26f6cef9",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "8d5157cd738fd0b7",
+    "type": "split",
+    "children": [
+      {
+        "id": "9230b28243ee9f5f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "672e9e084357a623",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "2 - Source Material/Uni Lessons/CDA3102 Module 2 - MUXes,  ALUs, Registers, RAM.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for CDA3102 Module 2 - MUXes,  ALUs, Registers, RAM"
+            }
+          },
+          {
+            "id": "69c78c0db51f8442",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "2 - Source Material/Uni Lessons/CDA3102 Module 2 - MUXes,  ALUs, Registers, RAM.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from CDA3102 Module 2 - MUXes,  ALUs, Registers, RAM"
+            }
+          },
+          {
+            "id": "c2af0129de126470",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "08846f5303e159ae",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "2 - Source Material/Uni Lessons/CDA3102 Module 2 - MUXes,  ALUs, Registers, RAM.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of CDA3102 Module 2 - MUXes,  ALUs, Registers, RAM"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "de0dc746095d97b6",
+  "lastOpenFiles": [
+    "2 - Source Material/Uni Lessons/CDA3102 Module 1 - Transistors, Gates, and Digital Circuits.md",
+    "assets/imgs/Pasted image 20241013184318.png",
+    "assets/imgs/Pasted image 20241013182456.png",
+    "assets/imgs/Pasted image 20241013180947.png",
+    "assets/imgs/Pasted image 20241013175115.png",
+    "assets/imgs/Pasted image 20241013173648.png",
+    "assets/imgs/Pasted image 20241013162122.png",
+    "assets/imgs/Pasted image 20241013145524.png",
+    "assets/imgs/Pasted image 20241012225849.png",
+    "assets/imgs/Pasted image 20241012224013.png",
+    "assets/imgs/Pasted image 20241012223449.png",
+    "2 - Source Material/Uni Lessons/CDA3102 Module 2 - MUXes,  ALUs, Registers, RAM.md",
+    "3 - Tags/binary-numbers.md",
+    "assets/imgs",
+    "assets",
+    "3 - Tags/data-storage.md",
+    "5 - Templates/Basic Template.md",
+    "6 - Main Notes/Overflows in Binary Arithmetic.md",
+    "6 - Main Notes/IEC prefixes.md",
+    "6 - Main Notes/Float Structure in 32-bit Binary.md",
+    "6 - Main Notes/COP3530 Lecture 5 - Lists.md",
+    "2 - Source Material/Uni Lessons/COP3530 Lecture 5 - Lists.md",
+    "2 - Source Material/Uni Lessons/CDA3102 Module 3 - Understanding a Language (Basic CPU).md",
+    "2 - Source Material/Uni Lessons/COP3530 Lectures 3 & 4 - Algorithm Analysis.md",
+    "6 - Main Notes/Why Floats Lose Precision in Binary.md",
+    "6 - Main Notes/Signing Methods for Binary Numbers.md",
+    "desktop.ini",
+    "().md",
+    "Untitled.canvas"
+  ]
+}

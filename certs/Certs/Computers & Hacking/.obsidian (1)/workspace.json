@@ -1,0 +1,170 @@
+{
+  "main": {
+    "id": "e29d85e8ad1273c5",
+    "type": "split",
+    "children": [
+      {
+        "id": "ba7d010c7f3c5187",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6cd3879a60aa0604",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2 - Source Material/Uni Lessons/CDA3102 Module 3 - Understanding a Language (Basic CPU).md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6354e95cd44e5265",
+    "type": "split",
+    "children": [
+      {
+        "id": "1ea935f97dc85100",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "96acee709e5240d0",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "776dbad323f3acab",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "df5fda4b8b2b351c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "f1214e808bd8683b",
+    "type": "split",
+    "children": [
+      {
+        "id": "fbeef659a328c0cf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "51b05111c77d2b0e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "2 - Source Material/Uni Lessons/CDA3102 Module 3 - Understanding a Language (Basic CPU).md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "4448f2a33cc55b33",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "2 - Source Material/Uni Lessons/CDA3102 Module 3 - Understanding a Language (Basic CPU).md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "1f551de56ee743ee",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "87b20f6579332d24",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "2 - Source Material/Uni Lessons/CDA3102 Module 3 - Understanding a Language (Basic CPU).md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "6cd3879a60aa0604",
+  "lastOpenFiles": [
+    "Pasted image 20241013145524.png",
+    "Pasted image 20241013175115.png",
+    "Pasted image 20241012224013.png",
+    "Pasted image 20241013173648.png",
+    "Pasted image 20241012223449.png",
+    "Pasted image 20241013184318.png",
+    "Pasted image 20241013162122.png",
+    "Pasted image 20241013180947.png",
+    "Pasted image 20241012225849.png",
+    "Pasted image 20241013182456.png",
+    "Pasted image 20241012222848.png",
+    "().md",
+    "2 - Source Material/Uni Lessons/CDA3102 Module 3 - Understanding a Language (Basic CPU).md",
+    "2 - Source Material/Uni Lessons/CDA3102 Module 2 - MUXes,  ALUs, Registers, RAM.md",
+    "2 - Source Material/Uni Lessons/CDA3102 Module 1 - Transistors, Gates, and Digital Circuits.md",
+    "2 - Source Material/Uni Lessons/COP3530 Lecture 5 - Lists.md",
+    "2 - Source Material/Uni Lessons/COP3530 Lectures 3 & 4 - Algorithm Analysis.md",
+    "Untitled.md"
+  ]
+}

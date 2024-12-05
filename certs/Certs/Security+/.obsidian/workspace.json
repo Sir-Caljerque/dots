@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "practice_exam_questiions.md",
+                "file": "study-areas.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "practice_exam_questiions"
+              "title": "study-areas"
             }
           }
         ],
@@ -193,31 +193,37 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "a4356933ff4f61f0",
+  "active": "8130dc707501ad88",
   "lastOpenFiles": [
-    "study-areas.md",
+    "study-areas.md~",
+    "assets/imgs/1733139755-JRPC.md",
+    "assets/imgs/Reparation_lifecycle.png",
+    "assets/imgs/Pasted image 20241108203712.png",
+    "2 - Threats, Vulnerabilities, and Mitigations.md",
+    "1 - General security concepts.md",
+    "assets/imgs/Tokenization.png",
+    "assets/imgs/Pasted image 20241031034239.png",
+    "assets/imgs/Encryption_algos.png",
+    "assets/imgs/Pasted image 20241031013648.png",
+    "1 - General security concepts.md~",
+    "assets/imgs/PEP.png",
+    "assets/imgs/PolicyEnforementAgent.png",
+    "assets/imgs/Pasted image 20241018014743.png",
+    "assets/imgs/GAP.png",
     "practice_exam_questiions.md",
+    "study-areas.md",
     "practice_exam_questiions.md~",
     "practice_exam.pdf",
     "PortsCheatSheet.pdf",
     "2 - Threats, Vulnerabilities, and Mitigations.md~",
-    "study-areas.md~",
     "SecurityPlus.md",
-    "2 - Threats, Vulnerabilities, and Mitigations.md",
     "ExamOBJs.pdf",
-    "1 - General security concepts.md",
     "class/Intrusion detection systems.md",
     "class/Lecture13-UserAuth.pdf",
     "class/Lecture12-IDS.pdf",
     "class/Lecture11-Firewalls.pdf",
-    "class/Lecture9-SSL-TLS.pdf",
-    "zzzImages/Pasted image 20241108203712.png",
     "class/Firewalls.md",
-    "zzzImages/Pasted image 20241031034239.png",
-    "zzzImages/Pasted image 20241031013648.png",
-    "zzzImages/Pasted image 20241018014743.png",
     "Class.md",
-    "zzzImages/Pasted image 20240924201240.png",
     "Untitled.canvas"
   ]
 }

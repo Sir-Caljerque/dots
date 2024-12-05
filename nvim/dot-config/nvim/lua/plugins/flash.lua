@@ -1,31 +1,26 @@
 return {
-	{
-		"folke/flash.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		---@type Flash.Config
-		opts = {
-			jump = {
-				autojump = false,
-				nohlsearch = true,
-			},
-			highlight = {
-				-- show a backdrop with hl FlashBackdrop
-				backdrop = true,
-				-- Highlight the search matches
-				matches = true,
-				-- extmark priority
-				priority = 5000,
-				groups = {
-					match = "FlashMatch",
-					current = "FlashCurrent",
-					backdrop = "FlashBackdrop",
-					label = "FlashLabel",
-				},
-			},
-      rainbow = {
-        enabled = true,
-        shade = 8, -- 1-9
-      },
-		},
-	},
+    "folke/flash.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    ---@type Flash.Config
+    config = function()
+        require("flash").setup({
+            search = {
+                mode = "fuzzy",
+                exclude = {
+                    "neo-tree",
+                    "sagaoutline",
+                }
+            },
+            jump = {
+                nohlsearch = true,
+                autojump = false,
+            },
+            label = {
+                rainbow = {
+                    enabled = true,
+                    shade = 8, -- 1-9
+                },
+            }
+        })
+    end,
 }
