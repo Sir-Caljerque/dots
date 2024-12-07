@@ -1,175 +1,174 @@
 {
-  "main": {
-    "id": "eba7b136ac6b3262",
-    "type": "split",
-    "children": [
-      {
-        "id": "bb6a83ee82153ab5",
-        "type": "tabs",
+    "main": {
+        "id": "eba7b136ac6b3262",
+        "type": "split",
         "children": [
-          {
-            "id": "508981014282d7d2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "9 - Cloud Architecture/3 - Reliability and availability.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "3 - Reliability and availability"
+            {
+                "id": "bb6a83ee82153ab5",
+                "type": "tabs",
+                "children": [
+                    {
+                        "id": "508981014282d7d2",
+                        "type": "leaf",
+                        "state": {
+                            "type": "markdown",
+                            "state": {
+                                "file": "9 - Cloud Architecture/3 - Reliability and availability.md",
+                                "mode": "source",
+                                "source": false
+                            },
+                            "icon": "lucide-file",
+                            "title": "3 - Reliability and availability"
+                        }
+                    }
+                ]
             }
-          }
-        ]
-      }
-    ],
-    "direction": "vertical"
-  },
-  "left": {
-    "id": "8699e9fba62b792d",
-    "type": "split",
-    "children": [
-      {
-        "id": "f6830bd4e6871c39",
-        "type": "tabs",
+        ],
+        "direction": "vertical"
+    },
+    "left": {
+        "id": "8699e9fba62b792d",
+        "type": "split",
         "children": [
-          {
-            "id": "dd875c54d31640bd",
-            "type": "leaf",
-            "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-folder-closed",
-              "title": "Files"
+            {
+                "id": "f6830bd4e6871c39",
+                "type": "tabs",
+                "children": [
+                    {
+                        "id": "dd875c54d31640bd",
+                        "type": "leaf",
+                        "state": {
+                            "type": "file-explorer",
+                            "state": {
+                                "sortOrder": "alphabetical"
+                            },
+                            "icon": "lucide-folder-closed",
+                            "title": "Files"
+                        }
+                    },
+                    {
+                        "id": "f14bc96ce20bb1d5",
+                        "type": "leaf",
+                        "state": {
+                            "type": "search",
+                            "state": {
+                                "query": "",
+                                "matchingCase": false,
+                                "explainSearch": false,
+                                "collapseAll": false,
+                                "extraContext": false,
+                                "sortOrder": "alphabetical"
+                            },
+                            "icon": "lucide-search",
+                            "title": "Search"
+                        }
+                    },
+                    {
+                        "id": "96e1c171cbdae540",
+                        "type": "leaf",
+                        "state": {
+                            "type": "bookmarks",
+                            "state": {},
+                            "icon": "lucide-bookmark",
+                            "title": "Bookmarks"
+                        }
+                    }
+                ]
             }
-          },
-          {
-            "id": "f14bc96ce20bb1d5",
-            "type": "leaf",
-            "state": {
-              "type": "search",
-              "state": {
-                "query": "",
-                "matchingCase": false,
-                "explainSearch": false,
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical"
-              },
-              "icon": "lucide-search",
-              "title": "Search"
-            }
-          },
-          {
-            "id": "96e1c171cbdae540",
-            "type": "leaf",
-            "state": {
-              "type": "bookmarks",
-              "state": {},
-              "icon": "lucide-bookmark",
-              "title": "Bookmarks"
-            }
-          }
-        ]
-      }
-    ],
-    "direction": "horizontal",
-    "width": 300
-  },
-  "right": {
-    "id": "31225a89c27de8c0",
-    "type": "split",
-    "children": [
-      {
-        "id": "752433906c4574a2",
-        "type": "tabs",
+        ],
+        "direction": "horizontal",
+        "width": 300
+    },
+    "right": {
+        "id": "31225a89c27de8c0",
+        "type": "split",
         "children": [
-          {
-            "id": "5a9a330cc5c7dfe5",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "9 - Cloud Architecture/3 - Reliability and availability.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-coming-in",
-              "title": "Backlinks for 3 - Reliability and availability"
+            {
+                "id": "752433906c4574a2",
+                "type": "tabs",
+                "children": [
+                    {
+                        "id": "5a9a330cc5c7dfe5",
+                        "type": "leaf",
+                        "state": {
+                            "type": "backlink",
+                            "state": {
+                                "file": "9 - Cloud Architecture/3 - Reliability and availability.md",
+                                "collapseAll": false,
+                                "extraContext": false,
+                                "sortOrder": "alphabetical",
+                                "showSearch": false,
+                                "searchQuery": "",
+                                "backlinkCollapsed": false,
+                                "unlinkedCollapsed": true
+                            },
+                            "icon": "links-coming-in",
+                            "title": "Backlinks for 3 - Reliability and availability"
+                        }
+                    },
+                    {
+                        "id": "ffb44247444adc06",
+                        "type": "leaf",
+                        "state": {
+                            "type": "outgoing-link",
+                            "state": {
+                                "file": "9 - Cloud Architecture/3 - Reliability and availability.md",
+                                "linksCollapsed": false,
+                                "unlinkedCollapsed": true
+                            },
+                            "icon": "links-going-out",
+                            "title": "Outgoing links from 3 - Reliability and availability"
+                        }
+                    },
+                    {
+                        "id": "9a2a76b88c84baaa",
+                        "type": "leaf",
+                        "state": {
+                            "type": "tag",
+                            "state": {
+                                "sortOrder": "frequency",
+                                "useHierarchy": true
+                            },
+                            "icon": "lucide-tags",
+                            "title": "Tags"
+                        }
+                    },
+                    {
+                        "id": "e10a5de7417f6264",
+                        "type": "leaf",
+                        "state": {
+                            "type": "outline",
+                            "state": {
+                                "file": "9 - Cloud Architecture/3 - Reliability and availability.md"
+                            },
+                            "icon": "lucide-list",
+                            "title": "Outline of 3 - Reliability and availability"
+                        }
+                    }
+                ]
             }
-          },
-          {
-            "id": "ffb44247444adc06",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "9 - Cloud Architecture/3 - Reliability and availability.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-going-out",
-              "title": "Outgoing links from 3 - Reliability and availability"
-            }
-          },
-          {
-            "id": "9a2a76b88c84baaa",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
-              },
-              "icon": "lucide-tags",
-              "title": "Tags"
-            }
-          },
-          {
-            "id": "e10a5de7417f6264",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "9 - Cloud Architecture/3 - Reliability and availability.md"
-              },
-              "icon": "lucide-list",
-              "title": "Outline of 3 - Reliability and availability"
-            }
-          }
-        ]
-      }
-    ],
-    "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
-  },
-  "left-ribbon": {
-    "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "markdown-importer:Open format converter": false,
-      "audio-recorder:Start/stop recording": false,
-      "obsidian-importer:Open Importer": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "remotely-save:Remotely Save": false
-    }
-  },
-  "active": "508981014282d7d2",
-  "lastOpenFiles": [
-    "zzzImages/Pasted image 20240826213236.png",
-    "9 - Cloud Architecture/3 - Reliability and availability.md"
-  ]
+        ],
+        "direction": "horizontal",
+        "width": 300,
+        "collapsed": true
+    },
+    "left-ribbon": {
+        "hiddenItems": {
+            "switcher:Open quick switcher": false,
+            "graph:Open graph view": false,
+            "canvas:Create new canvas": false,
+            "daily-notes:Open today's daily note": false,
+            "templates:Insert template": false,
+            "command-palette:Open command palette": false,
+            "markdown-importer:Open format converter": false,
+            "audio-recorder:Start/stop recording": false,
+            "obsidian-importer:Open Importer": false,
+            "table-editor-obsidian:Advanced Tables Toolbar": false,
+        }
+    },
+    "active": "508981014282d7d2",
+    "lastOpenFiles": [
+        "zzzImages/Pasted image 20240826213236.png",
+        "9 - Cloud Architecture/3 - Reliability and availability.md"
+    ]
 }

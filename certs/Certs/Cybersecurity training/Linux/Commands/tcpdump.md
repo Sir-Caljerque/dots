@@ -5,3 +5,4 @@
 * 
 ![[Pasted image 20231218115935.png]]
 
+-r *file* to read from file
