@@ -41,8 +41,8 @@ km.set("n", "<A-t>", ":Neotree filesystem reveal right toggle<CR>", { noremap = 
 km.set("n", "<A-d>", ":Neotree focus<CR>", { noremap = true, silent = true })
 
 -- Indenting
-km.set("v", "<", "<gv", { desc = "left shift indent" })  -- Shift Indentation to Left
-km.set("v", ">", ">gv", { desc = "right shift indent" }) -- Shift Indentation to Right
+km.set({ "v", "n" }, "<", "<gv", { desc = "left shift indent" })  -- Shift Indentation to Left
+km.set({ "v", "n" }, ">", ">gv", { desc = "right shift indent" }) -- Shift Indentation to Right
 
 -- Comments
 nkm("n", "<C-/>", "gcc", { noremap = false })
@@ -114,7 +114,8 @@ wk.add({
     -- End window management section
     -- Telescope section
     { "<leader>f",   group = "+Find" },
-    { "<leader>ff",  builtin.find_files,                                           desc = "Files" },
+    { "<leader>ff",  "<cmd>Yazi<cr>",                                              desc = "Files" },
+    { "<leader>F",   builtin.find_files,                                           desc = "Fuzzy files" },
     { "<leader>fg",  builtin.live_grep,                                            desc = "Live grep" },
     { "<leader>fb",  builtin.buffers,                                              desc = "Buffers" },
     { "<leader>fk",  builtin.keymaps,                                              desc = "Keymaps" },

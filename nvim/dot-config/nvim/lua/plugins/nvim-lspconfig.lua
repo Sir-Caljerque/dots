@@ -2,7 +2,9 @@ local on_attach = require("util.lsp").on_attach
 local diagnostic_signs = require("util.lsp").diagnostic_signs
 
 local config = function()
-    require("neoconf").setup({})
+    require("neoconf").setup({
+        live_reload = true,
+    })
     local cmp_nvim_lsp = require("cmp_nvim_lsp")
     local util = require("lspconfig.util")
     local lspconfig = require("lspconfig")
@@ -205,39 +207,39 @@ local config = function()
     })
 
     -- rust
-    lspconfig.rust_analyzer.setup({
-        filetypes = { "rust" },
-        root_dir = util.root_pattern("Cargo.toml"),
-        settings = {
-            ["rust-analyzer"] = {
-                checkOnSave = true,
-                diagnostics = {
-                    enable = true,
-                },
-                imports = {
-                    granularity = {
-                        group = "module",
-                    },
-                    prefix = "self",
-                },
-                cargo = {
-                    allFeatures = true,
-                    buildScripts = {
-                        enable = true,
-                    },
-                },
-                procMacro = {
-                    enable = true,
-                },
-                completion = {
-                    fullFunctionSignatures = { enable = true },
-                    termSearch = {
-                        enable = true
-                    }
-                }
-            },
-        },
-    })
+    -- lspconfig.rust_analyzer.setup({
+    --     filetypes = { "rust" },
+    --     root_dir = util.root_pattern("Cargo.toml"),
+    --     settings = {
+    --         ["rust-analyzer"] = {
+    --             checkOnSave = true,
+    --             diagnostics = {
+    --                 enable = true,
+    --             },
+    --             imports = {
+    --                 granularity = {
+    --                     group = "module",
+    --                 },
+    --                 prefix = "self",
+    --             },
+    --             cargo = {
+    --                 allFeatures = true,
+    --                 buildScripts = {
+    --                     enable = true,
+    --                 },
+    --             },
+    --             procMacro = {
+    --                 enable = true,
+    --             },
+    --             completion = {
+    --                 fullFunctionSignatures = { enable = true },
+    --                 termSearch = {
+    --                     enable = true
+    --                 }
+    --             }
+    --         },
+    --     },
+    -- })
 
     -- Assembly
     lspconfig.asm_lsp.setup({

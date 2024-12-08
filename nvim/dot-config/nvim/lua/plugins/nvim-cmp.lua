@@ -87,7 +87,6 @@ return {
                             }
                         }
                     },                    -- lsp
-                    { name = "nvim_lsp_signature_help" },
                     { name = "luasnip" }, -- snippets
                     { name = "buffer" },  -- text within current buffer
                     {
@@ -148,7 +147,6 @@ return {
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-buffer",
-            "hrsh7th/cmp-nvim-lsp-signature-help",  -- Testing
             "hrsh7th/cmp-nvim-lsp-document-symbol", -- Testing
             -- "hrsh7th/cmp-path",
             "FelipeLema/cmp-async-path",            -- !! but async
