@@ -39,6 +39,7 @@ km.set("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 -- neo-tree
 km.set("n", "<A-t>", ":Neotree filesystem reveal right toggle<CR>", { noremap = true, silent = true })
 km.set("n", "<A-d>", ":Neotree focus<CR>", { noremap = true, silent = true })
+-- km.set("n", "<A-t>", ":CHADopen<CR>", { noremap = true, silent = true })
 
 -- Indenting
 km.set({ "v", "n" }, "<", "<gv", { desc = "left shift indent" })  -- Shift Indentation to Left

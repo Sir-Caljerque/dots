@@ -1,6 +1,4 @@
 # Default apps
-export GNUPGHOME="$XDG_DATA_HOME/gnupg"
-
 export EDITOR="nvim"
 export VISUAL="nvim"
 # export BROWSER="zen-twilight" ### Kinda useless, keeping it just in case
@@ -24,3 +22,6 @@ export GDK_BACKEND=wayland
 if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
   export MOZ_ENABLE_WAYLAND=1
 fi
+
+PATH=$(echo $PATH | tr ':' '\n' | grep -v '/usr/lib/rustup' | tr '\n' ':' | sed 's/:$//')
+export PATH

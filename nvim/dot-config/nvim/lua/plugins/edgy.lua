@@ -57,6 +57,10 @@ return {
                         size = { height = 0.5 },
                     },
                     {
+                        ft = "CHADTree",
+
+                    },
+                    {
                         title = "Neo-Tree Buffers",
                         ft = "neo-tree",
                         filter = function(buf)

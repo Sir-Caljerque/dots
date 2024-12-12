@@ -1,0 +1,49 @@
+#!/usr/bin/zsh
+
+# Check if `stat` says if it's a regular file or a dir and
+# ignore error output
+file=${1/#\~\//$HOME/}
+type=$(file --dereference --mime -- "$file")
+
+if [[ ! $type =~ image/ ]]; then
+    if [[ $type =~ directory ]]; then
+        if command -v eza > /dev/null; then
+            eza -Th --icons=auto --color=always "$file"
+        else
+            ls --color=always "$file"
+            exit
+        fi
+    fi
+
+    if [[ $type =~ binary ]]; then
+        xxd -R always "$file"
+        exit
+    fi
+
+    if command -v bat > /dev/null; then
+        bat --paging=never --color=always "$file"
+        exit
+    fi
+
+    cat "$file"
+    exit
+fi
+
+dimensions=${FZF_PREVIEW_COLUMNS}x${FZF_PREVIEW_LINES}
+if [[ $dimensions = x ]]; then
+    dimensions=$(stty size < /dev/tty | awk '{print $2 "x" $1}')
+elif ! [[ $KITTY_WINDOW_ID ]] && (( FZF_PREVIEW_TOP + FZF_PREVIEW_LINES == $(stty size < /dev/tty | awk '{print $1}') )); then
+    # Avoid scrolling issue when the Sixel image touches the bottom of the screen
+    # * https://github.com/junegunn/fzf/issues/2544
+    dimensions=${FZF_PREVIEW_COLUMNS}x$((FZF_PREVIEW_LINES - 1))
+fi
+
+if [[ $KITTY_WINDOW_ID ]]; then
+    # 1. 'memory' is the fastest option but if you want the image to be scrollable,
+    #    you have to use 'stream'.
+    #
+    # 2. The last line of the output is the ANSI reset code without newline.
+    #    This confuses fzf and makes it render scroll offset indicator.
+    #    So we remove the last line and append the reset code to its previous line.
+    kitty icat --clear --transfer-mode=memory --unicode-placeholder --stdin=no --place="$dimensions@0x0" "$file" | sed '$d' | sed $'$s/$/\e[m/'
+fi
