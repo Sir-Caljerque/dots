@@ -1,6 +1,6 @@
 function startup() {
     clear
-    rand=$((RANDOM))
+    local rand=$((RANDOM))
 
     [[ -z "$NVIM" ]] &&
         if ((rand % 2 == 0)); then

@@ -9,9 +9,7 @@ alias paclean='sudo pacman -Sc'
 alias pacins='sudo pacman -U'
 alias paclr='sudo pacman -Scc'
 alias pacre='sudo pacman -R'
-alias pacrem='sudo pacman -Rns'
 alias pacrep='pacman -Si'
-alias pacreps='pacman -Ss'
 alias pacloc='pacman -Qi'
 alias paclocs='pacman -Qs'
 alias pacind='sudo pacman -S --asdeps'
@@ -23,6 +21,24 @@ alias pacfiles='pacman -F'
 alias pacls='pacman -Ql'
 alias pacown='pacman -Qo'
 alias pacupd="sudo pacman -Sy"
+
+function pacreps() {
+    if [[ $# == 0 ]]; then
+        pacman -Slq | fzf --multi --preview "pacman --color always -Ss '^{1}$'" | xargs -ro sudo pacman -S
+        return
+    fi
+    
+    pacman -Ss "$@"
+}
+
+function pacrem() {
+    if [[ $# == 0 ]]; then
+        pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns
+        return
+    fi
+    
+    sudo pacman -Rns "$@"
+}
 
 function paclist() {
     pacman -Qqe | xargs -I{} -P0 --no-run-if-empty pacman -Qs --color=auto "^{}\$"
@@ -85,7 +101,7 @@ function pacmansignkeys() {
 #################################
 
 if (($+commands[paru])); then
-    alias paru='paru --bottomup -a'
+    alias paru='paru'
     alias parconf='paru -Pg'
     alias parclean='paru -Sc'
     alias parclr='paru -Scc'
@@ -121,6 +137,8 @@ function upgrade() {
 
     if (($+commands[pacman])); then
         sudo pacman --noconfirm -Syu
-        paru -Syu
+        paru -Sua
+        zinit update &> /dev/null &
+        zinit self-update &> /dev/null &
     fi
 }

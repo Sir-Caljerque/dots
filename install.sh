@@ -25,8 +25,9 @@ install_pkgs() (
 
     sudo pacman -Syu --noconfirm \
         archlinux-wallpapers \
-        bat \
+        bat bat-extras \
         dunst \
+        entr \
         eza \
         fd \
         fuzzel \
@@ -37,6 +38,7 @@ install_pkgs() (
         rg \
         stow \
         trash-cli \
+        watchexec \
         wl-clipboard \
         yazi \
         zoxide \

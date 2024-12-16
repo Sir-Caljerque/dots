@@ -24,6 +24,8 @@ alias ssh='kitty +kitten ssh'
 alias rsbook='rustup doc --book &>/dev/null'
 alias rsstd='rustup doc --std &>/dev/null'
 
+alias brg='batgrep'
+
 alias we='watchexec --stop-timeout 2s'
 
 ### GLOBAL ALIAS ###
