@@ -8,7 +8,7 @@ alias ls='eza -h --icons=auto --color=auto --hyperlink'
 alias l='ls -A'
 alias ll='ls -ol'
 alias la='l -l'
-alias lall='la -T'
+alias lall='ll -T'
 
 alias icat='kitten icat'
 alias rm='trash'

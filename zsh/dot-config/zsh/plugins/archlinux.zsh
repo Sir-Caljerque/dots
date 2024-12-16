@@ -139,6 +139,8 @@ function upgrade() {
         sudo pacman --noconfirm -Syu
         paru -Sua
         zinit update &> /dev/null &
+        disown
         zinit self-update &> /dev/null &
+        disown
     fi
 }
