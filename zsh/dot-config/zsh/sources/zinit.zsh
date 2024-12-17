@@ -15,8 +15,9 @@ zinit wait lucid for \
     zsh-users/zsh-completions \
  atload"!_zsh_autosuggest_start" \
     zsh-users/zsh-autosuggestions
- atload"bindkey '^[[A' history-substring-search-up; bindkey '^[[B' history-substring-search-down" \
-    zsh-users/zsh-history-substring-search \
+
+zinit ice wait"0b" lucid atload"bindkey '^[[A' history-substring-search-up; bindkey '^[[B' history-substring-search-down"
+zinit light zsh-users/zsh-history-substring-search
 
 # zinit ice wait lucid
 # zinit light Aloxaf/fzf-tab

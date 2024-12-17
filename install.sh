@@ -30,24 +30,33 @@ install_pkgs() (
         entr \
         eza \
         fd \
+        ffmpegthumbnailer \
+        firewalld \
         fuzzel \
         fzf \
-        hyprland hyprpaper hypridle hyprlock \
+        grim \
+        hypr{land,paper,idle,lock} \
         kitty \
+        man-db man-pages \
         neovim \
-        rg \
+        noto-fonts-{emoji,cjk} \
+        pipewire pipewire-{pulse,jack,alsa} \
+        ripgrep \
+        signal-desktop \
+        slurp \
         stow \
         trash-cli \
         watchexec \
+        waybar \
         wl-clipboard \
         yazi \
         zoxide \
         zsh
 
-    paru -S clipse
+    paru -S clipse zen-twilight-avx2-bin
 )
 
-# TODO: Find a way to make the config files. E.g. Get the default monitor and set default
+# Find a way to make the config files. E.g. Get the default monitor and set default
 # workspaces and resolutions in hypr/hypr*
 # Would also need to check how many monitors you have and set workspaces accordingly
 
