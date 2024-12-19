@@ -5,7 +5,8 @@ local config = function()
     require("neoconf").setup({
         live_reload = true,
     })
-    local cmp_nvim_lsp = require("cmp_nvim_lsp")
+    -- local cmp_nvim_lsp = require("cmp_nvim_lsp")
+    local blink_cmp = require("blink.cmp")
     local util = require("lspconfig.util")
     local lspconfig = require("lspconfig")
     local lsp_zero = require("lsp-zero")
@@ -29,8 +30,9 @@ local config = function()
         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-    local capabilities = cmp_nvim_lsp.default_capabilities()
-    capabilities.textDocument.completion.completionItem.snippetSupport = true
+    -- local capabilities = cmp_nvim_lsp.default_capabilities()
+    -- capabilities.textDocument.completion.completionItem.snippetSupport = true
+    local capabilities = blink_cmp.get_lsp_capabilities()
 
     lsp_zero.extend_lspconfig({
         capabilities = capabilities,
@@ -461,8 +463,9 @@ return {
             "creativenull/efmls-configs-nvim",
             version = "v1.x.x",
         },
-        { "hrsh7th/nvim-cmp" },
-        { "hrsh7th/cmp-buffer" },
-        { "hrsh7th/cmp-nvim-lsp" },
+        { 'saghen/blink.cmp' },
+        -- { "hrsh7th/nvim-cmp" },
+        -- { "hrsh7th/cmp-buffer" },
+        -- { "hrsh7th/cmp-nvim-lsp" },
     },
 }

@@ -3,14 +3,21 @@ return {
     cmd = "Mason",
     lazy = false,
     event = "BufReadPre",
-    opts = {
-        PATH = "append",
-        ui = {
-            icons = {
-                package_installed = "✓",
-                package_pending = "➜",
-                package_uninstalled = "✗",
+    config = function()
+        require("mason").setup({
+            PATH = "append",
+            ui = {
+                border = "rounded",
+                icons = {
+                    package_installed = "✓",
+                    package_pending = "➜",
+                    package_uninstalled = "✗",
+                },
             },
-        },
-    },
+
+            pip = {
+                upgrade_pip = true,
+            },
+        })
+    end,
 }
