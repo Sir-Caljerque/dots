@@ -42,8 +42,8 @@ km.set("n", "<A-d>", ":Neotree focus<CR>", { noremap = true, silent = true })
 -- km.set("n", "<A-t>", ":CHADopen<CR>", { noremap = true, silent = true })
 
 -- Indenting
-km.set({ "v", "n" }, "<", "<gv", { desc = "left shift indent" })  -- Shift Indentation to Left
-km.set({ "v", "n" }, ">", ">gv", { desc = "right shift indent" }) -- Shift Indentation to Right
+km.set("v", "<", "<gv", { desc = "left shift indent" })  -- Shift Indentation to Left
+km.set("v", ">", ">gv", { desc = "right shift indent" }) -- Shift Indentation to Right
 
 -- Comments
 nkm("n", "<C-/>", "gcc", { noremap = false })
@@ -158,15 +158,15 @@ wk.add({
     { "<leader>DK", function() duck.cook_all() end, desc = "Kill all", },
     -- End duck section
     -- Flash
-    {
-        mode = { "n", "x", "o" },
-        { "s", function() require("flash").jump() end,       desc = "Flash", },
-        { "S", function() require("flash").treesitter() end, desc = "Flash treesitter", },
-    },
-    { "r",       function() require("flash").remote() end,            desc = "Remote Flash",        mode = { "o" } },
-    { "R",       function() require("flash").treesitter_search() end, desc = "Treesitter Search",   mode = { "o", "x" } },
-    { "<c-s>",   function() require("flash").toggle() end,            desc = "Toggle Flash Search", mode = { "c" } },
-    { "<S-Esc>", "<C-\\><C-n>",                                       desc = "Exit terminal mode",  mode = { "t" } },
+    -- {
+    --     mode = { "n", "x", "o" },
+    --     { "s", function() require("flash").jump() end,       desc = "Flash", },
+    --     { "S", function() require("flash").treesitter() end, desc = "Flash treesitter", },
+    -- },
+    { "r", function() require("flash").remote() end, desc = "Remote Flash", mode = { "o" } },
+    { "R", function() require("flash").treesitter_search() end, desc = "Treesitter Search", mode = { "o", "x" } },
+    { "<c-s>", function() require("flash").toggle() end, desc = "Toggle Flash Search", mode = { "c" } },
+    { "<S-Esc>", "<C-\\><C-n>", desc = "Exit terminal mode", mode = { "t" } },
 })
 
 -- ############### OLD KEYMAPPINGS!!! ###############

@@ -273,6 +273,8 @@ return {
                 ["<S-Tab>"] = { "select_prev", "fallback" },
                 ["<C-n>"] = { "snippet_forward", "fallback" },
                 ["<C-p>"] = { "snippet_backward", "fallback" },
+                ["<Up>"] = { "fallback" },
+                ["<Down>"] = { "fallback" },
             },
 
             completion = {
