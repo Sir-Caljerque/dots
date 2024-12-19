@@ -15,23 +15,44 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 local function check_codelens_support()
-local clients = vim.lsp.get_clients({ bufnr = 0 })
-for _, c in ipairs(clients) do
-  if c.server_capabilities.codeLensProvider then
-    return true
-  end
-end
-return false
+    local clients = vim.lsp.get_clients({ bufnr = 0 })
+    for _, c in ipairs(clients) do
+        if c.server_capabilities.codeLensProvider then
+            return true
+        end
+    end
+    return false
 end
 
-vim.api.nvim_create_autocmd({ 'TextChanged', 'InsertLeave', 'CursorHold', 'LspAttach', 'BufEnter' }, {
-buffer = bufnr,
-callback = function ()
-  if check_codelens_support() then
-    vim.lsp.codelens.refresh({bufnr = 0})
-  end
-end
+vim.api.nvim_create_autocmd({ "TextChanged", "InsertLeave", "CursorHold", "LspAttach", "BufEnter" }, {
+    buffer = bufnr,
+    callback = function()
+        if check_codelens_support() then
+            vim.lsp.codelens.refresh({ bufnr = 0 })
+        end
+    end
 })
 -- trigger codelens refresh
-vim.api.nvim_exec_autocmds('User', { pattern = 'LspAttached' })
+vim.api.nvim_exec_autocmds("User", { pattern = "LspAttached" })
 
+-- Close all folds at file enter
+local function applyFoldsAndThenCloseAllFolds(bufnr, providerName)
+        require("async")(function()
+            bufnr = bufnr or vim.api.nvim_get_current_buf()
+            -- make sure buffer is attached
+            require("ufo").attach(bufnr)
+            -- getFolds return Promise if providerName == "lsp"
+            local ranges = await(require("ufo").getFolds(bufnr, providerName))
+            local ok = require("ufo").applyFolds(bufnr, ranges)
+            if ok then
+                require("ufo").closeAllFolds()
+            end
+        end)
+    end
+
+    vim.api.nvim_create_autocmd("BufRead", {
+        pattern = "*",
+        callback = function(e)
+            applyFoldsAndThenCloseAllFolds(e.buf, "lsp")
+        end
+    })
