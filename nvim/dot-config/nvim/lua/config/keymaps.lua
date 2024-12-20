@@ -76,26 +76,37 @@ wk.add({
     {
         mode = { "n", "v" },
         { "<leader>c",   group = "+Code" },
-        { "<leader>cA",  "<cmd>Lspsaga code_action<CR>",                      desc = "Actions extra",           silent = true },
-        { "<leader>ca",  function() vim.lsp.buf.code_action() end,            desc = "Actions",                 silent = true },
-        { "<leader>cf",  function() vim.lsp.buf.format({ async = true }) end, desc = "Format",                  silent = true },
+        { "<leader>cA",  "<cmd>Lspsaga code_action<CR>",                      desc = "Actions extra",         silent = true },
+        { "<leader>ca",  function() vim.lsp.buf.code_action() end,            desc = "Actions",               silent = true },
+        { "<leader>cf",  function() vim.lsp.buf.format({ async = true }) end, desc = "Format",                silent = true },
         { "<leader>cd",  group = "+Diagnostics" },
-        { "<leader>cdc", "<cmd>Lspsaga show_cursor_diagnostics<CR>",          desc = "Cursor diagnostics",      silent = true, noremap = true },
-        { "<leader>cdl", "<cmd>Lspsaga show_line_diagnostics<CR>",            desc = "Line diagnostics",        silent = true, noremap = true },
-        { "<leader>cdw", "<cmd>Lspsaga show_workspace_diagnostics<CR>",       desc = "Workspace diagnostics",   silent = true, noremap = true },
-        { "<leader>rn",  "<cmd>Lspsaga rename<CR>",                           desc = "Rename",                  silent = true, noremap = true },
-        { "<leader>gd",  "<cmd>Lspsaga peek_definition<CR>",                  desc = "Peek definition",         silent = true, noremap = true },
-        { "<leader>gt",  "<cmd>Lspsaga peek_type_definition<CR>",             desc = "Peek type definition",    silent = true, noremap = true },
-        { "<S-k>",       "<cmd>Lspsaga hover_doc<CR>",                        desc = "Hover documentation",     silent = true, noremap = true },
-        { "<A-n>",       "<cmd>Lspsaga diagnostic_jump_next<CR>",             desc = "Jump to next diagnostic", silent = true, noremap = true },
-        { "<A-p>",       "<cmd>Lspsaga diagnostic_jump_prev<CR>",             desc = "Jump to prev diagnostic", silent = true, noremap = true },
-        { "<leader>l",   group = "+Lspsaga features" },
-        { "<leader>lf",  "<cmd>Lspsaga finder<CR>",                           desc = "Finder",                  silent = true, noremap = true },
-        { "<leader>lo",  "<cmd>Lspsaga outline<CR>",                          desc = "Outline",                 silent = true, noremap = true },
-        { "<leader>gD",  function() vim.lsp.buf.declaration() end,            desc = "Peek declaration",        silent = true, noremap = true },
-        { "<leader>gi",  function() vim.lsp.buf.implementation() end,         desc = "Go to implementation",    silent = true, noremap = true },
-        { "<leader>gr",  function() vim.lsp.buf.references() end,             desc = "Go to references",        silent = true, noremap = true },
-        { "<leader>gs",  function() vim.lsp.buf.signature_help() end,         desc = "Signature help",          silent = true, noremap = true },
+        { "<leader>cdc", "<cmd>Lspsaga show_cursor_diagnostics<CR>",          desc = "Cursor diagnostics",    silent = true, noremap = true },
+        { "<leader>cdl", "<cmd>Lspsaga show_line_diagnostics<CR>",            desc = "Line diagnostics",      silent = true, noremap = true },
+        { "<leader>cdw", "<cmd>Lspsaga show_workspace_diagnostics<CR>",       desc = "Workspace diagnostics", silent = true, noremap = true },
+        { "<leader>rn",  "<cmd>Lspsaga rename<CR>",                           desc = "Rename",                silent = true, noremap = true },
+        { "<leader>gd",  "<cmd>Lspsaga peek_definition<CR>",                  desc = "Peek definition",       silent = true, noremap = true },
+        { "<leader>gt",  "<cmd>Lspsaga peek_type_definition<CR>",             desc = "Peek type definition",  silent = true, noremap = true },
+        {
+            "<S-k>",
+            function()
+                local winid = require("ufo").peekFoldedLinesUnderCursor()
+                if not winid then
+                    vim.cmd("Lspsaga hover_doc")
+                end
+            end,
+            desc = "Hover documentation",
+            silent = true,
+            noremap = true
+        },
+        { "<A-n>",      "<cmd>Lspsaga diagnostic_jump_next<CR>",     desc = "Jump to next diagnostic", silent = true, noremap = true },
+        { "<A-p>",      "<cmd>Lspsaga diagnostic_jump_prev<CR>",     desc = "Jump to prev diagnostic", silent = true, noremap = true },
+        { "<leader>l",  group = "+Lspsaga features" },
+        { "<leader>lf", "<cmd>Lspsaga finder<CR>",                   desc = "Finder",                  silent = true, noremap = true },
+        { "<leader>lo", "<cmd>Lspsaga outline<CR>",                  desc = "Outline",                 silent = true, noremap = true },
+        { "<leader>gD", function() vim.lsp.buf.declaration() end,    desc = "Peek declaration",        silent = true, noremap = true },
+        { "<leader>gi", function() vim.lsp.buf.implementation() end, desc = "Go to implementation",    silent = true, noremap = true },
+        { "<leader>gr", function() vim.lsp.buf.references() end,     desc = "Go to references",        silent = true, noremap = true },
+        { "<leader>gs", function() vim.lsp.buf.signature_help() end, desc = "Signature help",          silent = true, noremap = true },
     },
     -- End code section
     -- Debug section

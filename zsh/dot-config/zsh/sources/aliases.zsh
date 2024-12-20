@@ -28,6 +28,8 @@ alias brg='batgrep'
 
 alias we='watchexec --stop-timeout 2s'
 
+alias rgp='rg --pretty --trim'
+
 ### GLOBAL ALIAS ###
 alias -g ip='ip --color=auto'
 alias -g grep='grep --color=auto'

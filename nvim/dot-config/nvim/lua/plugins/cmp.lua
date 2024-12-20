@@ -109,7 +109,19 @@ return {
                 -- 		show_labelDetails = true,
                 -- 	}),
                 -- },
-                enabled = false,
+                enabled = function()
+                    local ft = vim.bo.filetype
+                    local cmdline_contexts = { "/", "?", ":" }
+
+                    -- Check if we are in command-line mode or Markdown file
+                    if vim.fn.getcmdtype() ~= "" then
+                        -- Command-line mode: enable for "/", "?", ":"
+                        return vim.tbl_contains(cmdline_contexts, vim.fn.getcmdtype())
+                    else
+                        -- Normal buffer: enable only for Markdown
+                        return ft == "markdown"
+                    end
+                end,
                 -- enabled = function()
                 --     -- disable completion in comments
                 --     local context = require("cmp.config.context")
@@ -278,6 +290,10 @@ return {
                 ["<Down>"] = { "fallback" },
             },
 
+            enabled = function()
+                return not vim.tbl_contains({ "markdown" }, vim.bo.filetype) and vim.bo.buftype ~= "prompt"
+            end,
+
             completion = {
                 list = {
                     selection = "manual",
@@ -359,6 +375,10 @@ return {
                         return { "lsp", "luasnip", "snippets", "path", "buffer" }
                     end
                 end,
+
+                per_filetype = {
+                    markdown = nil,
+                },
 
                 cmdline = function()
                     local type = vim.fn.getcmdtype()
