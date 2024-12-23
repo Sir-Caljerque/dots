@@ -27,9 +27,9 @@ km.set("n", "<C-a>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Wi
 km.set("n", "<C-d>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
 -- Pane Navigation
-km.set("n", "<C-h>", "<C-w>h", { desc = "navigate left window" })  -- Navigate Left
-km.set("n", "<C-j>", "<C-w>j", { desc = "navigate down window" })  -- Navigate Down
-km.set("n", "<C-k>", "<C-w>k", { desc = "navigate up window" })    -- Navigate Up
+km.set("n", "<C-h>", "<C-w>h", { desc = "navigate left window" }) -- Navigate Left
+km.set("n", "<C-j>", "<C-w>j", { desc = "navigate down window" }) -- Navigate Down
+km.set("n", "<C-k>", "<C-w>k", { desc = "navigate up window" }) -- Navigate Up
 km.set("n", "<C-l>", "<C-w>l", { desc = "navigate right window" }) -- Navigate Right
 
 -- buffers
@@ -42,7 +42,7 @@ km.set("n", "<A-d>", ":Neotree focus<CR>", { noremap = true, silent = true })
 -- km.set("n", "<A-t>", ":CHADopen<CR>", { noremap = true, silent = true })
 
 -- Indenting
-km.set("v", "<", "<gv", { desc = "left shift indent" })  -- Shift Indentation to Left
+km.set("v", "<", "<gv", { desc = "left shift indent" }) -- Shift Indentation to Left
 km.set("v", ">", ">gv", { desc = "right shift indent" }) -- Shift Indentation to Right
 
 -- Comments
@@ -65,119 +65,303 @@ nkm("v", "<C-/>", "gcc", { noremap = false })
 -- nkm("i", "<C-i>", "<Right>", { noremap = true, silent = true })
 
 -- Floating term secondary keys
-km.set({ "n", "v", "i", "o", "x", "t" }, "<A-\\>", "<cmd>ToggleTerm<CR>", { desc = "Toggle bottom term" })
+km.set({ "n", "v", "i", "o", "x", "t" }, "<A-\\>", function()
+	Snacks.terminal.open()
+end, { desc = "Toggle bottom term" })
 km.set({ "n", "v", "i", "o", "x", "t" }, "<C-\\>", "<cmd>Lspsaga term_toggle<CR>", { desc = "Toggle floating term" })
 
 local duck = require("duck") -- for `duck` plugin keymap
 local builtin = require("telescope.builtin")
 
 wk.add({
-    -- Code group - <leader>{cf,cF,cdc,cdl}
-    {
-        mode = { "n", "v" },
-        { "<leader>c",   group = "+Code" },
-        { "<leader>cA",  "<cmd>Lspsaga code_action<CR>",                      desc = "Actions extra",         silent = true },
-        { "<leader>ca",  function() vim.lsp.buf.code_action() end,            desc = "Actions",               silent = true },
-        { "<leader>cf",  function() vim.lsp.buf.format({ async = true }) end, desc = "Format",                silent = true },
-        { "<leader>cd",  group = "+Diagnostics" },
-        { "<leader>cdc", "<cmd>Lspsaga show_cursor_diagnostics<CR>",          desc = "Cursor diagnostics",    silent = true, noremap = true },
-        { "<leader>cdl", "<cmd>Lspsaga show_line_diagnostics<CR>",            desc = "Line diagnostics",      silent = true, noremap = true },
-        { "<leader>cdw", "<cmd>Lspsaga show_workspace_diagnostics<CR>",       desc = "Workspace diagnostics", silent = true, noremap = true },
-        { "<leader>rn",  "<cmd>Lspsaga rename<CR>",                           desc = "Rename",                silent = true, noremap = true },
-        { "<leader>gd",  "<cmd>Lspsaga peek_definition<CR>",                  desc = "Peek definition",       silent = true, noremap = true },
-        { "<leader>gt",  "<cmd>Lspsaga peek_type_definition<CR>",             desc = "Peek type definition",  silent = true, noremap = true },
-        {
-            "<S-k>",
-            function()
-                local winid = require("ufo").peekFoldedLinesUnderCursor()
-                if not winid then
-                    vim.cmd("Lspsaga hover_doc")
-                end
-            end,
-            desc = "Hover documentation",
-            silent = true,
-            noremap = true
-        },
-        { "<A-n>",      "<cmd>Lspsaga diagnostic_jump_next<CR>",     desc = "Jump to next diagnostic", silent = true, noremap = true },
-        { "<A-p>",      "<cmd>Lspsaga diagnostic_jump_prev<CR>",     desc = "Jump to prev diagnostic", silent = true, noremap = true },
-        { "<leader>l",  group = "+Lspsaga features" },
-        { "<leader>lf", "<cmd>Lspsaga finder<CR>",                   desc = "Finder",                  silent = true, noremap = true },
-        { "<leader>lo", "<cmd>Lspsaga outline<CR>",                  desc = "Outline",                 silent = true, noremap = true },
-        { "<leader>gD", function() vim.lsp.buf.declaration() end,    desc = "Peek declaration",        silent = true, noremap = true },
-        { "<leader>gi", function() vim.lsp.buf.implementation() end, desc = "Go to implementation",    silent = true, noremap = true },
-        { "<leader>gr", function() vim.lsp.buf.references() end,     desc = "Go to references",        silent = true, noremap = true },
-        { "<leader>gs", function() vim.lsp.buf.signature_help() end, desc = "Signature help",          silent = true, noremap = true },
-    },
-    -- End code section
-    -- Debug section
-    { "<leader>d",   group = "+Debug" },
-    { "<leader>dt",  function() require("dap").toggle_breakpoint() end,            desc = "Toggle breakpoint",                            silent = true, noremap = true, },
-    { "<leader>dc",  function() require("dap").continue() end,                     desc = "Continue",                                     silent = true, noremap = true, },
-    -- End debug section
-    -- Window management section
-    { "<leader>s",   group = "+Split window" },
-    { "<leader>sv",  "<cmd>vsplit<CR>",                                            desc = "Vertical" },
-    { "<leader>sh",  "<cmd>split<CR>",                                             desc = "Horizontal" },
-    { "<leader>st",  group = "To terminal" },
-    { "<leader>stt", "<cmd>terminal<CR>i",                                         desc = "Open term here" },
-    { "<leader>sth", "<cmd>split<CR><cmd>terminal<CR>i",                           desc = "In horizontal window" },
-    { "<leader>stv", "<cmd>vsplit<CR><cmd>terminal<CR>i",                          desc = "In vertical window" },
-    { "<leader>stf", "<cmd><CR>",                                                  desc = "In floating window" },
-    -- End window management section
-    -- Telescope section
-    { "<leader>f",   group = "+Find" },
-    { "<leader>ff",  "<cmd>Yazi<cr>",                                              desc = "Files" },
-    { "<leader>F",   builtin.find_files,                                           desc = "Fuzzy files" },
-    { "<leader>fg",  builtin.live_grep,                                            desc = "Live grep" },
-    { "<leader>fb",  builtin.buffers,                                              desc = "Buffers" },
-    { "<leader>fk",  builtin.keymaps,                                              desc = "Keymaps" },
-    { "<leader>fh",  builtin.help_tags,                                            desc = "Help tags" },
-    -- End telescope section
-    -- Trouble section
-    { "<leader>t",   group = "+Trouble" },
-    { "<leader>td",  "<cmd>Trouble diagnostics toggle<CR>",                        desc = "Diagnostics" },
-    { "<leader>tb",  "<cmd>Trouble diagnostics toggle focus=false<CR>",            desc = "Buffer diagnostics" },
-    { "<leader>ts",  "<cmd>Trouble symbols toggle focus=false<cr>",                desc = "Symbols (Trouble)", },
-    { "<leader>tl",  "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", desc = "LSP Definitions / references / ... (Trouble)", },
-    { "<leader>tL",  "<cmd>Trouble loclist toggle<cr>",                            desc = "Location List (Trouble)", },
-    { "<leader>tq",  "<cmd>Trouble qflist toggle<cr>",                             desc = "Quickfix List (Trouble)", },
-    -- End trouble section
-    -- Cursors section
-    { "<leader>m",   group = "+Add Cursors" },
-    { "<leader>ma",  "<cmd>MultipleCursorsAddMatches<CR>",                         desc = "All matches" },
-    { "<leader>mA",  "<cmd>MultipleCursorsAddMatchesV<CR>",                        desc = "All V matches",                                mode = { "v" } },
-    { "<leader>mD",  "<cmd>MultipleCursorsAddJumpNextMatch<CR>",                   desc = "Next match" },
-    { "<leader>md",  "<cmd>MultipleCursorsJumpNextMatch<CR>",                      desc = "GOTO next match" },
-    { "<leader>ml",  "<cmd>MultipleCursorsLock<CR>",                               desc = "Lock cursors" },
-    {
-        mode = { "n", "i" },
-        { "<C-Up>",        "<cmd>MultipleCursorsAddUp<CR>",          desc = "Up" },
-        { "<C-Down>",      "<cmd>MultipleCursorsAddDown<CR>",        desc = "Down" },
-        { "<C-LeftMouse>", "<cmd>MultipleCursorsMouseAddDelete<CR>", desc = "Mouse click" },
-    },
-    -- End cursors section
-    -- YankBank
-    { "<leader>y", group = "+YankBank" },
-    { "<leader>yy", "<cmd>YankBank<CR>", desc = "Open" },
-    -- End YankBank
-    -- Duck section
-    { "<leader>D", group = "+Spawn" },
-    { "<leader>Dd", function() duck.hatch("🦆", 5) end, desc = "Duck", },
-    { "<leader>Dc", function() duck.hatch("🐈", 5) end, desc = "Cat", },
-    { "<leader>Do", function() duck.hatch("🦮", 8) end, desc = "Dog", },
-    { "<leader>Dk", function() duck.cook() end, desc = "Kill last", },
-    { "<leader>DK", function() duck.cook_all() end, desc = "Kill all", },
-    -- End duck section
-    -- Flash
-    -- {
-    --     mode = { "n", "x", "o" },
-    --     { "s", function() require("flash").jump() end,       desc = "Flash", },
-    --     { "S", function() require("flash").treesitter() end, desc = "Flash treesitter", },
-    -- },
-    { "r", function() require("flash").remote() end, desc = "Remote Flash", mode = { "o" } },
-    { "R", function() require("flash").treesitter_search() end, desc = "Treesitter Search", mode = { "o", "x" } },
-    { "<c-s>", function() require("flash").toggle() end, desc = "Toggle Flash Search", mode = { "c" } },
-    { "<S-Esc>", "<C-\\><C-n>", desc = "Exit terminal mode", mode = { "t" } },
+	-- Code group - <leader>{cf,cF,cdc,cdl}
+	{
+		mode = { "n", "v" },
+		{ "<leader>c", group = "+Code" },
+		{
+			"<leader>cA",
+			"<cmd>Lspsaga code_action<CR>",
+			desc = "Actions extra",
+			silent = true,
+		},
+		{
+			"<leader>ca",
+			function()
+				vim.lsp.buf.code_action()
+			end,
+			desc = "Actions",
+			silent = true,
+		},
+		{
+			"<leader>cf",
+			function()
+				vim.lsp.buf.format({ async = true })
+			end,
+			desc = "Format",
+			silent = true,
+		},
+		{ "<leader>cd", group = "+Diagnostics" },
+		{
+			"<leader>cdc",
+			"<cmd>Lspsaga show_cursor_diagnostics<CR>",
+			desc = "Cursor diagnostics",
+			silent = true,
+			noremap = true,
+		},
+		{
+			"<leader>cdl",
+			"<cmd>Lspsaga show_line_diagnostics<CR>",
+			desc = "Line diagnostics",
+			silent = true,
+			noremap = true,
+		},
+		{
+			"<leader>cdw",
+			"<cmd>Lspsaga show_workspace_diagnostics<CR>",
+			desc = "Workspace diagnostics",
+			silent = true,
+			noremap = true,
+		},
+		{
+			"<leader>rn",
+			"<cmd>Lspsaga rename<CR>",
+			desc = "Rename",
+			silent = true,
+			noremap = true,
+		},
+		{
+			"<leader>gd",
+			"<cmd>Lspsaga peek_definition<CR>",
+			desc = "Peek definition",
+			silent = true,
+			noremap = true,
+		},
+		{
+			"<leader>gt",
+			"<cmd>Lspsaga peek_type_definition<CR>",
+			desc = "Peek type definition",
+			silent = true,
+			noremap = true,
+		},
+		{
+			"<S-k>",
+			"<cmd>Lspsaga hover_doc<CR>",
+			desc = "Hover documentation",
+			silent = true,
+			noremap = true,
+		},
+		{
+			"<A-n>",
+			"<cmd>Lspsaga diagnostic_jump_next<CR>",
+			desc = "Jump to next diagnostic",
+			silent = true,
+			noremap = true,
+		},
+		{
+			"<A-p>",
+			"<cmd>Lspsaga diagnostic_jump_prev<CR>",
+			desc = "Jump to prev diagnostic",
+			silent = true,
+			noremap = true,
+		},
+		{ "<leader>l", group = "+Lspsaga features" },
+		{
+			"<leader>lf",
+			"<cmd>Lspsaga finder<CR>",
+			desc = "Finder",
+			silent = true,
+			noremap = true,
+		},
+		{
+			"<leader>lo",
+			"<cmd>Lspsaga outline<CR>",
+			desc = "Outline",
+			silent = true,
+			noremap = true,
+		},
+		{
+			"<leader>gD",
+			function()
+				vim.lsp.buf.declaration()
+			end,
+			desc = "Peek declaration",
+			silent = true,
+			noremap = true,
+		},
+		{
+			"<leader>gi",
+			function()
+				vim.lsp.buf.implementation()
+			end,
+			desc = "Go to implementation",
+			silent = true,
+			noremap = true,
+		},
+		{
+			"<leader>gr",
+			function()
+				vim.lsp.buf.references()
+			end,
+			desc = "Go to references",
+			silent = true,
+			noremap = true,
+		},
+		{
+			"<leader>gs",
+			function()
+				vim.lsp.buf.signature_help()
+			end,
+			desc = "Signature help",
+			silent = true,
+			noremap = true,
+		},
+	},
+	-- End code section
+	-- Debug section
+	{ "<leader>d", group = "+Debug" },
+	{
+		"<leader>dt",
+		function()
+			require("dap").toggle_breakpoint()
+		end,
+		desc = "Toggle breakpoint",
+		silent = true,
+		noremap = true,
+	},
+	{
+		"<leader>dc",
+		function()
+			require("dap").continue()
+		end,
+		desc = "Continue",
+		silent = true,
+		noremap = true,
+	},
+	-- End debug section
+	-- Window management section
+	{ "<leader>s", group = "+Split window" },
+	{ "<leader>sv", "<cmd>vsplit<CR>", desc = "Vertical" },
+	{ "<leader>sh", "<cmd>split<CR>", desc = "Horizontal" },
+	{ "<leader>st", group = "To terminal" },
+	{ "<leader>stt", "<cmd>terminal<CR>i", desc = "Open term here" },
+	{ "<leader>sth", "<cmd>split<CR><cmd>terminal<CR>i", desc = "In horizontal window" },
+	{ "<leader>stv", "<cmd>vsplit<CR><cmd>terminal<CR>i", desc = "In vertical window" },
+	{ "<leader>stf", "<cmd><CR>", desc = "In floating window" },
+	-- End window management section
+	-- Telescope section
+	{ "<leader>f", group = "+Find" },
+	{ "<leader>ff", "<cmd>Yazi<cr>", desc = "Files" },
+	{ "<leader>F", builtin.find_files, desc = "Fuzzy files" },
+	{ "<leader>fg", builtin.live_grep, desc = "Live grep" },
+	{ "<leader>fb", builtin.buffers, desc = "Buffers" },
+	{ "<leader>fk", builtin.keymaps, desc = "Keymaps" },
+	{ "<leader>fh", builtin.help_tags, desc = "Help tags" },
+	-- End telescope section
+	-- Trouble section
+	{ "<leader>t", group = "+Trouble" },
+	{ "<leader>td", "<cmd>Trouble diagnostics toggle<CR>", desc = "Diagnostics" },
+	{ "<leader>tb", "<cmd>Trouble diagnostics toggle focus=false<CR>", desc = "Buffer diagnostics" },
+	{ "<leader>ts", "<cmd>Trouble symbols toggle focus=false<cr>", desc = "Symbols (Trouble)" },
+	{
+		"<leader>tl",
+		"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+		desc = "LSP Definitions / references / ... (Trouble)",
+	},
+	{ "<leader>tL", "<cmd>Trouble loclist toggle<cr>", desc = "Location List (Trouble)" },
+	{ "<leader>tq", "<cmd>Trouble qflist toggle<cr>", desc = "Quickfix List (Trouble)" },
+	-- End trouble section
+	-- Cursors section
+	{ "<leader>m", group = "+Add Cursors" },
+	{ "<leader>ma", "<cmd>MultipleCursorsAddMatches<CR>", desc = "All matches" },
+	{
+		"<leader>mA",
+		"<cmd>MultipleCursorsAddMatchesV<CR>",
+		desc = "All V matches",
+		mode = { "v" },
+	},
+	{ "<leader>mD", "<cmd>MultipleCursorsAddJumpNextMatch<CR>", desc = "Next match" },
+	{ "<leader>md", "<cmd>MultipleCursorsJumpNextMatch<CR>", desc = "GOTO next match" },
+	{ "<leader>ml", "<cmd>MultipleCursorsLock<CR>", desc = "Lock cursors" },
+	{
+		mode = { "n", "i" },
+		{ "<C-Up>", "<cmd>MultipleCursorsAddUp<CR>", desc = "Up" },
+		{ "<C-Down>", "<cmd>MultipleCursorsAddDown<CR>", desc = "Down" },
+		{ "<C-LeftMouse>", "<cmd>MultipleCursorsMouseAddDelete<CR>", desc = "Mouse click" },
+	},
+	-- End cursors section
+	-- YankBank
+	{ "<leader>y", group = "+YankBank" },
+	{ "<leader>yy", "<cmd>YankBank<CR>", desc = "Open" },
+	-- End YankBank
+	-- Duck section
+	{ "<leader>D", group = "+Spawn" },
+	{
+		"<leader>Dd",
+		function()
+			duck.hatch("🦆", 5)
+		end,
+		desc = "Duck",
+	},
+	{
+		"<leader>Dc",
+		function()
+			duck.hatch("🐈", 5)
+		end,
+		desc = "Cat",
+	},
+	{
+		"<leader>Do",
+		function()
+			duck.hatch("🦮", 8)
+		end,
+		desc = "Dog",
+	},
+	{
+		"<leader>Dk",
+		function()
+			duck.cook()
+		end,
+		desc = "Kill last",
+	},
+	{
+		"<leader>DK",
+		function()
+			duck.cook_all()
+		end,
+		desc = "Kill all",
+	},
+	-- End duck section
+	-- Flash
+	-- {
+	--     mode = { "n", "x", "o" },
+	--     { "s", function() require("flash").jump() end,       desc = "Flash", },
+	--     { "S", function() require("flash").treesitter() end, desc = "Flash treesitter", },
+	-- },
+	{
+		"r",
+		function()
+			require("flash").remote()
+		end,
+		desc = "Remote Flash",
+		mode = { "o" },
+	},
+	{
+		"R",
+		function()
+			require("flash").treesitter_search()
+		end,
+		desc = "Treesitter Search",
+		mode = { "o", "x" },
+	},
+	{
+		"<c-s>",
+		function()
+			require("flash").toggle()
+		end,
+		desc = "Toggle Flash Search",
+		mode = { "c" },
+	},
+	{ "<S-Esc>", "<C-\\><C-n>", desc = "Exit terminal mode", mode = { "t" } },
 })
 
 -- ############### OLD KEYMAPPINGS!!! ###############

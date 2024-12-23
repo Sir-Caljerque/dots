@@ -1,5 +1,5 @@
 return {
-    {
+    { -- image support
         "3rd/image.nvim",
         build = false,
         ft = { "markdown" },
