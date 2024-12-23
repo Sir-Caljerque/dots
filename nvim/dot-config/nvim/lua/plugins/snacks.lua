@@ -9,7 +9,7 @@ return {
 		dim = {
 			enabled = true,
 			scope = {
-				min_size = 3,
+				min_size = 5,
 			},
 		},
 		indent = {
@@ -64,11 +64,11 @@ return {
 			enabled = true,
 			zoom = { win = { width = 0 } },
 		},
-		-- styles = {
-		-- 	zen = {
-		-- 		width = 0,
-		-- 	},
-		-- },
+		styles = {
+			zen = {
+				width = 0,
+			},
+		},
 	},
 	keys = {
 		{

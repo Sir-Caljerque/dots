@@ -48,21 +48,6 @@ km.set("v", ">", ">gv", { desc = "right shift indent" }) -- Shift Indentation to
 -- Comments
 nkm("n", "<C-/>", "gcc", { noremap = false })
 nkm("v", "<C-/>", "gcc", { noremap = false })
--- Remap hjkl to neoi for Workman layout
--- nkm("n", "n", "h", { noremap = true, silent = true })
--- nkm("n", "e", "j", { noremap = true, silent = true })
--- nkm("n", "o", "k", { noremap = true, silent = true })
--- nkm("n", "i", "l", { noremap = true, silent = true })
--- nkm("v", "n", "h", { noremap = true, silent = true })
--- -- Normal mode
--- nkm("v", "e", "j", { noremap = true, silent = true })
--- nkm("v", "o", "k", { noremap = true, silent = true })
--- nkm("v", "i", "l", { noremap = true, silent = true })
--- -- Insert mode
--- nkm("i", "<C-n>", "<Left>", { noremap = true, silent = true })
--- nkm("i", "<C-e>", "<Down>", { noremap = true, silent = true })
--- nkm("i", "<C-o>", "<Up>", { noremap = true, silent = true })
--- nkm("i", "<C-i>", "<Right>", { noremap = true, silent = true })
 
 -- Floating term secondary keys
 km.set({ "n", "v", "i", "o", "x", "t" }, "<A-\\>", function()

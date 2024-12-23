@@ -2,4 +2,4 @@
 
 brids=$(fd 'brid.*bg' ~/Pictures/ | shuf -n 1)
 
-chafa "$brids" --format symbols --symbols vhalf --size 60x17 --stretch
+chafa "$brids" --format symbols --symbols vhalf --size 160x10 --stretch
