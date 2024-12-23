@@ -1,226 +1,203 @@
 {
-    "main": {
-        "id": "56f4c4b3f2310e0e",
-        "type": "split",
+  "main": {
+    "id": "cdc82e6f0eabf288",
+    "type": "split",
+    "children": [
+      {
+        "id": "4100b06d754278a3",
+        "type": "tabs",
         "children": [
-            {
-                "id": "fb01735118620fb6",
-                "type": "tabs",
-                "children": [
-                    {
-                        "id": "7da071b164ad39ec",
-                        "type": "leaf",
-                        "state": {
-                            "type": "markdown",
-                            "state": {
-                                "file": "2 - Threats, Vulnerabilities, and Mitigations.md",
-                                "mode": "source",
-                                "source": false
-                            },
-                            "icon": "lucide-file",
-                            "title": "2 - Threats, Vulnerabilities, and Mitigations"
-                        }
-                    },
-                    {
-                        "id": "a4356933ff4f61f0",
-                        "type": "leaf",
-                        "state": {
-                            "type": "pdf",
-                            "state": {
-                                "file": "class/Lecture3-AsymmetricEncryption.pdf"
-                            },
-                            "icon": "lucide-file-text",
-                            "title": "Lecture3-AsymmetricEncryption"
-                        }
-                    }
-                ],
-                "currentTab": 1
+          {
+            "id": "0709a746badb0cdd",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "practice_exam.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "practice_exam"
             }
-        ],
-        "direction": "vertical"
-    },
-    "left": {
-        "id": "c158dd2770d51b50",
-        "type": "split",
+          },
+          {
+            "id": "23b1fd7c17ff25a4",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "practice_exam.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "practice_exam"
+            }
+          },
+          {
+            "id": "6d0cfcb7ffc3152d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "study-areas.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "study-areas"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8fc06866f6b6fae7",
+    "type": "split",
+    "children": [
+      {
+        "id": "a03acea120f46855",
+        "type": "tabs",
         "children": [
-            {
-                "id": "658c1dbc40667bde",
-                "type": "tabs",
-                "children": [
-                    {
-                        "id": "8130dc707501ad88",
-                        "type": "leaf",
-                        "state": {
-                            "type": "file-explorer",
-                            "state": {
-                                "sortOrder": "alphabetical"
-                            },
-                            "icon": "lucide-folder-closed",
-                            "title": "Files"
-                        }
-                    },
-                    {
-                        "id": "ed1ed250cebbfc60",
-                        "type": "leaf",
-                        "state": {
-                            "type": "search",
-                            "state": {
-                                "query": "",
-                                "matchingCase": false,
-                                "explainSearch": false,
-                                "collapseAll": false,
-                                "extraContext": false,
-                                "sortOrder": "alphabetical"
-                            },
-                            "icon": "lucide-search",
-                            "title": "Search"
-                        }
-                    },
-                    {
-                        "id": "6cceab78a240b8ab",
-                        "type": "leaf",
-                        "state": {
-                            "type": "bookmarks",
-                            "state": {},
-                            "icon": "lucide-bookmark",
-                            "title": "Bookmarks"
-                        }
-                    }
-                ]
+          {
+            "id": "68c03bf8eb0b983c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
-        ],
-        "direction": "horizontal",
-        "width": 300
-    },
-    "right": {
-        "id": "22a824513b2aec92",
-        "type": "split",
+          },
+          {
+            "id": "c6ae8856e92d34f9",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "6fd251d8057d5eba",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "c8adb8121bc266d0",
+    "type": "split",
+    "children": [
+      {
+        "id": "aad1814c73409979",
+        "type": "tabs",
         "children": [
-            {
-                "id": "6a9095b31ecef77e",
-                "type": "tabs",
-                "children": [
-                    {
-                        "id": "0f6e8627bb8280b4",
-                        "type": "leaf",
-                        "state": {
-                            "type": "backlink",
-                            "state": {
-                                "file": "1 - General security concepts.md",
-                                "collapseAll": false,
-                                "extraContext": false,
-                                "sortOrder": "alphabetical",
-                                "showSearch": false,
-                                "searchQuery": "",
-                                "backlinkCollapsed": false,
-                                "unlinkedCollapsed": true
-                            },
-                            "icon": "links-coming-in",
-                            "title": "Backlinks for 1 - General security concepts"
-                        }
-                    },
-                    {
-                        "id": "e94faa92174cee39",
-                        "type": "leaf",
-                        "state": {
-                            "type": "outgoing-link",
-                            "state": {
-                                "file": "1 - General security concepts.md",
-                                "linksCollapsed": false,
-                                "unlinkedCollapsed": true
-                            },
-                            "icon": "links-going-out",
-                            "title": "Outgoing links from 1 - General security concepts"
-                        }
-                    },
-                    {
-                        "id": "203c691695dc665b",
-                        "type": "leaf",
-                        "state": {
-                            "type": "tag",
-                            "state": {
-                                "sortOrder": "frequency",
-                                "useHierarchy": true
-                            },
-                            "icon": "lucide-tags",
-                            "title": "Tags"
-                        }
-                    },
-                    {
-                        "id": "be4c5a565df7888a",
-                        "type": "leaf",
-                        "state": {
-                            "type": "outline",
-                            "state": {
-                                "file": "1 - General security concepts.md"
-                            },
-                            "icon": "lucide-list",
-                            "title": "Outline of 1 - General security concepts"
-                        }
-                    },
-                    {
-                        "id": "809f076ffe9f3ed3",
-                        "type": "leaf",
-                        "state": {
-                            "type": "advanced-tables-toolbar",
-                            "state": {},
-                            "icon": "spreadsheet",
-                            "title": "Advanced Tables"
-                        }
-                    }
-                ],
-                "currentTab": 3
+          {
+            "id": "1727c5e6f3f1b8f3",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "practice_exam.pdf",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for practice_exam"
             }
-        ],
-        "direction": "horizontal",
-        "width": 300,
-        "collapsed": true
-    },
-    "left-ribbon": {
-        "hiddenItems": {
-            "switcher:Open quick switcher": false,
-            "graph:Open graph view": false,
-            "canvas:Create new canvas": false,
-            "daily-notes:Open today's daily note": false,
-            "templates:Insert template": false,
-            "command-palette:Open command palette": false,
-            "markdown-importer:Open format converter": false,
-            "audio-recorder:Start/stop recording": false,
-            "obsidian-importer:Open Importer": false,
-            "table-editor-obsidian:Advanced Tables Toolbar": false,
-        }
-    },
-    "active": "a4356933ff4f61f0",
-    "lastOpenFiles": [
-        "assets/imgs/Tokenization.png",
-        "PortsCheatSheet.pdf",
-        "class/Lecture14-Models.pdf",
-        "2 - Threats, Vulnerabilities, and Mitigations.md",
-        "study-areas.md",
-        "study-areas.md~",
-        "assets/imgs/1733139755-JRPC.md",
-        "assets/imgs/Reparation_lifecycle.png",
-        "assets/imgs/Pasted image 20241108203712.png",
-        "1 - General security concepts.md",
-        "assets/imgs/Pasted image 20241031034239.png",
-        "assets/imgs/Encryption_algos.png",
-        "assets/imgs/Pasted image 20241031013648.png",
-        "1 - General security concepts.md~",
-        "assets/imgs/PEP.png",
-        "assets/imgs/PolicyEnforementAgent.png",
-        "assets/imgs/Pasted image 20241018014743.png",
-        "assets/imgs/GAP.png",
-        "practice_exam_questiions.md",
-        "practice_exam_questiions.md~",
-        "practice_exam.pdf",
-        "2 - Threats, Vulnerabilities, and Mitigations.md~",
-        "SecurityPlus.md",
-        "ExamOBJs.pdf",
-        "class/Intrusion detection systems.md",
-        "class/Lecture13-UserAuth.pdf",
-        "class/Lecture12-IDS.pdf",
-        "class/Firewalls.md",
-        "Class.md",
-        "Untitled.canvas"
-    ]
+          },
+          {
+            "id": "c559965e952cbe37",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "practice_exam.pdf",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from practice_exam"
+            }
+          },
+          {
+            "id": "a224e6a49f148f18",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "e379a92e8efdd9a8",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "practice_exam.pdf"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of practice_exam"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false,
+      "audio-recorder:Start/stop recording": false
+    }
+  },
+  "active": "0709a746badb0cdd",
+  "lastOpenFiles": [
+    "definitions.md~",
+    "definitions.md",
+    "study-areas.md",
+    "practice_exam.pdf",
+    "acronyms.md",
+    "acronyms",
+    "practice_exam_questions.md",
+    "practice_exam_questiions.md",
+    "SecurityPlus.md"
+  ]
 }
