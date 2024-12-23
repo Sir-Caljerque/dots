@@ -1,1 +1,0 @@
-AWS Billing and cost management comes with several tools, such as Cost and Usage Report, and Billing Dashboard to help you manage your expenses

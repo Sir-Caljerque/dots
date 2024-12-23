@@ -1,4 +1,0 @@
-- CloudWatch provides a unified view of the operational health of your AWS resources, applications, and services.
-- CloudWatch collects monitoring and operational data as logs, metrics, and events.
-- CloudTrail monitors actions, and CloudWatch monitors performance.
-- Create custom dashboards, alarms, and notifications for key metrics.
