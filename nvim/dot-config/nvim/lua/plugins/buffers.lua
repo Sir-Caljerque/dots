@@ -1,14 +1,17 @@
 return {
 	{
 		"akinsho/bufferline.nvim",
-        lazy = false,
+		lazy = false,
 		version = "*",
 		dependencies = "nvim-tree/nvim-web-devicons",
 		config = function()
 			local bufferline = require("bufferline")
 			bufferline.setup({
 				options = {
-                    -- separator_style = "slant",
+					hover = {
+						enabled = true,
+					},
+					separator_style = "thick",
 				},
 			})
 		end,

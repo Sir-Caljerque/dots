@@ -363,38 +363,3 @@ wk.add({
 	},
 	{ "<S-Esc>", "<C-\\><C-n>", desc = "Exit terminal mode", mode = { "t" } },
 })
-
--- ############### OLD KEYMAPPINGS!!! ###############
--- km.set("n", "<leader>sv", ":vsplit<CR>", { desc = "vertical split" })
--- km.set("n", "<leader>sh", ":split<CR>", { desc = "horizontal split" })
--- km.set("n", "<leader>sm", ":MaximizerToggle<CR>", { desc = "toggle maximize" })
--- km.set("n", "<leader>stt", ":terminal<CR>i", { desc = "open terminal" })
--- km.set("n", "<leader>stv", ":vsplit<CR>:terminal<CR>i", { desc = "terminal vertical split" })
--- km.set("n", "<leader>sth", ":split<CR>:terminal<CR>i", { desc = "terminal horizontal split " })
--- km.set("n", "<leader>ma", "<Cmd>MultipleCursorsAddMatches<CR>", { desc = "add cursor on matches" })
---
--- km.set("n", "<leader>mA", "<Cmd>MultipleCursorsAddMatchesV<CR>", { desc = "add cursor on v matches" })
--- km.set("n", "<leader>mD", "<Cmd>MultipleCursorsAddJumpNextMatch<CR>", { desc = "add cursor on next match" })
--- km.set("n", "<leader>md", "<Cmd>MultipleCursorsJumpNextMatch<CR>", { desc = "jump to next match" })
--- km.set("n", "<leader>ml", "<Cmd>MultipleCursorsLock<CR>", { desc = "lock primary cursor" })
-
--- km.set("n", "<leader>dd", function()
--- 	require("duck").hatch("🦆", 5)
--- end, { desc = "spawn duck" })
--- km.set("n", "<leader>dc", function()
--- 	require("duck").hatch("🐈", 5)
--- end, { desc = "spawn cat" })
--- km.set("n", "<leader>do", function()
--- 	require("duck").hatch("🦮", 5)
--- end, { desc = "spawn dog" })
--- km.set("n", "<leader>dk", function()
--- 	require("duck").cook()
--- end, { desc = "kill last spawn" })
--- km.set("n", "<leader>da", function()
--- 	require("duck").cook_all()
--- end, { desc = "kill everything" })
--- -km.set("n", "<leader>yy", "<Cmd>YankBank<CR>", { noremap = true, desc = "open yank menu" })
---
--- nvim-tree
--- km.set("n", "<A-d>", ":NvimTreeFocus<CR>", { noremap = true, silent = true })
--- km.set("n", "<A-t>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })

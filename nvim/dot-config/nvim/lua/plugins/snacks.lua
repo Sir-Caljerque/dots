@@ -60,7 +60,15 @@ return {
 			notify_end = true,
 			foldopen = false,
 		},
-		zen = { enabled = true },
+		zen = {
+			enabled = true,
+			zoom = { win = { width = 0 } },
+		},
+		-- styles = {
+		-- 	zen = {
+		-- 		width = 0,
+		-- 	},
+		-- },
 	},
 	keys = {
 		{
