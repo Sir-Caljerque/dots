@@ -135,6 +135,13 @@ return {
 			desc = "Dismiss All Notifications",
 		},
 		{
+			"<leader>na",
+			function()
+				Snacks.notifier.show_history()
+			end,
+			desc = "Dismiss All Notifications",
+		},
+		{
 			"<leader>NN",
 			desc = "Neovim News",
 			function()
