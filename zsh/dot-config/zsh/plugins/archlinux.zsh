@@ -137,10 +137,12 @@ function upgrade() {
 
     if (($+commands[pacman])); then
         sudo pacman --noconfirm -Syu
-        paru -Sua
+        paru -Syu
         zinit update &> /dev/null &
         disown
         zinit self-update &> /dev/null &
+        disown
+        rustup update &> /dev/null &
         disown
     fi
 }
