@@ -19,10 +19,6 @@ export KEYTIMEOUT=1
 
 fpath+=( "$ZDOTDIR"/completions )
 
-# Source zinit, aliases, options and zstyle config
-for file in "$ZDOTDIR"/sources/*.zsh; do
-    source "$file"
-done
 # trash-put/trash   trash files and directories.
 # trash-empty         empty the trashcan(s).
 # trash-list          list trashed files.
@@ -44,10 +40,6 @@ for file in "$ZDOTDIR"/plugins/*.zsh; do
   source "$file"
 done
 
-# for file in $ZDOTDIR/completions/*.zsh; do
-#   source "$file"
-# done
-
 # keybinding sources
 for file in "$ZDOTDIR"/keybindings/*.zsh; do
   source "$file"
@@ -56,6 +48,11 @@ done
 # Source functions
 for file in "$ZDOTDIR"/functions/*.zsh; do
   source "$file"
+done
+
+# Source zinit, aliases, options and zstyle config
+for file in "$ZDOTDIR"/sources/*.zsh; do
+    source "$file"
 done
 
 # Change starship config location
