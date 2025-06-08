@@ -62,7 +62,6 @@ export DEFAULT_DISPLAY="DP-2"
 # Start up programs
 eval "$(zoxide init --cmd cd zsh)"
 source <(/usr/bin/fzf --zsh)
-source <(batpipe)
 
 # FZF options
 # export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --smart-case"

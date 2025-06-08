@@ -18,7 +18,7 @@ export LC_ALL="en_US.UTF-8"
 export MANPAGER="nvim +Man!"
 
 # Set wayland env variables
-export GDK_BACKEND=wayland
+# export GDK_BACKEND=wayland,x11
 if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
   export MOZ_ENABLE_WAYLAND=1
 fi
