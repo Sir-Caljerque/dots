@@ -52,7 +52,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 
 		-- make sure there is at least one client with formatting capabilities
-		if client.supports_method("textDocument/formatting") then
+		if client:supports_method("textDocument/formatting") then
 			require("lsp-zero").buffer_autoformat()
 		end
 	end,
@@ -78,25 +78,3 @@ vim.api.nvim_create_autocmd({ "TextChanged", "InsertLeave", "CursorHold", "LspAt
 })
 -- trigger codelens refresh
 vim.api.nvim_exec_autocmds("User", { pattern = "LspAttached" })
-
--- Close all folds at file enter
-local function applyFoldsAndThenCloseAllFolds(bufnr, providerName)
-	require("async")(function()
-		bufnr = vim.api.nvim_get_current_buf()
-		-- make sure buffer is attached
-		require("ufo").attach(bufnr)
-		-- getFolds return Promise if providerName == "lsp"
-		local ranges = await(require("ufo").getFolds(bufnr, providerName))
-		local ok = require("ufo").applyFolds(bufnr, ranges)
-		if ok then
-			require("ufo").closeAllFolds()
-		end
-	end)
-end
-
-vim.api.nvim_create_autocmd("BufRead", {
-	pattern = "*",
-	callback = function(e)
-		applyFoldsAndThenCloseAllFolds(e.buf, "lsp")
-	end,
-})

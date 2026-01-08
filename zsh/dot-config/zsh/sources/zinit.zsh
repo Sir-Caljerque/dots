@@ -1,10 +1,7 @@
 # https://github.com/zdharma-continuum/zinit#ice-modifiers
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-if [ ! -d "$ZINIT_HOME" ]; then
-    mkdir -p "$(dirname $ZINIT_HOME)"
-    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME" &> /dev/null
-    echo "Installing zsh package manager"
-fi
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
 # themes/plugin sources
@@ -25,9 +22,7 @@ zinit light zsh-users/zsh-history-substring-search
 # Prompt (starship)
 zinit ice as"command" from"gh-r" \
           atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
-          atpull"%atclone" \
-          src"init.zsh"
+          atpull"%atclone" src"init.zsh"
 zinit light starship/starship
-
 # Existing plugin snippets 
 # zinit snippet OMZP::git

@@ -1,6 +1,6 @@
 return {
 	"mrcjkb/rustaceanvim",
-	version = "^5", -- Recommended
+	version = "^6", -- Recommended
 	ft = { "rust" }, -- This plugin is already lazy
 	-- ["rust-analyzer"] = {
 	-- cargo = {
@@ -34,10 +34,7 @@ return {
 			"n",
 			"K", -- Override Neovim's built-in hover keymap with rustaceanvim's hover actions
 			function()
-				local winid = require("ufo").peekFoldedLinesUnderCursor()
-				if not winid then
-					vim.cmd.RustLsp({ "hover", "actions" })
-				end
+				vim.cmd.RustLsp({ "hover", "actions" })
 			end,
 			{ silent = true, buffer = bufnr, desc = "Hover actions" }
 		)

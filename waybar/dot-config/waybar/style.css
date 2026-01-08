@@ -1,5 +1,5 @@
 * {
-    /* @import ../../.cache/wal/colors-waybar.css; */
+  /* @import ../../.cache/wal/colors-waybar.css; */
   /* `otf-font-awesome` is required to be installed for icons */
   border: none;
   border-radius: 0;
@@ -77,7 +77,7 @@ button:hover {
 }
 
 #workspaces button.empty {
-      border: 1px solid white;
+  border: 1px solid white;
 }
 
 #workspaces button.urgent {

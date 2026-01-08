@@ -31,6 +31,15 @@ function pacreps() {
     pacman -Ss "$@"
 }
 
+function pareps() {
+    if [[ $# == 0 ]]; then
+        paru -Slq | fzf --multi --preview "par --color always -Ss '^{1}$'" | xargs -ro sudo paru -S
+        return
+    fi
+    
+    paru -Ss "$@"
+}
+
 function pacrem() {
     if [[ $# == 0 ]]; then
         pacman -Qq | fzf --multi --preview 'pacman -Qi {1}' | xargs -ro sudo pacman -Rns
@@ -41,7 +50,7 @@ function pacrem() {
 }
 
 function paclist() {
-    pacman -Qqe | xargs -I{} -P0 --no-run-if-empty pacman -Qs --color=auto "^{}\$"
+    pacman -Qqe | xargs -I{} -P0 --no-run-if-empty pacman -Qs --color=always "^{}\$"
 }
 
 function pacdisowned() {
@@ -138,11 +147,8 @@ function upgrade() {
     if (($+commands[pacman])); then
         sudo pacman --noconfirm -Syu
         paru -Syu
-        zinit update &> /dev/null &
-        disown
-        zinit self-update &> /dev/null &
-        disown
-        rustup update &> /dev/null &
-        disown
+        zinit update
+        zinit self-update
+        rustup update
     fi
 }

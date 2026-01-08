@@ -4,7 +4,7 @@ alias ....='../../..'
 alias zconf="nvim $ZDOTDIR/.zshrc"
 alias nv='nvim'
 
-alias ls='eza -h --icons=auto --color=auto --hyperlink'
+alias ls='eza -Hh --icons=auto --color=always --hyperlink'
 alias l='ls -A'
 alias ll='ls -ol'
 alias la='l -l'
@@ -31,9 +31,9 @@ alias we='watchexec --stop-timeout 2s'
 alias rgp='rg --pretty --trim'
 
 ### GLOBAL ALIAS ###
-alias -g ip='ip --color=auto'
-alias -g grep='grep --color=auto'
-alias -g diff='diff --color=auto'
+alias -g ip='ip --color=always'
+alias -g grep='grep --color=always'
+alias -g diff='diff --color=always'
 alias -g G='| grep'
 alias -g L='| less'
 alias -g B='| bat'

@@ -13,6 +13,9 @@ extract() {
     *.tar.gz)
       tar xzvf "$1"
       ;;
+    *.tar.zst)
+      tar xvf --zstd "$1"
+      ;;
     *.tbz2)
       tar xjvf "$1"
       ;;

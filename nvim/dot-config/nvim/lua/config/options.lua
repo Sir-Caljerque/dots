@@ -23,6 +23,7 @@ opt.signcolumn = "yes"
 opt.cmdheight = 1
 opt.scrolloff = 10
 opt.completeopt = "menuone,noinsert,noselect"
+vim.o.winborder = "rounded"
 
 -- Fold opts
 vim.o.foldcolumn = "1" -- '0' is not bad
@@ -53,6 +54,7 @@ opt.modifiable = true
 opt.encoding = "UTF-8"
 opt.autowrite = true
 opt.cursorline = true -- Enable highlighting of the current line
+opt.cursorcolumn = true -- !! but for current column
 opt.smoothscroll = true
 opt.laststatus = 3
 opt.splitkeep = "screen"
