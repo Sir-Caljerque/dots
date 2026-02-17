@@ -52,6 +52,7 @@ install_pkgs() (
 		ripgrep \
 		signal-desktop \
 		slurp \
+		starship \
 		stow \
 		trash-cli \
 		watchexec \

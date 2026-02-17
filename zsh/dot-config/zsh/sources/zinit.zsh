@@ -20,9 +20,14 @@ zinit light zsh-users/zsh-history-substring-search
 # zinit light Aloxaf/fzf-tab
 
 # Prompt (starship)
-zinit ice as"command" from"gh-r" \
-          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
-          atpull"%atclone" src"init.zsh"
-zinit light starship/starship
-# Existing plugin snippets 
+# zinit ice as"command" from"gh-r" \
+          # atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
+          # atpull"%atclone" src""
+# zinit light starship/starship
+
+zinit ice lucid atload'eval "$(starship init zsh)"'; zinit load zdharma-continuum/null
+
+#Existing plugin snippets 
 # zinit snippet OMZP::git
+
+zinit cdreplay -q  # Cache completions
