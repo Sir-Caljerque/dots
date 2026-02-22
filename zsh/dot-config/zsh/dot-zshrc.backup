@@ -1,20 +1,3 @@
-# Check if hyprland is running and if tty is tty1
-# if hyprland ISNT running, run it
-if [[ -z "$HYPRLAND_INSTANCE_SIGNATURE" && "$(tty)" == "/dev/tty1" ]]; then
-    Hyprland
-fi
-
-clear
-
-rand=$((RANDOM))
-
-[[ -z "$NVIM" ]] &&
-if (( rand % 2 == 0 )); then
-    fastfetch --logo ~/Pictures/wallpaps/bridWithKicks.png --logo-width 48 --logo-height 27
-else
-    fastfetch --logo ~/Pictures/wallpaps/bridNoKicks.png --logo-width 48 --logo-height 27
-fi
-
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
 
@@ -24,82 +7,93 @@ ENABLE_CORRECTION="true"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 COMPLETION_WAITING_DOTS="true"
 
-HISTFILE=~/.zsh_history
-HISTSIZE=1000
+HISTFILE="$ZDOTDIR/.zsh_history"
+HISTSIZE=2000
 SAVEHIST=2000
-setopt autocd extendedglob nomatch
+HISTDUP=erase
+### Might be annoying
+KEYBOARD_HACK=\\
+### Ignore the trailing '\' in a command
 
-unsetopt beep
-bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/fran/.zshrc'
+export KEYTIMEOUT=1
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+fpath+=( "$ZDOTDIR"/completions )
 
-# Source options and zstyle config
-source ~/.zsh/Sources/options.zsh
-
-# themes/plugin sources
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/plugins/archlinux.zsh
-source ~/.zsh/plugins/firewalld.zsh
-source ~/.zsh/plugins/systemd.zsh
-source ~/.zsh/plugins/python.zsh
-source ~/.zsh/plugins/sysadmin.zsh
-source ~/.zsh/plugins/completions/starship.zsh
-source ~/.zsh/plugins/completions/rustup.zsh
-
-# keybinding sources
-source ~/.zsh/Sources/keybindings/ViKeys
-source ~/.zsh/Sources/keybindings/zkbd
-source ~/.zsh/Sources/keybindings/history-search
-
-# Source aliases
-source ~/.zsh/Sources/aliases.zsh
-# trash-put/trash   trash files and directories. 
+# trash-put/trash   trash files and directories.
 # trash-empty         empty the trashcan(s).
 # trash-list          list trashed files.
 # trash-restore       restore a trashed file.
 # trash-rm            remove individual files from the trashcan.
 
+# Load completions
+autoload -Uz compinit
+compinit
+_comp_options+=(globdots) # With hidden files
+
+zinit cdreplay -q  # Cache completions
+
+# Keybinds
+bindkey -v  # VI mode
+
+
+for file in "$ZDOTDIR"/plugins/*.zsh; do
+  source "$file"
+done
+
+# keybinding sources
+for file in "$ZDOTDIR"/keybindings/*.zsh; do
+  source "$file"
+done
+
 # Source functions
-source ~/.zsh/Sources/functions.zsh
+for file in "$ZDOTDIR"/functions/*.zsh; do
+  source "$file"
+done
+
+# Source zinit, aliases, options and zstyle config
+for file in "$ZDOTDIR"/sources/*.zsh; do
+    source "$file"
+done
 
 # Change starship config location
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
+export DEFAULT_DISPLAY="DP-2"
 
 # Start up programs
 eval "$(zoxide init --cmd cd zsh)"
-eval "$(starship init zsh)"
+source <(/usr/bin/fzf --zsh)
 
 # FZF options
 # export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --smart-case"
-export FZF_DEFAULT_COMMAND="fd -Hp"
-export FZF_DEFAULT_OPTS="--preview='bat --paging=never --color=always {}' --ansi --highlight-line"
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
-    --highlight-line \
-    --info=inline-right \
-    --ansi \
-    --layout=reverse \
-    --border=none
-    --color=bg+:#283457 \
-        --color=bg:#16161e \
-        --color=border:#27a1b9 \
-        --color=fg:#c0caf5 \
-        --color=gutter:#16161e \
-        --color=header:#ff9e64 \
-        --color=hl+:#2ac3de \
-        --color=hl:#2ac3de \
-        --color=info:#545c7e \
-        --color=marker:#ff007c \
-        --color=pointer:#ff007c \
-        --color=prompt:#2ac3de \
-        --color=query:#c0caf5:regular \
-        --color=scrollbar:#27a1b9 \
-        --color=separator:#ff9e64 \
-        --color=spinner:#ff007c \
-        "
+# export FZF_DEFAULT_COMMAND="fd -Hp"
+export FZF_DEFAULT_OPTS_FILE="$XDG_CONFIG_HOME/fzf/fzfrc"
+# "--preview='bat --paging=never --color=always {}' \
+# --cycle \
+# --scroll-off=10 \
+# --height=~50% \
+# --border \
+# --info=inline \
+# --highlight-line \
+# --info=inline-right \
+# --ansi \
+# --layout=reverse \
+# --border \
+# --color=bg+:#283457 \
+# --color=bg:#16161e \
+# --color=border:#27a1b9 \
+# --color=fg:#c0caf5 \
+# --color=gutter:#16161e \
+# --color=header:#ff9e64 \
+# --color=hl+:#2ac3de \
+# --color=hl:#2ac3de \
+# --color=info:#545c7e \
+# --color=marker:#ff007c \
+# --color=pointer:#ff007c \
+# --color=prompt:#2ac3de \
+# --color=query:#c0caf5:regular \
+# --color=scrollbar:#27a1b9 \
+# --color=separator:#ff9e64 \
+# --color=spinner:#ff007c
+# "
+
+startup
