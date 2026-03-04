@@ -310,7 +310,8 @@ local config = function()
 		-- on_attach = on_attach,
 	})
 
-	-- null-ls
+	-- qmlls
+	lspconfig("qmlls", {})
 
 	-- efmls
 	local luacheck = require("efmls-configs.linters.luacheck") -- Lua
@@ -359,6 +360,8 @@ local config = function()
 			"docker",
 			"solidity",
 			"css",
+			"qml",
+			"qmljs",
 		},
 		init_options = {
 			documentFormatting = true,

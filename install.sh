@@ -49,7 +49,7 @@ install_pkgs() (
 		neovim \
 		noto-fonts-{emoji,cjk} \
 		pipewire pipewire-{pulse,jack,alsa} \
-		quickshell qt6-svg qt6-imageformats qt6-multimedia qt6-5compat \
+		quickshell qt6-svg qt6-imageformats qt6-multimedia qt6-5compat unixodbc \
 		ripgrep \
 		signal-desktop \
 		slurp \
